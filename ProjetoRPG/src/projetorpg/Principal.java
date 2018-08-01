@@ -54,7 +54,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(btn1)
                         .addGap(49, 49, 49)
                         .addComponent(btn2)))
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -64,7 +64,8 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn1)
-                    .addComponent(btn2)))
+                    .addComponent(btn2))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         pack();

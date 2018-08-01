@@ -36,7 +36,7 @@
                       <Component id="btn2" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="270" max="32767" attributes="0"/>
+              <EmptySpace pref="94" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -50,6 +50,7 @@
                   <Component id="btn1" min="-2" max="-2" attributes="0"/>
                   <Component id="btn2" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="86" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
