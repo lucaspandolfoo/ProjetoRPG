@@ -15,11 +15,12 @@ public class ProjetoRPG {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Inicializações do jogo
+        System.out.println("Inicialização...");
+        
+        //ABERTURA DA TELA PRINCIPAL
+        Principal tela = new Principal();
+        tela.setVisible(true);
     }
-    
-    
-   // testando 
-    
-    
+     
 }
