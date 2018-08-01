@@ -5,6 +5,8 @@
  */
 package projetorpg;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author guilherme.klafki
@@ -55,6 +57,11 @@ public class Principal extends javax.swing.JFrame {
 
         btnAvancar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sign-right.png"))); // NOI18N
         btnAvancar.setText("Avançar");
+        btnAvancar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAvancarActionPerformed(evt);
+            }
+        });
 
         SelecionarPersonagens.add(rbGuerreiro);
         rbGuerreiro.setText("Guerreiro");
@@ -133,6 +140,11 @@ public class Principal extends javax.swing.JFrame {
     private void rbBarbaroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbBarbaroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_rbBarbaroActionPerformed
+
+    private void btnAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancarActionPerformed
+        // TODO add your handling code here:
+         JOptionPane.showMessageDialog(this, "Bom jogo!");
+    }//GEN-LAST:event_btnAvancarActionPerformed
 
     /**
      * @param args the command line arguments
