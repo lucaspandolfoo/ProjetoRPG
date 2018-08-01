@@ -29,9 +29,14 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        SelecionarPersonagens = new javax.swing.ButtonGroup();
         lblTeste = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
         btnAvancar = new javax.swing.JButton();
+        rbGuerreiro = new javax.swing.JRadioButton();
+        rbBarbaro = new javax.swing.JRadioButton();
+        rbArcano = new javax.swing.JRadioButton();
+        rbMago = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Projeto RPG");
@@ -51,6 +56,28 @@ public class Principal extends javax.swing.JFrame {
         btnAvancar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sign-right.png"))); // NOI18N
         btnAvancar.setText("Avançar");
 
+        SelecionarPersonagens.add(rbGuerreiro);
+        rbGuerreiro.setText("Guerreiro");
+        rbGuerreiro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbGuerreiroActionPerformed(evt);
+            }
+        });
+
+        SelecionarPersonagens.add(rbBarbaro);
+        rbBarbaro.setText("Bárbaro");
+        rbBarbaro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbBarbaroActionPerformed(evt);
+            }
+        });
+
+        SelecionarPersonagens.add(rbArcano);
+        rbArcano.setText("Arcano");
+
+        SelecionarPersonagens.add(rbMago);
+        rbMago.setText("Mago");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,13 +89,29 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(btnAvancar)
                 .addGap(36, 36, 36))
             .addComponent(lblTeste, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(rbGuerreiro)
+                .addGap(67, 67, 67)
+                .addComponent(rbBarbaro)
+                .addGap(67, 67, 67)
+                .addComponent(rbArcano)
+                .addGap(67, 67, 67)
+                .addComponent(rbMago)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(lblTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(rbGuerreiro)
+                    .addComponent(rbBarbaro)
+                    .addComponent(rbArcano)
+                    .addComponent(rbMago))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAvancar)
                     .addComponent(btnSair))
@@ -82,6 +125,14 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
+
+    private void rbGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbGuerreiroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbGuerreiroActionPerformed
+
+    private void rbBarbaroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbBarbaroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbBarbaroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -119,8 +170,13 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup SelecionarPersonagens;
     private javax.swing.JButton btnAvancar;
     private javax.swing.JButton btnSair;
     private javax.swing.JLabel lblTeste;
+    private javax.swing.JRadioButton rbArcano;
+    private javax.swing.JRadioButton rbBarbaro;
+    private javax.swing.JRadioButton rbGuerreiro;
+    private javax.swing.JRadioButton rbMago;
     // End of variables declaration//GEN-END:variables
 }
