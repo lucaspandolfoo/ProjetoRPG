@@ -17,6 +17,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         this.setResizable(false);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -29,43 +30,45 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTeste = new javax.swing.JLabel();
-        btn1 = new javax.swing.JButton();
-        btn2 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
+        btnAvancar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Projeto RPG");
+        setPreferredSize(new java.awt.Dimension(600, 400));
 
-        lblTeste.setText("teste");
+        lblTeste.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblTeste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTeste.setText("Selecione um personagem:");
 
-        btn1.setText("Bnt1");
+        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sign-error.png"))); // NOI18N
+        btnSair.setText("Sair");
 
-        btn2.setText("Bnt2");
+        btnAvancar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sign-right.png"))); // NOI18N
+        btnAvancar.setText("Avançar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(lblTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
-                        .addComponent(btn1)
-                        .addGap(49, 49, 49)
-                        .addComponent(btn2)))
-                .addContainerGap(94, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(btnSair)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
+                .addComponent(btnAvancar)
+                .addGap(36, 36, 36))
+            .addComponent(lblTeste, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(42, 42, 42)
                 .addComponent(lblTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn1)
-                    .addComponent(btn2))
-                .addContainerGap(86, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 269, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAvancar)
+                    .addComponent(btnSair))
+                .addGap(27, 27, 27))
         );
 
         pack();
@@ -107,8 +110,8 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn1;
-    private javax.swing.JButton btn2;
+    private javax.swing.JButton btnAvancar;
+    private javax.swing.JButton btnSair;
     private javax.swing.JLabel lblTeste;
     // End of variables declaration//GEN-END:variables
 }
