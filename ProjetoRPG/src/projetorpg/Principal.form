@@ -28,24 +28,40 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              <Component id="btnSair" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="346" max="32767" attributes="0"/>
-              <Component id="btnAvancar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-          </Group>
           <Component id="lblTeste" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-              <Component id="rbGuerreiro" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-              <Component id="rbBarbaro" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-              <Component id="rbArcano" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
-              <Component id="rbMago" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+              <Component id="btrGuerreiro" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
+              <Component id="btrEspiritualista" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="btrArcano" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+              <Component id="btrArqueiro" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="55" max="32767" attributes="0"/>
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel5" min="-2" pref="161" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnSair" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnAvancar" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="128" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -54,19 +70,35 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
               <Component id="lblTeste" min="-2" pref="29" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="rbGuerreiro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="rbBarbaro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="rbArcano" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="rbMago" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="btrGuerreiro" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btrArcano" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btrEspiritualista" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btrArqueiro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
-              <EmptySpace pref="219" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel5" min="-2" pref="213" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="jLabel2" alignment="1" min="-2" pref="180" max="-2" attributes="0"/>
+                      <Component id="jLabel3" alignment="0" min="-2" pref="196" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="107" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnAvancar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnSair" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnAvancar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -103,7 +135,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAvancarActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="rbGuerreiro">
+    <Component class="javax.swing.JRadioButton" name="btrGuerreiro">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="SelecionarPersonagens"/>
@@ -111,21 +143,21 @@
         <Property name="text" type="java.lang.String" value="Guerreiro"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbGuerreiroActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btrGuerreiroActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="rbBarbaro">
+    <Component class="javax.swing.JRadioButton" name="btrEspiritualista">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="SelecionarPersonagens"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="B&#xe1;rbaro"/>
+        <Property name="text" type="java.lang.String" value="Espiritualista"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbBarbaroActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btrEspiritualistaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="rbArcano">
+    <Component class="javax.swing.JRadioButton" name="btrArcano">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="SelecionarPersonagens"/>
@@ -133,12 +165,40 @@
         <Property name="text" type="java.lang.String" value="Arcano"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JRadioButton" name="rbMago">
+    <Component class="javax.swing.JRadioButton" name="btrArqueiro">
       <Properties>
         <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
           <ComponentRef name="SelecionarPersonagens"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Mago"/>
+        <Property name="text" type="java.lang.String" value="Arqueiro"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/personagens/arqueiro.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/personagens/guerreiro.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/personagens/espiritualista.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/personagens/arcano.png"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>

@@ -35,10 +35,14 @@ public class Principal extends javax.swing.JFrame {
         lblTeste = new javax.swing.JLabel();
         btnSair = new javax.swing.JButton();
         btnAvancar = new javax.swing.JButton();
-        rbGuerreiro = new javax.swing.JRadioButton();
-        rbBarbaro = new javax.swing.JRadioButton();
-        rbArcano = new javax.swing.JRadioButton();
-        rbMago = new javax.swing.JRadioButton();
+        btrGuerreiro = new javax.swing.JRadioButton();
+        btrEspiritualista = new javax.swing.JRadioButton();
+        btrArcano = new javax.swing.JRadioButton();
+        btrArqueiro = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Projeto RPG");
@@ -63,66 +67,97 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        SelecionarPersonagens.add(rbGuerreiro);
-        rbGuerreiro.setText("Guerreiro");
-        rbGuerreiro.addActionListener(new java.awt.event.ActionListener() {
+        SelecionarPersonagens.add(btrGuerreiro);
+        btrGuerreiro.setText("Guerreiro");
+        btrGuerreiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbGuerreiroActionPerformed(evt);
+                btrGuerreiroActionPerformed(evt);
             }
         });
 
-        SelecionarPersonagens.add(rbBarbaro);
-        rbBarbaro.setText("Bárbaro");
-        rbBarbaro.addActionListener(new java.awt.event.ActionListener() {
+        SelecionarPersonagens.add(btrEspiritualista);
+        btrEspiritualista.setText("Espiritualista");
+        btrEspiritualista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbBarbaroActionPerformed(evt);
+                btrEspiritualistaActionPerformed(evt);
             }
         });
 
-        SelecionarPersonagens.add(rbArcano);
-        rbArcano.setText("Arcano");
+        SelecionarPersonagens.add(btrArcano);
+        btrArcano.setText("Arcano");
 
-        SelecionarPersonagens.add(rbMago);
-        rbMago.setText("Mago");
+        SelecionarPersonagens.add(btrArqueiro);
+        btrArqueiro.setText("Arqueiro");
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/arqueiro.png"))); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/guerreiro.png"))); // NOI18N
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/espiritualista.png"))); // NOI18N
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/arcano.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(btnSair)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 346, Short.MAX_VALUE)
-                .addComponent(btnAvancar)
-                .addGap(36, 36, 36))
             .addComponent(lblTeste, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(rbGuerreiro)
-                .addGap(67, 67, 67)
-                .addComponent(rbBarbaro)
-                .addGap(67, 67, 67)
-                .addComponent(rbArcano)
-                .addGap(67, 67, 67)
-                .addComponent(rbMago)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(59, 59, 59)
+                .addComponent(btrGuerreiro)
+                .addGap(88, 88, 88)
+                .addComponent(btrEspiritualista)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btrArcano)
+                .addGap(101, 101, 101)
+                .addComponent(btrArqueiro)
+                .addGap(40, 40, 40))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(btnSair)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnAvancar)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(lblTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(btrGuerreiro))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btrArcano)
+                            .addComponent(btrEspiritualista)
+                            .addComponent(btrArqueiro))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbGuerreiro)
-                    .addComponent(rbBarbaro)
-                    .addComponent(rbArcano)
-                    .addComponent(rbMago))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 219, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAvancar)
-                    .addComponent(btnSair))
-                .addGap(27, 27, 27))
+                    .addComponent(btnSair)
+                    .addComponent(btnAvancar))
+                .addGap(24, 24, 24))
         );
 
         pack();
@@ -133,13 +168,13 @@ public class Principal extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_btnSairActionPerformed
 
-    private void rbGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbGuerreiroActionPerformed
+    private void btrGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrGuerreiroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rbGuerreiroActionPerformed
+    }//GEN-LAST:event_btrGuerreiroActionPerformed
 
-    private void rbBarbaroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbBarbaroActionPerformed
+    private void btrEspiritualistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrEspiritualistaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_rbBarbaroActionPerformed
+    }//GEN-LAST:event_btrEspiritualistaActionPerformed
 
     private void btnAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancarActionPerformed
         // TODO add your handling code here:
@@ -185,10 +220,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup SelecionarPersonagens;
     private javax.swing.JButton btnAvancar;
     private javax.swing.JButton btnSair;
+    private javax.swing.JRadioButton btrArcano;
+    private javax.swing.JRadioButton btrArqueiro;
+    private javax.swing.JRadioButton btrEspiritualista;
+    private javax.swing.JRadioButton btrGuerreiro;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblTeste;
-    private javax.swing.JRadioButton rbArcano;
-    private javax.swing.JRadioButton rbBarbaro;
-    private javax.swing.JRadioButton rbGuerreiro;
-    private javax.swing.JRadioButton rbMago;
     // End of variables declaration//GEN-END:variables
 }
