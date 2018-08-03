@@ -5,6 +5,7 @@
  */
 package projetorpg;
 
+import Views.ViewLogin;
 import javax.swing.JOptionPane;
 import modelo.Personagem;
 
@@ -33,7 +34,7 @@ public class Principal extends javax.swing.JFrame {
 
         SelecionarPersonagens = new javax.swing.ButtonGroup();
         lblTeste = new javax.swing.JLabel();
-        btnSair = new javax.swing.JButton();
+        btnVoltar = new javax.swing.JButton();
         btnAvancar = new javax.swing.JButton();
         btrGuerreiro = new javax.swing.JRadioButton();
         btrEspiritualista = new javax.swing.JRadioButton();
@@ -57,11 +58,11 @@ public class Principal extends javax.swing.JFrame {
         lblTeste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTeste.setText("Selecione um personagem:");
 
-        btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sign-error.png"))); // NOI18N
-        btnSair.setText("Sair");
-        btnSair.addActionListener(new java.awt.event.ActionListener() {
+        btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/sign-left.png"))); // NOI18N
+        btnVoltar.setText("Voltar");
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSairActionPerformed(evt);
+                btnVoltarActionPerformed(evt);
             }
         });
 
@@ -165,7 +166,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(btnAtGuerreiro))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(49, 49, 49)
-                        .addComponent(btnSair)))
+                        .addComponent(btnVoltar)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -238,17 +239,20 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(btnAvancar)
                     .addComponent(txtNick, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNick)
-                    .addComponent(btnSair))
+                    .addComponent(btnVoltar))
                 .addGap(24, 24, 24))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-        System.exit(0);
-    }//GEN-LAST:event_btnSairActionPerformed
+        dispose();
+        ViewLogin telaLogin = new ViewLogin();
+        telaLogin.setVisible(true);
+        
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     private void btrGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrGuerreiroActionPerformed
         // TODO add your handling code here:
@@ -406,7 +410,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btnAtEspiritualista;
     private javax.swing.JButton btnAtGuerreiro;
     private javax.swing.JButton btnAvancar;
-    private javax.swing.JButton btnSair;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JRadioButton btrArcano;
     private javax.swing.JRadioButton btrArqueiro;
     private javax.swing.JRadioButton btrEspiritualista;
