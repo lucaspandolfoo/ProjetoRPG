@@ -16,10 +16,10 @@ public class ProjetoRPG {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    //public static void main(String[] args) {
         //Inicializações do jogo
-        System.out.println("Inicializando o projeto...");
+       // System.out.println("Inicializando o projeto...");
        
-    }
+   // }
      
 }
