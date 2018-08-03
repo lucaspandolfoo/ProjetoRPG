@@ -59,6 +59,7 @@ public class Personagem {
     
     public String toString() {
         return
+        "Atributos do Personagem: " + "\n" +
         "Nome: " + nome + "\n" +
         "Classe: " + classe + "\n" +
         "Nível: " + nivel + "\n" +
