@@ -19,10 +19,7 @@ public class ProjetoRPG {
     public static void main(String[] args) {
         //Inicializações do jogo
         System.out.println("Inicializando o projeto...");
-        
-        //ABERTURA DA TELA PRINCIPAL
-        Principal tela = new Principal();
-        tela.setVisible(true);
+       
     }
      
 }
