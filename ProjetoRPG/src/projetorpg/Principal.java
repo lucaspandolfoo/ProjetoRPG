@@ -193,11 +193,18 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancarActionPerformed
         // TODO add your handling code here:
-        if (!txtNick.getText().equals("")) {
-         JOptionPane.showMessageDialog(this, "Bom jogo! " + txtNick.getText());
-        } else {
-             JOptionPane.showMessageDialog(this, "Por favor, escolha um nome para o seu personagem!");
-        }
+        
+          if ((btrGuerreiro.isSelected()) ||  (btrArcano.isSelected()) ||
+                  (btrEspiritualista.isSelected()) || (btrArqueiro.isSelected())) {
+              
+                    if (!txtNick.getText().equals("")) {
+                    JOptionPane.showMessageDialog(this, "Bom jogo! " + txtNick.getText());
+                    } else {
+                         JOptionPane.showMessageDialog(this, "Por favor, escolha um nome para o seu personagem!");
+                    }
+          } else {
+               JOptionPane.showMessageDialog(this, "Por favor, escolha uma classe!");
+          }
     }//GEN-LAST:event_btnAvancarActionPerformed
 
     /**
