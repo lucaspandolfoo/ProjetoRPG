@@ -278,12 +278,15 @@ public class Principal extends javax.swing.JFrame {
         
                         if (btrGuerreiro.isSelected()) { 
                             novoPersonagem("GUE");
+                         
                         }
                         else if (btrArcano.isSelected()) {  
                             novoPersonagem("ARC");
+    
                         }
                         else if (btrEspiritualista.isSelected()) {
                             novoPersonagem("ESP");
+     
                            
                         }
                         else if (btrArqueiro.isSelected()) {
@@ -366,8 +369,10 @@ public class Principal extends javax.swing.JFrame {
           guerreiro.setNivel(0);
           guerreiro.setVida(100);
           guerreiro.setAtaque(300);
+          System.out.println("Nome: " + txtNick.getText()+"\n" + guerreiro.toString());
           return guerreiro.toString();
-    }
+        }
+        
         else if (classe.equals("ARC")) {
           Personagem arcano= new Personagem();
           arcano.setNome(txtNick.getText());
@@ -375,6 +380,7 @@ public class Principal extends javax.swing.JFrame {
           arcano.setNivel(0);
           arcano.setVida(200);
           arcano.setAtaque(250);  
+          System.out.println("Nome: " + txtNick.getText()+"\n" +arcano.toString());
           return arcano.toString();
           
         } else if (classe.equals("ESP")) {
@@ -384,6 +390,7 @@ public class Principal extends javax.swing.JFrame {
           espiritualista.setNivel(0);
           espiritualista.setVida(150);
           espiritualista.setAtaque(150);
+          System.out.println("Nome: " + txtNick.getText()+"\n" +espiritualista.toString());
           return espiritualista.toString();
             
         } else if (classe.equals("ARQ")) {
@@ -393,12 +400,12 @@ public class Principal extends javax.swing.JFrame {
           arqueiro.setNivel(0);
           arqueiro.setVida(100);
           arqueiro.setAtaque(100);
+          System.out.println("Nome: " + txtNick.getText()+"\n" + arqueiro.toString());
           return arqueiro.toString();
         }
         return null;
     }
     
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup SelecionarPersonagens;
     private javax.swing.JButton btnAtArcano;
