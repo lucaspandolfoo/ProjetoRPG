@@ -6,6 +6,7 @@
 package projetorpg;
 
 import javax.swing.JOptionPane;
+import modelo.Personagem;
 
 /**
  *
@@ -118,12 +119,12 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(btrArqueiro)
                 .addGap(40, 40, 40))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addComponent(btnSair)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
@@ -164,15 +165,18 @@ public class Principal extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNick, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNick))
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSair)
-                    .addComponent(btnAvancar))
-                .addGap(24, 24, 24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnSair)
+                            .addComponent(btnAvancar))
+                        .addGap(24, 24, 24))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtNick, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblNick))
+                        .addGap(93, 93, 93))))
         );
 
         pack();
@@ -194,17 +198,48 @@ public class Principal extends javax.swing.JFrame {
     private void btnAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancarActionPerformed
         // TODO add your handling code here:
         
-          if ((btrGuerreiro.isSelected()) ||  (btrArcano.isSelected()) ||
-                  (btrEspiritualista.isSelected()) || (btrArqueiro.isSelected())) {
-              
-                    if (!txtNick.getText().equals("")) {
+        if (!btrGuerreiro.isSelected() && !btrArcano.isSelected() && !btrEspiritualista.isSelected() && !btrArqueiro.isSelected()) {   
+               JOptionPane.showMessageDialog(this, "Por favor, escolha uma classe!");
+          } else {
+        
+                        if (btrGuerreiro.isSelected()) { 
+                            Personagem guerreiro = new Personagem();
+                            guerreiro.setNome(txtNick.getText());
+                            guerreiro.setClasse("Guerreiro");
+                            guerreiro.setNivel(0);
+                            guerreiro.setVida(100);
+                            guerreiro.setAtaque(300);
+                        }
+                        else if (btrArcano.isSelected()) {
+                            Personagem arcano= new Personagem();
+                            arcano.setNome(txtNick.getText());
+                            arcano.setClasse("Arcano");
+                            arcano.setNivel(0);
+                            arcano.setVida(200);
+                            arcano.setAtaque(250);   
+                        }
+                        else if (btrEspiritualista.isSelected()) {
+                            Personagem espiritualista = new Personagem();
+                            espiritualista.setNome(txtNick.getText());
+                            espiritualista.setClasse("Espiritualista");
+                            espiritualista.setNivel(0);
+                            espiritualista.setVida(150);
+                            espiritualista.setAtaque(150);     
+                        }
+                        else if (btrArqueiro.isSelected()) {
+                            Personagem arqueiro = new Personagem();
+                            arqueiro.setNome(txtNick.getText());
+                            arqueiro.setClasse("Arqueiro");
+                            arqueiro.setNivel(0);
+                            arqueiro.setVida(100);
+                            arqueiro.setAtaque(100);
+                  }
+                    if (!txtNick.getText().trim().equals("")) {
                     JOptionPane.showMessageDialog(this, "Bom jogo! " + txtNick.getText());
                     } else {
                          JOptionPane.showMessageDialog(this, "Por favor, escolha um nome para o seu personagem!");
                     }
-          } else {
-               JOptionPane.showMessageDialog(this, "Por favor, escolha uma classe!");
-          }
+        }
     }//GEN-LAST:event_btnAvancarActionPerformed
 
     /**
