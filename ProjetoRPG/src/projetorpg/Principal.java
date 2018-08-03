@@ -103,6 +103,12 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/arcano.png"))); // NOI18N
 
+        txtNick.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtNickKeyTyped(evt);
+            }
+        });
+
         lblNick.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         lblNick.setText("Nome:");
 
@@ -285,7 +291,7 @@ public class Principal extends javax.swing.JFrame {
                   }
                     }
         }
-                JOptionPane.showMessageDialog(this, "Bom jogo! " + txtNick.getText());
+                JOptionPane.showMessageDialog(this, "Bom jogo!  " + txtNick.getText());
     }//GEN-LAST:event_btnAvancarActionPerformed
 
     private void btnAtGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtGuerreiroActionPerformed
@@ -307,6 +313,13 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
             JOptionPane.showMessageDialog(this, novoPersonagem("ARC"));
     }//GEN-LAST:event_btnAtArcanoActionPerformed
+
+    private void txtNickKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNickKeyTyped
+        // TODO add your handling code here:
+          if (txtNick.getText().length()>=10) {
+            evt.consume();
+          }
+    }//GEN-LAST:event_txtNickKeyTyped
 
     /**
      * @param args the command line arguments
