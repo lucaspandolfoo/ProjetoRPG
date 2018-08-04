@@ -12,7 +12,7 @@ import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
-import projetorpg.Principal;
+import Views.Principal;
 
 /**
  *

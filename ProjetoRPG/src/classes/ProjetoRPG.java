@@ -5,7 +5,7 @@
  */
 package classes;
 
-import projetorpg.Principal;
+import Views.Principal;
 
 /**
  *
