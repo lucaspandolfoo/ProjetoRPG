@@ -154,7 +154,7 @@ public class ViewLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         //Valida o Login
-        if (checkLogin(txtLogin.getText(), new String (txtSenha.getPassword()))) {
+        if (checkLogin(txtLogin.getText().toUpperCase(), new String (txtSenha.getPassword()))) {
             
         //ABERTURA DA TELA PRINCIPAL
         Principal tela = new Principal();
@@ -171,8 +171,8 @@ public class ViewLogin extends javax.swing.JFrame {
      */
     
     public boolean checkLogin(String login, String senha) {
-    return login.equals("lucas") && senha.equals("123")
-    || login.equals("guilherme") && senha.equals("123");
+    return login.equals("LUCAS") && senha.equals("123")
+    || login.equals("GUILHERME") && senha.equals("123");
         
     }
     
