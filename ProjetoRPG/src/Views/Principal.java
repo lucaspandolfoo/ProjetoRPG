@@ -266,11 +266,11 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         if (txtNick.getText().trim().equals("")) {
-              JOptionPane.showMessageDialog(this, "Por favor, escolha um nome para o seu personagem!");
+              JOptionPane.showMessageDialog(this, "Por favor, escolha um nome para o seu personagem!","Atenção",JOptionPane.WARNING_MESSAGE);
                return;
                     } else {
                 if (!btrGuerreiro.isSelected() && !btrArcano.isSelected() && !btrEspiritualista.isSelected() && !btrArqueiro.isSelected()) {   
-                       JOptionPane.showMessageDialog(this, "Por favor, escolha uma classe!");
+                       JOptionPane.showMessageDialog(this, "Por favor, escolha uma classe!","Atenção",JOptionPane.WARNING_MESSAGE);
                        return;
                   } else {
         
