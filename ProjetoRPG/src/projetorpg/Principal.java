@@ -52,7 +52,7 @@ public class Principal extends javax.swing.JFrame {
         btnAtArcano = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Projeto RPG");
+        setTitle("Tela de Seleção do Personagem");
 
         lblTeste.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblTeste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
