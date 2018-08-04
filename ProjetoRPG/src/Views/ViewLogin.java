@@ -142,7 +142,7 @@ public class ViewLogin extends javax.swing.JFrame {
         tela.setVisible(true);
         this.dispose();
         } else {
-            JOptionPane.showMessageDialog(this, "Usuário ou senha inválidos!");
+            JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos!", "Atenção",JOptionPane.WARNING_MESSAGE);
             return;
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
