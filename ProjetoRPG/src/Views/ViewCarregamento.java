@@ -79,7 +79,7 @@ public class ViewCarregamento extends javax.swing.JDialog {
 
         progress.setBackground(new java.awt.Color(255, 255, 255));
         progress.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
-        progress.setForeground(new java.awt.Color(153, 153, 153));
+        progress.setForeground(new java.awt.Color(255, 153, 51));
         progress.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         progress.setStringPainted(true);
         getContentPane().add(progress);
