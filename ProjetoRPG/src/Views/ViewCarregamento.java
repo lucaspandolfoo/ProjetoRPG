@@ -119,6 +119,7 @@ public class ViewCarregamento extends javax.swing.JDialog {
         new Thread() {
         @Override
         public void run () {        
+        System.out.println("Inicializando a tela de carregamento");
             
         for (int x=0; x<101; x++) {
             try {   
@@ -150,6 +151,7 @@ public class ViewCarregamento extends javax.swing.JDialog {
          dispose();
          ViewLogin login = new ViewLogin();
          login.setVisible(true);
+         System.out.println("Iniciando a tela de Login");
         }
        }.start();
     }//GEN-LAST:event_formWindowOpened

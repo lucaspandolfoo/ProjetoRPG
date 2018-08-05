@@ -253,6 +253,7 @@ public class Principal extends javax.swing.JFrame {
         dispose();
         ViewLogin telaLogin = new ViewLogin();
         telaLogin.setVisible(true);
+        System.out.println("Voltado da tela de Personagem para a tela de Login");
         
     }//GEN-LAST:event_btnVoltarActionPerformed
 
@@ -295,6 +296,7 @@ public class Principal extends javax.swing.JFrame {
                     }
         }
                 JOptionPane.showMessageDialog(this, "Bom jogo!  " + txtNick.getText());
+                System.out.println("Escolhido o personagem e pronto para jogar!"); 
     }//GEN-LAST:event_btnAvancarActionPerformed
 
     private void btnAtGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtGuerreiroActionPerformed
