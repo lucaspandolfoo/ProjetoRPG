@@ -34,7 +34,6 @@ public class ViewLogin extends javax.swing.JFrame {
         private static final long serialVersionUID = 1L;
         @Override
         public void actionPerformed(ActionEvent arg0) {
-        System.out.println("Foi feito login no jogo");
         btnEntrar.doClick();
     }
 });
@@ -155,6 +154,7 @@ public class ViewLogin extends javax.swing.JFrame {
         
         //Valida o Login
         if (checkLogin(txtLogin.getText().toUpperCase(), new String (txtSenha.getPassword()))) {
+        System.out.println("Foi feito login no jogo");
             
         //ABERTURA DA TELA PRINCIPAL
         Principal tela = new Principal();
