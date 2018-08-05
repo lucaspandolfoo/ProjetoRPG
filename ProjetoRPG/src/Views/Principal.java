@@ -6,6 +6,7 @@
 package Views;
 
 import Views.ViewLogin;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import modelo.Personagem;
 
@@ -22,6 +23,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
+        this.getContentPane().setBackground(Color.WHITE);
     }
         /**
      * This method is called from within the constructor to initialize the form.
