@@ -23,8 +23,8 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(Color.WHITE);
-    }
+        this.getContentPane().setBackground(Color.WHITE); 
+    }   
         /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
