@@ -16,7 +16,7 @@ import modelo.Personagem;
  */
 public class ViewConfronto extends javax.swing.JFrame {
    Personagem personagem;
-   Oponente oponente;
+   Oponente oponente = new Oponente();
    Random gerador = new Random();
 
     /**
@@ -24,10 +24,12 @@ public class ViewConfronto extends javax.swing.JFrame {
      */
     public ViewConfronto(Personagem personagemEscolhido) {
         initComponents();
-        this.personagem = personagem;
-        mostrarPersonagem();
-        mostrarOponente();
-        gerarOponente();
+        this.personagem = personagemEscolhido;
+        
+        mostrarPersonagem(); //Preenche os dados do personagem
+        gerarOponente(); // Gera um novo oponente
+        mostrarOponente();   //Preenche os dados do oponente
+
 
        
        
@@ -304,9 +306,8 @@ public class ViewConfronto extends javax.swing.JFrame {
     
     private Oponente gerarOponente () {
     try {    
-    Oponente oponente = new Oponente();
     // +1 não deixa gerar 0
-    int numero = gerador.nextInt(6) + 1;
+    int numero = gerador.nextInt(5) + 1;
     
     if (numero == 1) {
         oponente.setNome("Mandala");
@@ -351,7 +352,6 @@ public class ViewConfronto extends javax.swing.JFrame {
     
     private void mostrarOponente() {
          //Prenchee o Oponente
-        Oponente oponenteSelecionado = gerarOponente();
         txtNomeB.setText(oponente.getNome());
         txtAtaqueB.setText(String.valueOf(oponente.getAtaque()));
         txtVidaB.setText(String.valueOf(oponente.getVida()));
