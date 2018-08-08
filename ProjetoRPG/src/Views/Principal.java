@@ -6,6 +6,7 @@
 package Views;
 
 import Views.ViewLogin;
+import ferramentas.CaixaDeDialogo;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -64,7 +65,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        txtNick = new javax.swing.JTextField();
+        txtNome = new javax.swing.JTextField();
         lblNick = new javax.swing.JLabel();
         btnAtGuerreiro = new javax.swing.JButton();
         btnAtEspiritualista = new javax.swing.JButton();
@@ -128,9 +129,9 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/arcano.png"))); // NOI18N
 
-        txtNick.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtNickKeyTyped(evt);
+                txtNomeKeyTyped(evt);
             }
         });
 
@@ -193,7 +194,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtNick, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(74, 74, 74))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,10 +255,10 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAtArqueiro)
                             .addComponent(btnAtArcano))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAvancar)
-                    .addComponent(txtNick, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblNick)
                     .addComponent(btnVoltar))
                 .addGap(24, 24, 24))
@@ -286,8 +287,12 @@ public class Principal extends javax.swing.JFrame {
     private void btnAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancarActionPerformed
         // TODO add your handling code here:
         
-        if (txtNick.getText().trim().equals("")) {
-              JOptionPane.showMessageDialog(this, "Por favor, escolha um nome para o seu personagem!","Atenção",JOptionPane.WARNING_MESSAGE);
+               if (txtNome.getText().trim().equals("")) {
+               CaixaDeDialogo.obterinstancia().exibirMensagem("Por favor, escolha um nome para o seu personagem","Atenção",'i');
+               return;
+               } else {
+               if (txtNome.getText().trim().length() <=3) {
+              CaixaDeDialogo.obterinstancia().exibirMensagem("Por favor, escolha um nome maior que 3 letras","Atenção",'i');
                return;
                     } else {
                 if (!btrGuerreiro.isSelected() && !btrArcano.isSelected() && !btrEspiritualista.isSelected() && !btrArqueiro.isSelected()) {   
@@ -295,54 +300,46 @@ public class Principal extends javax.swing.JFrame {
                        return;
                   } else {
         
-                        if (btrGuerreiro.isSelected()) { 
-                            novoPersonagem("GUE");
-                         
-                        }
-                        else if (btrArcano.isSelected()) {  
-                            novoPersonagem("ARC");
-    
-                        }
-                        else if (btrEspiritualista.isSelected()) {
-                            novoPersonagem("ESP");
-                           
-                        }
-                        else if (btrArqueiro.isSelected()) {
-                            novoPersonagem("ARQ");
-                        
-                  }
-                    }
-        }
-                JOptionPane.showMessageDialog(this, "Bom jogo!  " + txtNick.getText());
+ 
+                JOptionPane.showMessageDialog(this, "Bom jogo!  " + txtNome.getText());
                 System.out.println("Escolhido o personagem e pronto para jogar!"); 
+                
+                Personagem personagem = escolherPersonagem();
+                ViewConfronto tela = new ViewConfronto(personagem);
+                tela.setVisible(true);
+                this.setVisible(false);
+                }
+               }
+        
+        }
     }//GEN-LAST:event_btnAvancarActionPerformed
 
     private void btnAtGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtGuerreiroActionPerformed
         // TODO add your handling code here:
-         JOptionPane.showMessageDialog(this, novoPersonagem("GUE"));
+        // JOptionPane.showMessageDialog(this, novoPersonagem("GUE"));
     }//GEN-LAST:event_btnAtGuerreiroActionPerformed
 
     private void btnAtEspiritualistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtEspiritualistaActionPerformed
         // TODO add your handling code here:
-         JOptionPane.showMessageDialog(this, novoPersonagem("ESP"));
+        // JOptionPane.showMessageDialog(this, novoPersonagem("ESP"));
     }//GEN-LAST:event_btnAtEspiritualistaActionPerformed
 
     private void btnAtArqueiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtArqueiroActionPerformed
         // TODO add your handling code here:
-         JOptionPane.showMessageDialog(this, novoPersonagem("ARQ"));
+        // JOptionPane.showMessageDialog(this, novoPersonagem("ARQ"));
     }//GEN-LAST:event_btnAtArqueiroActionPerformed
 
     private void btnAtArcanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtArcanoActionPerformed
         // TODO add your handling code here:
-            JOptionPane.showMessageDialog(this, novoPersonagem("ARC"));
+            //JOptionPane.showMessageDialog(this, novoPersonagem("ARC"));
     }//GEN-LAST:event_btnAtArcanoActionPerformed
 
-    private void txtNickKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNickKeyTyped
+    private void txtNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyTyped
         // TODO add your handling code here:
-        if (txtNick.getText().length()>=10) {
+        if (txtNome.getText().length()>=10) {
             evt.consume();
         }
-    }//GEN-LAST:event_txtNickKeyTyped
+    }//GEN-LAST:event_txtNomeKeyTyped
 
     /**
      * @param args the command line arguments
@@ -380,49 +377,43 @@ public class Principal extends javax.swing.JFrame {
     }
     
     //Método para instância um novo personagem e mostrar os atributos
-    public String novoPersonagem(String classe) {
-        if (classe.equals("GUE")) {
-          Personagem guerreiro = new Personagem();
-          guerreiro.setNome(txtNick.getText());
-          guerreiro.setClasse("Guerreiro");
-          guerreiro.setNivel(0);
-          guerreiro.setVida(100);
-          guerreiro.setAtaque(300);
-          System.out.println("Nome: " + txtNick.getText()+"\n" + guerreiro.toString());
-          return guerreiro.toString();
+    
+    private Personagem escolherPersonagem() {
+       try {
+           
+         Personagem personagem = new Personagem();
+         personagem.setNome(txtNome.getText());
+         
+         if (btrGuerreiro.isSelected()) { 
+          personagem.setClasse("Guerreiro");
+          personagem.setNivel(0);
+          personagem.setVida(100);
+          personagem.setAtaque(300);
         }
-        
-        else if (classe.equals("ARC")) {
-          Personagem arcano= new Personagem();
-          arcano.setNome(txtNick.getText());
-          arcano.setClasse("Arcano");
-          arcano.setNivel(0);
-          arcano.setVida(200);
-          arcano.setAtaque(250);  
-          System.out.println("Nome: " + txtNick.getText()+"\n" +arcano.toString());
-          return arcano.toString();
+       else if (btrArcano.isSelected()) {  
+          personagem.setClasse("Arcano");
+          personagem.setNivel(0);
+          personagem.setVida(200);
+          personagem.setAtaque(250);  
           
-        } else if (classe.equals("ESP")) {
-          Personagem espiritualista = new Personagem();
-          espiritualista.setNome(txtNick.getText());
-          espiritualista.setClasse("Espiritualista");
-          espiritualista.setNivel(0);
-          espiritualista.setVida(150);
-          espiritualista.setAtaque(150);
-          System.out.println("Nome: " + txtNick.getText()+"\n" +espiritualista.toString());
-          return espiritualista.toString();
-            
-        } else if (classe.equals("ARQ")) {
-          Personagem arqueiro = new Personagem();
-          arqueiro.setNome(txtNick.getText());
-          arqueiro.setClasse("Arqueiro");
-          arqueiro.setNivel(0);
-          arqueiro.setVida(100);
-          arqueiro.setAtaque(100);
-          System.out.println("Nome: " + txtNick.getText()+"\n" + arqueiro.toString());
-          return arqueiro.toString();
+        } else if (btrEspiritualista.isSelected()) {
+          personagem.setClasse("Espiritualista");
+          personagem.setNivel(0);
+          personagem.setVida(150);
+          personagem.setAtaque(150);
+          
+        } else if (btrArqueiro.isSelected()) {
+          personagem.setClasse("Arqueiro");
+          personagem.setNivel(0);
+          personagem.setVida(100);
+          personagem.setAtaque(100);
         }
-        return null;
+  
+         return personagem;
+         
+       } catch (Exception e) {
+         return null;
+    }
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -443,6 +434,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblNick;
     private javax.swing.JLabel lblTeste;
-    private javax.swing.JTextField txtNick;
+    private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }
