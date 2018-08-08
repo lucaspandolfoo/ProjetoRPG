@@ -254,7 +254,7 @@ public class ViewConfronto extends javax.swing.JFrame {
 
     private void btnAtacarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtacarActionPerformed
         // TODO add your handling code here
-        
+        ataque();
         //Valida se o oponente já morreu e gerar um novo para lutar.
         if (oponente.getVida() > 0) {
         mostrarOponente();
@@ -360,7 +360,7 @@ public class ViewConfronto extends javax.swing.JFrame {
     
     private void ataque() {
         //Personagem ataca o oponente
-        int ataque = personagem.getAtaque();
+        int ataque = 0;
         int valorDado = gerador.nextInt(20) + 1;
         if (valorDado > 13) { //Ataque Critico 
             ataque = personagem.getAtaque() / 2;
@@ -368,7 +368,7 @@ public class ViewConfronto extends javax.swing.JFrame {
              ataque = personagem.getAtaque() / 3;
         }
         System.out.println("DADO = " + valorDado);
-        System.out.println("Ataque" + ataque);
+        System.out.println("Ataque = " + ataque);
         
         int vidaRestante = oponente.getVida() - personagem.getAtaque();
         oponente.setVida(vidaRestante);
