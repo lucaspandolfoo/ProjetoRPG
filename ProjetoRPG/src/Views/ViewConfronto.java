@@ -102,7 +102,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         txtClasseP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtClasseP.setText(".......................");
 
-        lblBatalha.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblBatalha.setFont(new java.awt.Font("Tahoma", 0, 40)); // NOI18N
         lblBatalha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBatalha.setText("Campo de Batalha");
 
@@ -272,7 +272,7 @@ public class ViewConfronto extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(75, 75, 75)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblVezPersonagem)
