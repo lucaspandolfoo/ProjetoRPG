@@ -272,7 +272,6 @@ public class Principal extends javax.swing.JFrame {
         dispose();
         ViewLogin telaLogin = new ViewLogin();
         telaLogin.setVisible(true);
-        System.out.println("Voltado da tela de Personagem para a tela de Login");
         
     }//GEN-LAST:event_btnVoltarActionPerformed
 
@@ -301,7 +300,7 @@ public class Principal extends javax.swing.JFrame {
                   } else {
         
  
-                JOptionPane.showMessageDialog(this, "Bom jogo!  " + txtNome.getText());
+                //JOptionPane.showMessageDialog(this, "Bom jogo!  " + txtNome.getText());
                 System.out.println("Escolhido o personagem e pronto para jogar!"); 
                 
                 Personagem personagem = escolherPersonagem();
@@ -387,26 +386,26 @@ public class Principal extends javax.swing.JFrame {
          if (btrGuerreiro.isSelected()) { 
           personagem.setClasse("Guerreiro");
           personagem.setNivel(0);
-          personagem.setVida(100);
-          personagem.setAtaque(300);
+          personagem.setVida(1000);
+          personagem.setAtaque(450);
         }
        else if (btrArcano.isSelected()) {  
           personagem.setClasse("Arcano");
           personagem.setNivel(0);
-          personagem.setVida(200);
-          personagem.setAtaque(250);  
+          personagem.setVida(250);
+          personagem.setAtaque(300);  
           
         } else if (btrEspiritualista.isSelected()) {
           personagem.setClasse("Espiritualista");
           personagem.setNivel(0);
           personagem.setVida(150);
-          personagem.setAtaque(150);
+          personagem.setAtaque(400);
           
         } else if (btrArqueiro.isSelected()) {
           personagem.setClasse("Arqueiro");
           personagem.setNivel(0);
-          personagem.setVida(100);
-          personagem.setAtaque(100);
+          personagem.setVida(250);
+          personagem.setAtaque(250);
         }
   
          return personagem;
