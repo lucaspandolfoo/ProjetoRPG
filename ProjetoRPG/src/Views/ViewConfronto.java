@@ -450,7 +450,16 @@ public class ViewConfronto extends javax.swing.JFrame {
         System.out.println("DADO = " + valorDado);
         System.out.println("Ataque = " + ataque);
         
-        lblAtkPersonagem.setText("Seu ataque foi de: " + ataque);
+        //Vez do ataque e tempo    
+        lblAtkPersonagem.setText("Aguarde o ataque");
+        tempo = new Timer(1000, new ActionListener() {//vai esperar 5 segundos e executar essa ação
+        @Override
+        public void actionPerformed(ActionEvent e) {
+               lblAtkPersonagem.setText("Seu ataque foi de: " + ataque); //removo o conteudo do text, ou remove da tela, faz qualquer coisa
+               tempo.stop();//paro a contagem, pra não ser executado de novo
+        }
+        });
+        tempo.start();
         
         int vidaRestante = (oponente.getVida() - ataque);
         System.out.println("Vida restante do Oponente: " + vidaRestante);
@@ -468,7 +477,15 @@ public class ViewConfronto extends javax.swing.JFrame {
         System.out.println("Ataque = " + ataque);
         
        //Vez do ataque e tempo    
-        lblAtkOponente.setText("O ataque do seu oponente foi de: " + ataque);
+        lblAtkOponente.setText("Aguarde o ataque");
+        tempo = new Timer(1000, new ActionListener() {//vai esperar 5 segundos e executar essa ação
+        @Override
+        public void actionPerformed(ActionEvent e) {
+               lblAtkOponente.setText("O ataque do seu oponente foi de: " + ataque); //removo o conteudo do text, ou remove da tela, faz qualquer coisa
+               tempo.stop();//paro a contagem, pra não ser executado de novo
+        }
+        });
+        tempo.start();
 
         int vidaRestante = personagem.getVida() - ataque;
         System.out.println("Vida restante do Personagem: " + vidaRestante);
