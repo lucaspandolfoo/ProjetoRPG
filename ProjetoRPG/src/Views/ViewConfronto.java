@@ -30,10 +30,7 @@ public class ViewConfronto extends javax.swing.JFrame {
      */
     public ViewConfronto(Personagem personagemEscolhido) {
         initComponents();
-        lblAtkPersonagem.setText("");
-        lblAtkOponente.setText("");
-        lblVezPersonagem.setText("");
-        lblVezOponente.setText("");
+        limparLabels();
         this.personagem = personagemEscolhido;
         
         mostrarPersonagem(); //Preenche os dados do personagem
@@ -180,8 +177,7 @@ public class ViewConfronto extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txtClasseP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtNivelP, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addComponent(txtNivelP, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
@@ -323,12 +319,15 @@ public class ViewConfronto extends javax.swing.JFrame {
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns, você derrotou o oponente " + oponente.getNome(),"Atenção",'i');
         gerarOponente();
         mostrarOponente();
+        
         if (personagem.getVida() < 100) {
         boolean wResposta = CaixaDeDialogo.obterinstancia().pedirConfirmacao("Atenção sua vida está abaixo de 100\nDeseja continuar lutando?","Vida",'p');         
         if (wResposta == true) {
         gerarOponente();
+        limparLabels();
         mostrarOponente();
         } else {
+            limparLabels();
             return;
          }
         }
@@ -475,6 +474,13 @@ public class ViewConfronto extends javax.swing.JFrame {
         System.out.println("Vida restante do Personagem: " + vidaRestante);
         personagem.setVida(vidaRestante);   
   }
+    
+    public void limparLabels() {
+        lblAtkPersonagem.setText("");
+        lblAtkOponente.setText("");
+        lblVezPersonagem.setText("");
+        lblVezOponente.setText("");    
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtacar;

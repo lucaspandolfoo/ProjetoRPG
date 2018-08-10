@@ -22,7 +22,7 @@ import modelo.Personagem;
  * @author guilherme.klafki
  */
 public class Principal extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Principal
      */
@@ -315,22 +315,26 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnAtGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtGuerreiroActionPerformed
         // TODO add your handling code here:
-        // JOptionPane.showMessageDialog(this, novoPersonagem("GUE"));
+        Personagem personagem = escolherPersonagem();
+        CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
     }//GEN-LAST:event_btnAtGuerreiroActionPerformed
 
     private void btnAtEspiritualistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtEspiritualistaActionPerformed
         // TODO add your handling code here:
-        // JOptionPane.showMessageDialog(this, novoPersonagem("ESP"));
+        Personagem personagem = escolherPersonagem();
+        CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
     }//GEN-LAST:event_btnAtEspiritualistaActionPerformed
 
     private void btnAtArqueiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtArqueiroActionPerformed
         // TODO add your handling code here:
-        // JOptionPane.showMessageDialog(this, novoPersonagem("ARQ"));
+        Personagem personagem = escolherPersonagem();
+        CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
     }//GEN-LAST:event_btnAtArqueiroActionPerformed
 
     private void btnAtArcanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtArcanoActionPerformed
         // TODO add your handling code here:
-            //JOptionPane.showMessageDialog(this, novoPersonagem("ARC"));
+        Personagem personagem = escolherPersonagem();
+        CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
     }//GEN-LAST:event_btnAtArcanoActionPerformed
 
     private void txtNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyTyped
@@ -379,8 +383,7 @@ public class Principal extends javax.swing.JFrame {
     
     private Personagem escolherPersonagem() {
        try {
-           
-         Personagem personagem = new Personagem();
+         Personagem personagem = new Personagem();  
          personagem.setNome(txtNome.getText());
          
          if (btrGuerreiro.isSelected()) { 
