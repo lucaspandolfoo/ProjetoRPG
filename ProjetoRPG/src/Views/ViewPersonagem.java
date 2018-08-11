@@ -395,26 +395,26 @@ public class ViewPersonagem extends javax.swing.JFrame {
          if (btrGuerreiro.isSelected()) { 
           personagem.setClasse("Guerreiro");
           personagem.setNivel(0);
-          personagem.setVida(1000);
-          personagem.setAtaque(450);
+          personagem.setVida(600);
+          personagem.setAtaque(300);
         }
        else if (btrArcano.isSelected()) {  
           personagem.setClasse("Arcano");
           personagem.setNivel(0);
-          personagem.setVida(250);
-          personagem.setAtaque(300);  
+          personagem.setVida(400);
+          personagem.setAtaque(400);  
           
         } else if (btrEspiritualista.isSelected()) {
           personagem.setClasse("Espiritualista");
           personagem.setNivel(0);
-          personagem.setVida(150);
-          personagem.setAtaque(400);
+          personagem.setVida(200);
+          personagem.setAtaque(550);
           
         } else if (btrArqueiro.isSelected()) {
           personagem.setClasse("Arqueiro");
           personagem.setNivel(0);
           personagem.setVida(250);
-          personagem.setAtaque(250);
+          personagem.setAtaque(280);
         }
   
          return personagem;
