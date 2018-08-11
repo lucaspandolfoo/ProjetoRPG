@@ -6,9 +6,18 @@
 package Views;
 
 import ferramentas.CaixaDeDialogo;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.Timer;
 import modelo.Oponente;
 import modelo.Personagem;
@@ -22,21 +31,22 @@ public class ViewConfronto extends javax.swing.JFrame {
    Oponente oponente = new Oponente();
    Random gerador = new Random();
    public static int ataque = 0;
-  public static int ataqueO = 0;
-  public static Timer tempo;
+   public static int ataqueO = 0;
+   public static Timer tempo;
 
     /**
      * Creates new form ViewConfronto
      */
-    public ViewConfronto(Personagem personagemEscolhido) {
+    public ViewConfronto(Personagem personagemEscolhido) throws IOException {
         initComponents();
         limparLabels();
         this.personagem = personagemEscolhido;
         
         mostrarPersonagem(); //Preenche os dados do personagem
         gerarOponente(); // Gera um novo oponente
-        mostrarOponente(); //Preenche os dados do oponente
-
+        mostrarOponente(); //Preenche os dados do oponente;
+       // lblImagemP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/"+personagem.getClasse().toLowerCase()+".png")));
+       // lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/"+oponente.getNome().toLowerCase()+".png")));
     }
 
     /**
@@ -60,7 +70,6 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblBatalha = new javax.swing.JLabel();
         lblNivelP = new javax.swing.JLabel();
         txtNivelP = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         lblAtaqueB = new javax.swing.JLabel();
         lblVidaB = new javax.swing.JLabel();
         txtNomeB = new javax.swing.JLabel();
@@ -73,65 +82,63 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblAtkOponente = new javax.swing.JLabel();
         lblVezOponente = new javax.swing.JLabel();
         lblVezPersonagem = new javax.swing.JLabel();
+        txtDescB = new javax.swing.JLabel();
+        lblImagemB = new javax.swing.JLabel();
+        lblImagemP = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 650));
         setResizable(false);
 
         lblNomeP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblNomeP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/usuario.png"))); // NOI18N
         lblNomeP.setText("Nome:");
 
         lblAtaqueP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblAtaqueP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ataque.png"))); // NOI18N
         lblAtaqueP.setText("Ataque:");
 
         lblVidaP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblVidaP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/coracao.png"))); // NOI18N
         lblVidaP.setText("Vida:");
 
         txtNomeP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtNomeP.setText("........................");
 
         txtAtaqueP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtAtaqueP.setText("......");
 
         txtVidaP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtVidaP.setText(".......");
 
         lblClasseP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblClasseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/classe.png"))); // NOI18N
         lblClasseP.setText("Classe:");
 
         txtClasseP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtClasseP.setText(".......................");
 
         lblBatalha.setFont(new java.awt.Font("Tahoma", 0, 40)); // NOI18N
         lblBatalha.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBatalha.setText("Campo de Batalha");
 
         lblNivelP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblNivelP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/nivel.png"))); // NOI18N
         lblNivelP.setText("Nível:");
 
         txtNivelP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtNivelP.setText("......");
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 100)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("X");
 
         lblAtaqueB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblAtaqueB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ataque.png"))); // NOI18N
         lblAtaqueB.setText("Ataque:");
 
         lblVidaB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblVidaB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/coracao.png"))); // NOI18N
         lblVidaB.setText("Vida:");
 
         txtNomeB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtNomeB.setText("........................");
 
         txtAtaqueB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtAtaqueB.setText("......");
 
         txtVidaB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        txtVidaB.setText(".......");
 
         lblNomeB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblNomeB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/boss.png"))); // NOI18N
         lblNomeB.setText("Nome:");
 
         btnAtacar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -154,6 +161,9 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblVezPersonagem.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblVezPersonagem.setText("Sua vez de atacar");
 
+        txtDescB.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        txtDescB.setBorder(javax.swing.BorderFactory.createTitledBorder("Mensagem:"));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -161,133 +171,131 @@ public class ViewConfronto extends javax.swing.JFrame {
             .addComponent(jSeparator1)
             .addComponent(lblBatalha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblAtkPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblVezPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblAtaqueDe, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 208, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblAtkOponente, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblVezOponente, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(btnAtacar))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(lblClasseP)
-                                            .addComponent(lblNivelP))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(txtClasseP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtNivelP, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(lblVidaP)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(lblNomeP)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(txtNomeP, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(lblAtaqueP)
-                                                    .addComponent(lblVidaP))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(txtAtaqueP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(241, 241, 241)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(184, 184, 184)
+                                        .addComponent(lblAtaqueP)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtAtaqueP, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblNivelP)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtNivelP, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(lblClasseP)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(txtClasseP, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                            .addComponent(lblNomeP)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(txtNomeP, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblImagemB, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(21, 21, 21)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
                                     .addComponent(lblVidaB)
-                                    .addComponent(lblAtaqueB))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtVidaB, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtAtaqueB, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(107, 107, 107))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(lblNomeB)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtNomeB, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(lblAtaqueDe, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblAtkPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblVezPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblVezOponente, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblAtkOponente, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap())))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtVidaB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGap(2, 2, 2))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblAtaqueB)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtAtaqueB, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblNomeB)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtNomeB, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(txtDescB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(lblBatalha)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNomeP)
-                            .addComponent(txtNomeP))
-                        .addGap(8, 8, 8)
+                            .addComponent(txtNomeP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblClasseP)
-                            .addComponent(txtClasseP))
+                            .addComponent(txtClasseP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNivelP)
-                            .addComponent(txtNivelP))
+                            .addComponent(txtNivelP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblAtaqueP)
-                            .addComponent(txtAtaqueP))
+                            .addComponent(txtAtaqueP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblVidaP)
-                            .addComponent(txtVidaP)))
+                            .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(lblBatalha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNomeB)
-                            .addComponent(txtNomeB))
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAtaqueB)
-                            .addComponent(txtAtaqueB))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtVidaB)
-                            .addComponent(lblVidaB)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblNomeB, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(txtNomeB, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtAtaqueB, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblAtaqueB))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtVidaB, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblVidaB))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtDescB, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblImagemB, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblAtaqueDe, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblVezPersonagem)
-                        .addGap(2, 2, 2))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblVezOponente)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAtkPersonagem)
-                    .addComponent(lblAtkOponente))
-                .addGap(28, 28, 28)
-                .addComponent(lblAtaqueDe, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(138, 138, 138)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblAtkOponente))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblVezPersonagem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblAtkPersonagem)))
+                .addGap(204, 204, 204)
                 .addComponent(btnAtacar)
-                .addGap(89, 89, 89))
+                .addContainerGap())
         );
 
         pack();
@@ -316,7 +324,8 @@ public class ViewConfronto extends javax.swing.JFrame {
         mostrarOponente();
         } else {
         mostrarOponente();
-        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns, você derrotou o oponente " + oponente.getNome(),"Atenção",'i');
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns, você derrotou o oponente " + oponente.getNome() + "\nVocê ganhou 100 de vida.","Atenção",'i');
+        aumentaVida(); 
         gerarOponente();
         mostrarOponente();
         
@@ -339,14 +348,13 @@ public class ViewConfronto extends javax.swing.JFrame {
          } else {
          mostrarPersonagem();
          CaixaDeDialogo.obterinstancia().exibirMensagem("Você foi derrotado!\nEsperamos que você esteja mais forte na próxima luta. " + oponente.getNome(),"GAME OVER",'i');
-         Principal tela = new Principal();
+         ViewPersonagem tela = new ViewPersonagem();
          tela.setVisible(true);
          this.setVisible(false);
          } 
-         
+      
 // barra de vida progresso
 // array de oponentes
-// dado para ver se personagem ou oponente ataca.
    
     }//GEN-LAST:event_btnAtacarActionPerformed
 
@@ -380,7 +388,11 @@ public class ViewConfronto extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewConfronto(null).setVisible(true);
+                try {
+                    new ViewConfronto(null).setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(ViewConfronto.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -393,28 +405,33 @@ public class ViewConfronto extends javax.swing.JFrame {
     if (numero == 1) {
         oponente.setNome("Mandala");
         oponente.setVida(600);
-        oponente.setAtaque(200);    
+        oponente.setAtaque(200);  
+        oponente.setDescricao("<html> Será que você consegue derrpotar o Rei dos macacos? <br> por: " + oponente.getNome() + "</html>");
     }
     else if (numero == 2) {
-        oponente.setNome("Rei Leão-Dourado");
+        oponente.setNome("Rei Leão Trator");
         oponente.setVida(300);
         oponente.setAtaque(150);    
+        oponente.setDescricao("<html> Preparado para perder? <br> por: " + oponente.getNome() + "</html>");
     }
       else if (numero == 3) {
         oponente.setNome("Corcel do Inferno");
         oponente.setVida(800);
         oponente.setAtaque(300);    
+        oponente.setDescricao("<html> Demonstre sua força para mim. <br> por: " + oponente.getNome()+ "</html>");
     }
       else if (numero == 4) {
         oponente.setNome("Dragão de Fogo");
         oponente.setVida(400);
         oponente.setAtaque(200);    
+        oponente.setDescricao("<html> Espero que esteja preparado para a glória! <br> por: " + oponente.getNome()+ "</html>");
     }
       else if (numero == 5) {
         oponente.setNome("Louva-Deus");
         oponente.setVida(500);
         oponente.setAtaque(300);    
-    }
+        oponente.setDescricao("<html> Cuidado por onde andas! <br> por: " + oponente.getNome()+"</html>");
+      }
         return oponente;
     
     } catch (Exception e) {
@@ -436,7 +453,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         txtNomeB.setText(oponente.getNome());
         txtAtaqueB.setText(String.valueOf(oponente.getAtaque()));
         txtVidaB.setText(String.valueOf(oponente.getVida()));
-                
+        txtDescB.setText(oponente.getDescricao());
     }
     
     private void ataquePersonagem() {
@@ -452,7 +469,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         
         //Vez do ataque e tempo    
         lblAtkPersonagem.setText("Aguarde o ataque");
-        tempo = new Timer(1000, new ActionListener() {//vai esperar 5 segundos e executar essa ação
+        tempo = new Timer(400, new ActionListener() {//vai esperar 5 segundos e executar essa ação
         @Override
         public void actionPerformed(ActionEvent e) {
                lblAtkPersonagem.setText("Seu ataque foi de: " + ataque); //removo o conteudo do text, ou remove da tela, faz qualquer coisa
@@ -478,7 +495,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         
        //Vez do ataque e tempo    
         lblAtkOponente.setText("Aguarde o ataque");
-        tempo = new Timer(1000, new ActionListener() {//vai esperar 5 segundos e executar essa ação
+        tempo = new Timer(400, new ActionListener() {//vai esperar 5 segundos e executar essa ação
         @Override
         public void actionPerformed(ActionEvent e) {
                lblAtkOponente.setText("O ataque do seu oponente foi de: " + ataque); //removo o conteudo do text, ou remove da tela, faz qualquer coisa
@@ -489,8 +506,9 @@ public class ViewConfronto extends javax.swing.JFrame {
 
         int vidaRestante = personagem.getVida() - ataque;
         System.out.println("Vida restante do Personagem: " + vidaRestante);
-        personagem.setVida(vidaRestante);   
-  }
+        personagem.setVida(vidaRestante); 
+ 
+ }
     
     public void limparLabels() {
         lblAtkPersonagem.setText("");
@@ -498,10 +516,27 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblVezPersonagem.setText("");
         lblVezOponente.setText("");    
     }
+    
+    private void aumentaVida() {
+        int vida = 100;
+        personagem.setVida(personagem.getVida() + vida);
+    }
 
+ 
+    public void imagensBatalha (String img) {
+          String diretorio = "/br/com/ProjetoRPG/ProjetoRPG/src/personagens/" + img + ".png";
+        try {
+            URL resource = getClass().getResource(diretorio);
+            File file = new File(resource.toURI());
+            //setando o icone
+            ImageIcon logo = new ImageIcon(file.getPath());
+            lblImagemB.setIcon(logo);  
+        } catch (URISyntaxException ex) {
+           //algo errado
+    }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtacar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAtaqueB;
     private javax.swing.JLabel lblAtaqueDe;
@@ -510,6 +545,8 @@ public class ViewConfronto extends javax.swing.JFrame {
     private javax.swing.JLabel lblAtkPersonagem;
     private javax.swing.JLabel lblBatalha;
     private javax.swing.JLabel lblClasseP;
+    private javax.swing.JLabel lblImagemB;
+    private javax.swing.JLabel lblImagemP;
     private javax.swing.JLabel lblNivelP;
     private javax.swing.JLabel lblNomeB;
     private javax.swing.JLabel lblNomeP;
@@ -520,6 +557,7 @@ public class ViewConfronto extends javax.swing.JFrame {
     private javax.swing.JLabel txtAtaqueB;
     private javax.swing.JLabel txtAtaqueP;
     private javax.swing.JLabel txtClasseP;
+    private javax.swing.JLabel txtDescB;
     private javax.swing.JLabel txtNivelP;
     private javax.swing.JLabel txtNomeB;
     private javax.swing.JLabel txtNomeP;

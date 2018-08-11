@@ -205,9 +205,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Guerreiro"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btrGuerreiroActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="btrEspiritualista">
       <Properties>
@@ -216,9 +213,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Espiritualista"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btrEspiritualistaActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="btrArcano">
       <Properties>

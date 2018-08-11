@@ -21,12 +21,12 @@ import modelo.Personagem;
  *
  * @author guilherme.klafki
  */
-public class Principal extends javax.swing.JFrame {
+public class ViewPersonagem extends javax.swing.JFrame {
     
     /**
      * Creates new form Principal
      */
-    public Principal() {
+    public ViewPersonagem() {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -101,19 +101,9 @@ public class Principal extends javax.swing.JFrame {
 
         SelecionarPersonagens.add(btrGuerreiro);
         btrGuerreiro.setText("Guerreiro");
-        btrGuerreiro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btrGuerreiroActionPerformed(evt);
-            }
-        });
 
         SelecionarPersonagens.add(btrEspiritualista);
         btrEspiritualista.setText("Espiritualista");
-        btrEspiritualista.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btrEspiritualistaActionPerformed(evt);
-            }
-        });
 
         SelecionarPersonagens.add(btrArcano);
         btrArcano.setText("Arcano");
@@ -275,14 +265,6 @@ public class Principal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnVoltarActionPerformed
 
-    private void btrGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrGuerreiroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btrGuerreiroActionPerformed
-
-    private void btrEspiritualistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btrEspiritualistaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btrEspiritualistaActionPerformed
-
     private void btnAvancarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvancarActionPerformed
         // TODO add your handling code here:
         
@@ -291,7 +273,7 @@ public class Principal extends javax.swing.JFrame {
                return;
                } else {
                if (txtNome.getText().trim().length() <=3) {
-              CaixaDeDialogo.obterinstancia().exibirMensagem("Por favor, escolha um nome maior que 3 letras","Atenção",'i');
+               CaixaDeDialogo.obterinstancia().exibirMensagem("Por favor, escolha um nome maior que 3 letras!","Atenção",'i');
                return;
                     } else {
                 if (!btrGuerreiro.isSelected() && !btrArcano.isSelected() && !btrEspiritualista.isSelected() && !btrArqueiro.isSelected()) {   
@@ -316,24 +298,40 @@ public class Principal extends javax.swing.JFrame {
     private void btnAtGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtGuerreiroActionPerformed
         // TODO add your handling code here:
         Personagem personagem = escolherPersonagem();
+        if (personagem.getClasse() == null) {
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Selecione o personagem para ver seus atributos!","Selecione um Personagem",'e'); 
+        return;
+        }
         CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
     }//GEN-LAST:event_btnAtGuerreiroActionPerformed
 
     private void btnAtEspiritualistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtEspiritualistaActionPerformed
         // TODO add your handling code here:
         Personagem personagem = escolherPersonagem();
+        if (personagem.getClasse() == null) {
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Selecione o personagem para ver seus atributos!","Selecione um Personagem",'e'); 
+        return;
+        }
         CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
     }//GEN-LAST:event_btnAtEspiritualistaActionPerformed
 
     private void btnAtArqueiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtArqueiroActionPerformed
         // TODO add your handling code here:
         Personagem personagem = escolherPersonagem();
+        if (personagem.getClasse() == null) {
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Selecione o personagem para ver seus atributos!","Selecione um Personagem",'e'); 
+        return;
+        }
         CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
     }//GEN-LAST:event_btnAtArqueiroActionPerformed
 
     private void btnAtArcanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtArcanoActionPerformed
         // TODO add your handling code here:
         Personagem personagem = escolherPersonagem();
+        if (personagem.getClasse() == null) {
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Selecione o personagem para ver seus atributos!","Selecione um Personagem",'e'); 
+         return;
+        }
         CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
     }//GEN-LAST:event_btnAtArcanoActionPerformed
 
@@ -361,20 +359,21 @@ public class Principal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewPersonagem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewPersonagem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewPersonagem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Principal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ViewPersonagem.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Principal().setVisible(true);
+                new ViewPersonagem().setVisible(true);
             }
         });
     }
@@ -417,7 +416,6 @@ public class Principal extends javax.swing.JFrame {
          return null;
     }
     }
-    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup SelecionarPersonagens;
     private javax.swing.JButton btnAtArcano;

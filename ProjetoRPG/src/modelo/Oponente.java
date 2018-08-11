@@ -14,6 +14,7 @@ public class Oponente {
     private String nome;
     private int vida;
     private int ataque;
+    private String descricao;
     
 
     public String getNome() {
@@ -40,12 +41,21 @@ public class Oponente {
         this.ataque = ataque;
     }
 
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
     public String toString() {
         return
         "Atributos do Oponente: " + "\n" +
         "Nome: " + nome + "\n" +
         "Vida: " + vida + "\n" +
-        "Ataque: " + ataque + "\n";      
+        "Ataque: " + ataque + "\n" +
+        "Descrição: " + descricao + "\n";       
     }
     
 }
