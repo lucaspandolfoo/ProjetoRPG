@@ -481,8 +481,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblImagemB">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Imagem do Oponente"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblImagemP">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Imagem do Personagem"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblX">
       <Properties>

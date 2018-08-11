@@ -177,6 +177,10 @@ public class ViewConfronto extends javax.swing.JFrame {
         txtDescB.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         txtDescB.setBorder(javax.swing.BorderFactory.createTitledBorder("Mensagem:"));
 
+        lblImagemB.setToolTipText("Imagem do Oponente");
+
+        lblImagemP.setToolTipText("Imagem do Personagem");
+
         lblX.setFont(new java.awt.Font("Tahoma", 1, 140)); // NOI18N
         lblX.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblX.setText("X");

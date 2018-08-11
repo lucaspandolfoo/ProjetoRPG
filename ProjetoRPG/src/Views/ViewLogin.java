@@ -95,14 +95,19 @@ public class ViewLogin extends javax.swing.JFrame {
         lblLogin.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblLogin.setText("Login");
 
+        txtLogin.setToolTipText("Digite seu usuário");
+
         lblSenha.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblSenha.setText("Senha");
+
+        txtSenha.setToolTipText("Digite sua senha");
 
         btnEntrar.setBackground(new java.awt.Color(0, 102, 255));
         btnEntrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnEntrar.setForeground(new java.awt.Color(255, 255, 255));
         btnEntrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/login.png"))); // NOI18N
         btnEntrar.setText("Entrar");
+        btnEntrar.setToolTipText("Entrar no jogo");
         btnEntrar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

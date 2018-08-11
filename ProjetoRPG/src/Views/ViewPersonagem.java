@@ -86,6 +86,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         btnVoltar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/sign-left.png"))); // NOI18N
         btnVoltar.setText("Voltar");
+        btnVoltar.setToolTipText("Voltar para a tela de login");
         btnVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVoltarActionPerformed(evt);
@@ -96,6 +97,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         btnAvancar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAvancar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/sign-right.png"))); // NOI18N
         btnAvancar.setText("Avançar");
+        btnAvancar.setToolTipText("Ir para o campo de batalha");
         btnAvancar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAvancarActionPerformed(evt);
@@ -115,13 +117,18 @@ public class ViewPersonagem extends javax.swing.JFrame {
         btrArqueiro.setText("Arqueiro");
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/arqueiro.png"))); // NOI18N
+        jLabel1.setToolTipText("Imagem do personagem Arqueiro");
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/guerreiro.png"))); // NOI18N
+        jLabel2.setToolTipText("Imagem do Personagem Guerreiro");
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/espiritualista.png"))); // NOI18N
+        jLabel3.setToolTipText("Imagem do Personagem Espiritualista");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/arcano.png"))); // NOI18N
+        jLabel5.setToolTipText("Imagem do personagem Arcano");
 
+        txtNome.setToolTipText("Preencha um nome para o seu personagem");
         txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtNomeKeyTyped(evt);
@@ -132,6 +139,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         lblNick.setText("Nome:");
 
         btnAtGuerreiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/button.png"))); // NOI18N
+        btnAtGuerreiro.setToolTipText("Atributos do persoangem Guerreiro");
         btnAtGuerreiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtGuerreiroActionPerformed(evt);
@@ -139,6 +147,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         });
 
         btnAtEspiritualista.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/button.png"))); // NOI18N
+        btnAtEspiritualista.setToolTipText("Atributos do Personagem Espiritualista");
         btnAtEspiritualista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtEspiritualistaActionPerformed(evt);
@@ -146,6 +155,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         });
 
         btnAtArqueiro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/button.png"))); // NOI18N
+        btnAtArqueiro.setToolTipText("Atributos do personagem Arqueiro");
         btnAtArqueiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtArqueiroActionPerformed(evt);
@@ -153,6 +163,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         });
 
         btnAtArcano.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/button.png"))); // NOI18N
+        btnAtArcano.setToolTipText("Atributos do personagem Arcano");
         btnAtArcano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtArcanoActionPerformed(evt);
