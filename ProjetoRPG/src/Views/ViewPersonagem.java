@@ -408,7 +408,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
           personagem.setClasse("Espiritualista");
           personagem.setNivel(0);
           personagem.setVida(200);
-          personagem.setAtaque(550);
+          personagem.setAtaque(500);
           
         } else if (btrArqueiro.isSelected()) {
           personagem.setClasse("Arqueiro");
