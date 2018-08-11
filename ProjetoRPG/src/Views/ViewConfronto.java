@@ -46,7 +46,6 @@ public class ViewConfronto extends javax.swing.JFrame {
         gerarOponente(); // Gera um novo oponente
         mostrarOponente(); //Preenche os dados do oponente;
         lblImagemP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+personagem.getClasse().toLowerCase()+".png")));
-        lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
     }
 
     /**
@@ -88,7 +87,6 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblX = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1150, 650));
         setResizable(false);
 
         lblNomeP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -235,9 +233,9 @@ public class ViewConfronto extends javax.swing.JFrame {
                                 .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lblX, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblImagemB, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(10, 10, 10)
+                                .addComponent(lblImagemB, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtDescB, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(73, 73, 73)
@@ -410,37 +408,42 @@ public class ViewConfronto extends javax.swing.JFrame {
     private Oponente gerarOponente () {
     try {    
     // +1 não deixa gerar 0
-    int numero = 1; //gerador.nextInt(5) + 1;
+    int numero = gerador.nextInt(5) + 1;
     
     if (numero == 1) {
         oponente.setNome("Mandala");
         oponente.setVida(600);
         oponente.setAtaque(200);  
         oponente.setDescricao("<html> Será que você consegue derrpotar o Rei dos macacos? <br> por: " + oponente.getNome() + "</html>");
+   lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
     }
     else if (numero == 2) {
-        oponente.setNome("Rei Leão Trator");
+        oponente.setNome("Rei Trator");
         oponente.setVida(300);
         oponente.setAtaque(150);    
         oponente.setDescricao("<html> Preparado para perder? <br> por: " + oponente.getNome() + "</html>");
+   lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
     }
       else if (numero == 3) {
         oponente.setNome("Corcel do Inferno");
         oponente.setVida(800);
         oponente.setAtaque(300);    
         oponente.setDescricao("<html> Demonstre sua força para mim. <br> por: " + oponente.getNome()+ "</html>");
-    }
+   lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
+      }
       else if (numero == 4) {
-        oponente.setNome("Dragão de Fogo");
+        oponente.setNome("Lorden");
         oponente.setVida(400);
         oponente.setAtaque(200);    
         oponente.setDescricao("<html> Espero que esteja preparado para a glória! <br> por: " + oponente.getNome()+ "</html>");
-    }
+   lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
+      }
       else if (numero == 5) {
         oponente.setNome("Louva-Deus");
         oponente.setVida(500);
         oponente.setAtaque(300);    
         oponente.setDescricao("<html> Cuidado por onde andas! <br> por: " + oponente.getNome()+"</html>");
+        lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
       }
         return oponente;
     
