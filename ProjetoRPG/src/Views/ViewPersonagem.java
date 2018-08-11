@@ -10,6 +10,9 @@ import ferramentas.CaixaDeDialogo;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.AbstractAction;
 import javax.swing.InputMap;
 import javax.swing.JComponent;
@@ -282,13 +285,17 @@ public class ViewPersonagem extends javax.swing.JFrame {
                   } else {
         
  
-                //JOptionPane.showMessageDialog(this, "Bom jogo!  " + txtNome.getText());
-                System.out.println("Escolhido o personagem e pronto para jogar!"); 
-                
-                Personagem personagem = escolherPersonagem();
-                ViewConfronto tela = new ViewConfronto(personagem);
-                tela.setVisible(true);
-                this.setVisible(false);
+                    try {
+                        //JOptionPane.showMessageDialog(this, "Bom jogo!  " + txtNome.getText());
+                        System.out.println("Escolhido o personagem e pronto para jogar!");
+                        
+                        Personagem personagem = escolherPersonagem();
+                        ViewConfronto tela = new ViewConfronto(personagem);
+                        tela.setVisible(true);
+                        this.setVisible(false);
+                    } catch (IOException ex) {
+                        Logger.getLogger(ViewPersonagem.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
                }
         
