@@ -321,11 +321,11 @@ public class ViewConfronto extends javax.swing.JFrame {
                         .addComponent(lblVezPersonagem)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblAtkPersonagem)))
-                .addGap(204, 204, 204)
+                .addGap(186, 186, 186)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAtacar)
                     .addComponent(btnSair))
-                .addContainerGap())
+                .addGap(29, 29, 29))
         );
 
         pack();
