@@ -6,6 +6,7 @@
 package Views;
 
 import ferramentas.CaixaDeDialogo;
+import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -41,7 +42,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         initComponents();
         limparLabels();
         this.personagem = personagemEscolhido;
-        
+        this.getContentPane().setBackground(Color.WHITE); 
         mostrarPersonagem(); //Preenche os dados do personagem
         gerarOponente(); // Gera um novo oponente
         mostrarOponente(); //Preenche os dados do oponente;
@@ -88,6 +89,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         btnSair = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela Campo de Batalha");
         setResizable(false);
 
         lblNomeP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -388,9 +390,14 @@ public class ViewConfronto extends javax.swing.JFrame {
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
         // TODO add your handling code here:
+        boolean wResposta = CaixaDeDialogo.obterinstancia().pedirConfirmacao("Atenção você deseja abandonar a luta?","Sair",'p');         
+        if (wResposta == true) {
         this.dispose();
         ViewPersonagem telaP = new ViewPersonagem();
         telaP.setVisible(true);
+        } else {
+            return;
+        }
     }//GEN-LAST:event_btnSairActionPerformed
 
     /**
@@ -441,7 +448,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         oponente.setNome("Mandala");
         oponente.setVida(600);
         oponente.setAtaque(200);  
-        oponente.setDescricao("<html> Será que você consegue derrotar o Rei dos voador? <br> por: " + oponente.getNome() + "</html>");
+        oponente.setDescricao("<html> Será que você consegue derrotar o Rei voador? <br> por: " + oponente.getNome() + "</html>");
    lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
     }
     else if (numero == 2) {

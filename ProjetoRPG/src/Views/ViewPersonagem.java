@@ -280,7 +280,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
                return;
                     } else {
                 if (!btrGuerreiro.isSelected() && !btrArcano.isSelected() && !btrEspiritualista.isSelected() && !btrArqueiro.isSelected()) {   
-                       JOptionPane.showMessageDialog(this, "Por favor, escolha uma classe!","Atenção",JOptionPane.WARNING_MESSAGE);
+                        CaixaDeDialogo.obterinstancia().exibirMensagem("Por favor, escolha uma classe!","Atenção",'i');
                        return;
                   } else {
         

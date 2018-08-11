@@ -13,6 +13,7 @@ import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import Views.ViewPersonagem;
+import ferramentas.CaixaDeDialogo;
 
 /**
  *
@@ -161,7 +162,7 @@ public class ViewLogin extends javax.swing.JFrame {
         tela.setVisible(true);
         this.dispose();
         } else {
-            JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos!", "Atenção",JOptionPane.WARNING_MESSAGE);
+             CaixaDeDialogo.obterinstancia().exibirMensagem("Usuário ou senha inválidos!", "Atenção",'a');
             return;
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
