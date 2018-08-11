@@ -105,14 +105,17 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblNomeP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblNomeP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/usuario.png"))); // NOI18N
         lblNomeP.setText("Nome:");
+        lblNomeP.setToolTipText("Nome do Personagem");
 
         lblAtaqueP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblAtaqueP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ataque.png"))); // NOI18N
         lblAtaqueP.setText("Ataque:");
+        lblAtaqueP.setToolTipText("Ataque do Personagem");
 
         lblVidaP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblVidaP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/coracao.png"))); // NOI18N
         lblVidaP.setText("Vida:");
+        lblVidaP.setToolTipText("Vida do Personagem");
 
         txtNomeP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
@@ -123,6 +126,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblClasseP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblClasseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/classe.png"))); // NOI18N
         lblClasseP.setText("Classe:");
+        lblClasseP.setToolTipText("Classe do Personagem");
 
         txtClasseP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
@@ -133,16 +137,19 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblNivelP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblNivelP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/nivel.png"))); // NOI18N
         lblNivelP.setText("Nível:");
+        lblNivelP.setToolTipText("Nível do Personagem");
 
         txtNivelP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         lblAtaqueB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblAtaqueB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/ataque.png"))); // NOI18N
         lblAtaqueB.setText("Ataque:");
+        lblAtaqueB.setToolTipText("Ataque do Oponente");
 
         lblVidaB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblVidaB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/coracao.png"))); // NOI18N
         lblVidaB.setText("Vida:");
+        lblVidaB.setToolTipText("Vida do Oponente");
 
         txtNomeB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
@@ -153,6 +160,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblNomeB.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblNomeB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/boss.png"))); // NOI18N
         lblNomeB.setText("Nome:");
+        lblNomeB.setToolTipText("Nome do Oponente");
 
         lblAtkPersonagem.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         lblAtkPersonagem.setText("Ataque do Personagem");
@@ -176,6 +184,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         btnSair.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/sign-error.png"))); // NOI18N
         btnSair.setText("Sair da Batalha");
+        btnSair.setToolTipText("Voltar para tela de seleção");
         btnSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSairActionPerformed(evt);
@@ -190,8 +199,11 @@ public class ViewConfronto extends javax.swing.JFrame {
 
         lblSkill3.setPreferredSize(new java.awt.Dimension(50, 50));
 
+        lblSkill1.setToolTipText("");
+
         btnDuelo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnDuelo.setText("Duelar");
+        btnDuelo.setToolTipText("Iniciar um Duelo");
         btnDuelo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDueloActionPerformed(evt);
@@ -200,6 +212,7 @@ public class ViewConfronto extends javax.swing.JFrame {
 
         btnAtacar.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         btnAtacar.setText("Atacar");
+        btnAtacar.setToolTipText("Atacar o Oponente");
         btnAtacar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAtacarActionPerformed(evt);

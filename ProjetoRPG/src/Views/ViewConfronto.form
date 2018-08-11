@@ -282,6 +282,7 @@
           <Image iconType="3" name="/icones/usuario.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nome:"/>
+        <Property name="toolTipText" type="java.lang.String" value="Nome do Personagem"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblAtaqueP">
@@ -293,6 +294,7 @@
           <Image iconType="3" name="/icones/ataque.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ataque:"/>
+        <Property name="toolTipText" type="java.lang.String" value="Ataque do Personagem"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblVidaP">
@@ -304,6 +306,7 @@
           <Image iconType="3" name="/icones/coracao.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Vida:"/>
+        <Property name="toolTipText" type="java.lang.String" value="Vida do Personagem"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="txtNomeP">
@@ -336,6 +339,7 @@
           <Image iconType="3" name="/icones/classe.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Classe:"/>
+        <Property name="toolTipText" type="java.lang.String" value="Classe do Personagem"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="txtClasseP">
@@ -365,6 +369,7 @@
           <Image iconType="3" name="/icones/nivel.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="N&#xed;vel:"/>
+        <Property name="toolTipText" type="java.lang.String" value="N&#xed;vel do Personagem"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="txtNivelP">
@@ -383,6 +388,7 @@
           <Image iconType="3" name="/icones/ataque.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Ataque:"/>
+        <Property name="toolTipText" type="java.lang.String" value="Ataque do Oponente"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblVidaB">
@@ -394,6 +400,7 @@
           <Image iconType="3" name="/icones/coracao.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Vida:"/>
+        <Property name="toolTipText" type="java.lang.String" value="Vida do Oponente"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="txtNomeB">
@@ -426,6 +433,7 @@
           <Image iconType="3" name="/icones/boss.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nome:"/>
+        <Property name="toolTipText" type="java.lang.String" value="Nome do Oponente"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblAtkPersonagem">
@@ -494,6 +502,7 @@
           <Image iconType="3" name="/icones/sign-error.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Sair da Batalha"/>
+        <Property name="toolTipText" type="java.lang.String" value="Voltar para tela de sele&#xe7;&#xe3;o"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSairActionPerformed"/>
@@ -528,6 +537,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblSkill1">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblSkill2">
     </Component>
@@ -537,6 +549,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Duelar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Iniciar um Duelo"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDueloActionPerformed"/>
@@ -548,6 +561,7 @@
           <Font name="Tahoma" size="16" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Atacar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Atacar o Oponente"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAtacarActionPerformed"/>
