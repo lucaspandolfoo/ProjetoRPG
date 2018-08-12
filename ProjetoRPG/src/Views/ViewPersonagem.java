@@ -78,7 +78,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Seleção do Personagem");
 
-        lblTeste.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblTeste.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblTeste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTeste.setText("Selecione um personagem:");
 
