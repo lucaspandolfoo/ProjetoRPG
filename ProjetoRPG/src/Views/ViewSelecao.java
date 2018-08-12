@@ -294,19 +294,15 @@ public class ViewSelecao extends javax.swing.JFrame {
                         CaixaDeDialogo.obterinstancia().exibirMensagem("Por favor, escolha uma classe!","Atenção",'i');
                        return;
                   } else {
-        
- 
-                    try {
-                        //JOptionPane.showMessageDialog(this, "Bom jogo!  " + txtNome.getText());
-                        System.out.println("Escolhido o personagem e pronto para jogar!");
-                        
-                        Personagem personagem = escolherPersonagem();
-                        ViewConfronto tela = new ViewConfronto(personagem);
-                        tela.setVisible(true);
-                        this.setVisible(false);
-                    } catch (IOException ex) {
-                        Logger.getLogger(ViewSelecao.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                     System.out.println("Escolhido o personagem e pronto para jogar!");
+                     CaixaDeDialogo.obterinstancia().exibirMensagem("Bom jogo!  " + txtNome.getText(),"Atenção",'i');
+                    // Personagem personagem = escolherPersonagem();
+                    /// ViewConfronto tela = new ViewConfronto(personagem);
+                    // tela.setVisible(true);
+                    Personagem personagem = escolherPersonagem();
+                    ViewPersonagem tela = new ViewPersonagem(personagem);
+                    tela.setVisible(true);
+                    this.setVisible(false);
                 }
                }
         

@@ -429,8 +429,8 @@ public class ViewConfronto extends javax.swing.JFrame {
         boolean wResposta = CaixaDeDialogo.obterinstancia().pedirConfirmacao("Atenção, você deseja abandonar a luta?","Sair",'p');         
         if (wResposta == true) {
         this.dispose();
-        ViewSelecao telaP = new ViewSelecao();
-        telaP.setVisible(true);
+       ViewPersonagem telaP = new ViewPersonagem(personagem);
+       telaP.setVisible(true);
         } else {
             return;
         }
@@ -678,7 +678,7 @@ public class ViewConfronto extends javax.swing.JFrame {
          } else {
          mostrarPersonagem();
          CaixaDeDialogo.obterinstancia().exibirMensagem("<html><center><b>GAME OVER</b></center>Você foi derrotado!<br>Esperamos que você esteja mais forte na próxima luta.<br>" + oponente.getNome()+"</html>","GAME OVER",'e');
-         ViewSelecao tela = new ViewSelecao();
+         ViewPersonagem tela = new ViewPersonagem(personagem);
          tela.setVisible(true);
          this.setVisible(false);
          } 
