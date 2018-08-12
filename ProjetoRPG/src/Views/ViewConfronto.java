@@ -531,7 +531,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         });
     }
     
-    private Oponente gerarOponente () {
+   private Oponente gerarOponente () {
     try {    
     // +1 não deixa gerar 0
     int numero = gerador.nextInt(5) + 1;
@@ -578,7 +578,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         return null;
     }
     }
-    
+     
     private void mostrarPersonagem() {
         txtNomeP.setText(personagem.getNome());
         txtClasseP.setText(personagem.getClasse());
