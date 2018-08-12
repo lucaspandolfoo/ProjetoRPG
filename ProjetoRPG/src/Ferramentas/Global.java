@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ferramentas;
+package ferramentas;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.Calendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -51,4 +55,49 @@ public class Global {
 
         return dataRetorno;
     }
+     
+      public static String lerArquivo(String caminho,int linhaNumero){
+        try{
+            BufferedReader ler = new BufferedReader(new FileReader (caminho));
+            String line = "";
+            int counter=0;
+            while((line=ler.readLine())!=null){
+                if(counter==linhaNumero){
+                   break;
+                }
+                counter++;
+            }
+           return line;
+
+        }catch(Exception e){
+            e.printStackTrace();
+            System.exit(1);
+        }
+         return null;
+    }
+      
+        public static boolean validarEmail (String email) {
+                boolean isValid = false;
+
+                String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
+                CharSequence inputStr = email;
+
+                Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
+                Matcher matcher = pattern.matcher(inputStr);
+                if (matcher.matches()) {
+                    isValid = true;
+                }
+                return isValid;
+            }
+        
+         public static boolean validarNome(String name){
+                boolean isValid = false;
+                Pattern p = Pattern.compile("^(([a-zA-Z ]|[é])*)$");
+                Matcher m = p.matcher(name);
+                if(m.find()) {
+                    return isValid = true;
+                }
+                return isValid;
+
+            }
 }

@@ -5,6 +5,7 @@
  */
 package Views;
 
+import ferramentas.Global;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import javax.swing.AbstractAction;
@@ -14,6 +15,20 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import Views.ViewSelecao;
 import ferramentas.CaixaDeDialogo;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static jdk.nashorn.internal.objects.ArrayBufferView.buffer;
 
 /**
  *
@@ -57,6 +72,7 @@ public class ViewLogin extends javax.swing.JFrame {
         lblSenha = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
         btnEntrar = new javax.swing.JButton();
+        btnCadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Login");
@@ -115,6 +131,17 @@ public class ViewLogin extends javax.swing.JFrame {
             }
         });
 
+        btnCadastrar.setBackground(new java.awt.Color(0, 102, 255));
+        btnCadastrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCadastrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCadastrar.setText("Cadastrar-se");
+        btnCadastrar.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        btnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadastrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -124,14 +151,16 @@ public class ViewLogin extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(315, 315, 315)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btnEntrar)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblLogin)
-                                .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(lblSenha)
-                                .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 316, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnCadastrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnEntrar))
+                            .addComponent(lblSenha)
+                            .addComponent(txtLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblLogin))
+                        .addGap(0, 280, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -147,7 +176,9 @@ public class ViewLogin extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 109, Short.MAX_VALUE))
         );
 
@@ -156,33 +187,54 @@ public class ViewLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
-        
-        //Valida o Login
-        if (checkLogin(txtLogin.getText().toUpperCase(), new String (txtSenha.getPassword()))) {
-        System.out.println("Foi feito login no jogo");
-            
-        //ABERTURA DA TELA PRINCIPAL
-        ViewSelecao tela = new ViewSelecao();
-        tela.setVisible(true);
-        this.dispose();
-        } else {
-             CaixaDeDialogo.obterinstancia().exibirMensagem("Usuário ou senha inválidos!", "Atenção",'a');
-            return;
-        }
+           // TODO add your handling code here:
+           String senha = new String(txtSenha.getPassword());
+           
+           if ((!txtLogin.getText().trim().equals("")) && (!senha.trim().equals(""))) {
+
+           try {    
+               
+           String caminho = new File ("../ProjetoRPG/usuarios/Usuario "+txtLogin.getText().toUpperCase()+".txt").getCanonicalPath();
+           if(!new File(caminho).exists()) {
+           CaixaDeDialogo.obterinstancia().exibirMensagem("Usuário não cadastrado, cadastre-se para jogar!", "Atenção",'a');
+           return;
+           }
+           
+           String loginSalvo = Global.lerArquivo(caminho,0);
+           String senhaSalva = Global.lerArquivo(caminho,1);
+           
+           if((txtLogin.getText().toUpperCase().equals(loginSalvo)) && senha.toUpperCase().equals(senhaSalva)){
+            ViewSelecao tela = new ViewSelecao();
+            tela.setVisible(true);
+            this.setVisible(false);
+          } else {
+           CaixaDeDialogo.obterinstancia().exibirMensagem("Usuário ou senha inválidos!", "Atenção",'a');
+           return;
+           }
+       } catch (IOException e) {
+           CaixaDeDialogo.obterinstancia().exibirMensagem("Erro ao válidar usuário!" +e.getMessage().toString(), "Atenção",'e');
+           return;
+       } 
+         } else {
+           CaixaDeDialogo.obterinstancia().exibirMensagem("Usuário ou senha inválidos!", "Atenção",'a');
+           return;
+           }
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
+        // TODO add your handling code here:
+        ViewCadastro telaCadastro = new ViewCadastro(this, true);
+        telaCadastro.setLocationRelativeTo(null);
+        telaCadastro.setVisible(true);
+;
+    }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**
      * @param args the command line arguments
-     */
-    
-    public boolean checkLogin(String login, String senha) {
-    return login.equals("LUCAS") && senha.equals("123")
-    || login.equals("GUILHERME") && senha.equals("123");
-        
-    }
+     */  
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnEntrar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

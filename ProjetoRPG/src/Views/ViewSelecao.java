@@ -406,24 +406,28 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setNivel(0);
           personagem.setVida(600);
           personagem.setAtaque(300);
+          personagem.setBau(1);
         }
        else if (btrArcano.isSelected()) {  
           personagem.setClasse("Arcano");
           personagem.setNivel(0);
           personagem.setVida(400);
           personagem.setAtaque(400);  
+          personagem.setBau(1);
           
         } else if (btrEspiritualista.isSelected()) {
           personagem.setClasse("Espiritualista");
           personagem.setNivel(0);
           personagem.setVida(200);
           personagem.setAtaque(500);
+          personagem.setBau(1);
           
         } else if (btrArqueiro.isSelected()) {
           personagem.setClasse("Arqueiro");
           personagem.setNivel(0);
           personagem.setVida(250);
           personagem.setAtaque(280);
+          personagem.setBau(1);
         }
   
          return personagem;

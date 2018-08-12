@@ -16,6 +16,7 @@ public class Personagem {
     private int nivel;
     private int vida;
     private int ataque;
+    private int bau;
 
     public String getNome() {
         return nome;
@@ -55,6 +56,14 @@ public class Personagem {
 
     public void setAtaque(int ataque) {
         this.ataque = ataque;
+    }
+
+    public int getBau() {
+        return bau;
+    }
+
+    public void setBau(int bau) {
+        this.bau = bau;
     }
     
     public String toString() {
