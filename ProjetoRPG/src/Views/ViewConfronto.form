@@ -89,9 +89,9 @@
                                           <Component id="jLabel1" max="32767" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="JrSkill1" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                               <Component id="JrSkill2" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                               <Component id="JrSkill3" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -102,12 +102,14 @@
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                              <Component id="lblX" min="-2" pref="123" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                               <Component id="btnDuelo" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblX" min="-2" pref="123" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -149,13 +151,13 @@
               </Group>
           </Group>
           <Group type="102" attributes="0">
-              <Component id="lblBatalha" min="-2" pref="1151" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="122" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="226" max="-2" attributes="0"/>
+              <Component id="btnAtacar" min="-2" pref="90" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="957" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="237" max="-2" attributes="0"/>
-              <Component id="btnAtacar" min="-2" pref="90" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Component id="lblBatalha" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -165,8 +167,8 @@
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Component id="lblBatalha" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -193,7 +195,7 @@
                                           <Component id="txtDescB" min="-2" pref="100" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Component id="lblX" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
+                                  <Component id="lblX" alignment="1" min="-2" pref="234" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -473,6 +475,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="14" style="3"/>
         </Property>
+        <Property name="toolTipText" type="java.lang.String" value="Mensagem do Oponente"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
             <TitledBorder title="Mensagem:"/>
@@ -537,6 +540,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblSkill3">
       <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Espada Voadora, o personagem salta por cima do oponente e coloca toda sua for&#xe7;a em seu equipamento, as chances do ataque ser cr&#xed;tico s&#xe3;o m&#xe9;dias."/>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
           <Dimension value="[50, 50]"/>
         </Property>
@@ -544,10 +548,13 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblSkill1">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value=""/>
+        <Property name="toolTipText" type="java.lang.String" value="Fogo congelante, &#xe9; um ataque que baseia-se em prever os movimentos do oponente apenas para tentar um contra-ataque, um ataque cr&#xed;tico nessas condi&#xe7;&#xf5;es &#xe9; quase imposs&#xed;vel."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblSkill2">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Golpe do Drag&#xe3;o, ataca o oponente pelas costas imobilizando por 3 segundos, h&#xe1; uma grande chance de ocorrer um ataque cr&#xed;tico."/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnDuelo">
       <Properties>
