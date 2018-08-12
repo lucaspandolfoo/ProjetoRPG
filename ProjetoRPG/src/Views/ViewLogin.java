@@ -196,7 +196,7 @@ public class ViewLogin extends javax.swing.JFrame {
                
            String caminho = new File ("../ProjetoRPG/usuarios/Usuario "+txtLogin.getText().toUpperCase()+".txt").getCanonicalPath();
            if(!new File(caminho).exists()) {
-           CaixaDeDialogo.obterinstancia().exibirMensagem("Usuário não cadastrado, cadastre-se para jogar!", "Atenção",'a');
+           CaixaDeDialogo.obterinstancia().exibirMensagem("Usuário não cadastrado, cadastre-se para jogar!", "Atenção",'e');
            return;
            }
            

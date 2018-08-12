@@ -8,6 +8,7 @@ package Views;
 import ferramentas.CaixaDeDialogo;
 import ferramentas.Global;
 import java.awt.Color;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -188,10 +189,12 @@ public class ViewCadastro extends javax.swing.JDialog {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
      // TODO add your handling code here:
+     
      String senha = new String(txtSenha.getPassword());
      if ((!txtNome.getText().trim().equals("")) && (!senha.trim().equals("")) && (!txtEmail.getText().trim().equals(""))) {
      Usuario usuario = new Usuario();
      
+     try {
      if (!Global.validarNome(txtNome.getText().toUpperCase())) {
        CaixaDeDialogo.obterinstancia().exibirMensagem("Usuário inválido!", "Atenção",'e');
        return;   
@@ -203,14 +206,22 @@ public class ViewCadastro extends javax.swing.JDialog {
         return;
      }
      usuario.setEmail(txtEmail.getText());
-
+        String caminho = new File ("../ProjetoRPG/usuarios/Usuario "+txtNome.getText().toUpperCase()+".txt").getCanonicalPath();
+        if(new File(caminho).exists()) {
+           CaixaDeDialogo.obterinstancia().exibirMensagem("Este usuário já está cadastrado em nosso sistema!", "Atenção",'e');
+           return;
+           }
      CaixaDeDialogo.obterinstancia().exibirMensagem(usuario.salvar(), "Cadastro",'i');
      ViewLogin telaLogin = new ViewLogin();
      telaLogin.setVisible(true);
      this.setVisible(false);
-     
+     }catch (Exception e) {
+         CaixaDeDialogo.obterinstancia().exibirMensagem("Erro ao confirmar seu cadastro!" + e.getMessage().toString(), "Atenção",'e');
+         return;
+     }
      } else {
           CaixaDeDialogo.obterinstancia().exibirMensagem("Preencha os dados corretamente!", "Atenção",'e');
+          return;
      }
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
