@@ -5,7 +5,7 @@
  */
 package classes;
 
-import Views.ViewPersonagem;
+import Views.ViewSelecao;
 
 /**
  *

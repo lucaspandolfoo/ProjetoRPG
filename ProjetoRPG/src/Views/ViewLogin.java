@@ -12,7 +12,7 @@ import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
-import Views.ViewPersonagem;
+import Views.ViewSelecao;
 import ferramentas.CaixaDeDialogo;
 
 /**
@@ -163,7 +163,7 @@ public class ViewLogin extends javax.swing.JFrame {
         System.out.println("Foi feito login no jogo");
             
         //ABERTURA DA TELA PRINCIPAL
-        ViewPersonagem tela = new ViewPersonagem();
+        ViewSelecao tela = new ViewSelecao();
         tela.setVisible(true);
         this.dispose();
         } else {
