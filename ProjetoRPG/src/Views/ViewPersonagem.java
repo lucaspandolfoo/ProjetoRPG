@@ -31,6 +31,10 @@ public class ViewPersonagem extends javax.swing.JFrame {
         mostrarPersonagem();
     }
 
+    private ViewPersonagem() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -263,8 +267,6 @@ public class ViewPersonagem extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        }
     
       private void mostrarPersonagem() {
         txtNomeP.setText(personagem.getNome());
