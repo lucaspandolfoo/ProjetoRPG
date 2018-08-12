@@ -209,7 +209,7 @@ public class ViewConfronto extends javax.swing.JFrame {
 
         lblSkill2.setToolTipText("Golpe do Dragão, ataca o oponente pelas costas imobilizando por 3 segundos, há uma grande chance de ocorrer um ataque crítico.");
 
-        btnDuelo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnDuelo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnDuelo.setText("Duelar");
         btnDuelo.setToolTipText("Iniciar um Duelo");
         btnDuelo.addActionListener(new java.awt.event.ActionListener() {
@@ -292,13 +292,12 @@ public class ViewConfronto extends javax.swing.JFrame {
                                     .addComponent(lblAtkPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(lblX, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addGap(62, 62, 62)
-                                .addComponent(btnDuelo)
-                                .addGap(24, 24, 24))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblX, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))))
+                                .addComponent(btnDuelo)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblImagemB, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -407,9 +406,9 @@ public class ViewConfronto extends javax.swing.JFrame {
                             .addComponent(lblSkill1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(btnAtacar, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(36, 36, 36)
                         .addComponent(btnSair)
-                        .addGap(29, 29, 29))
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblVezOponente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -417,7 +416,7 @@ public class ViewConfronto extends javax.swing.JFrame {
                         .addGap(249, 249, 249))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(7, 7, 7)
-                        .addComponent(btnDuelo)
+                        .addComponent(btnDuelo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
 
