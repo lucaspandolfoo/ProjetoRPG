@@ -263,6 +263,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    public static void main(String args[]) {
+        }
     
       private void mostrarPersonagem() {
         txtNomeP.setText(personagem.getNome());
