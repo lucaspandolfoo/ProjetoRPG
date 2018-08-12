@@ -548,7 +548,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         oponente.setVida(300);
         oponente.setAtaque(150);    
         oponente.setDescricao("<html> Preparado para perder? <br> por: " + oponente.getNome() + "</html>");
-   lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
+        lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
     }
       else if (numero == 3) {
         oponente.setNome("Corcel do Inferno");
@@ -621,7 +621,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         
         int vidaRestante = (oponente.getVida() - ataque);
         System.out.println("Vida restante do Oponente: " + vidaRestante);
-        oponente.setVida(vidaRestante);   
+        oponente.setVida(vidaRestante);  
   }
     private void ataqueOponente() {
         //Oponente ataca o personagem
