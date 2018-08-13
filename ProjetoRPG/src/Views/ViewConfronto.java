@@ -29,11 +29,12 @@ import modelo.Personagem;
  */
 public class ViewConfronto extends javax.swing.JFrame {
    Personagem personagem;
-   Oponente oponente = new Oponente();
+   Oponente[] oponentes = new Oponente[5];
    Random gerador = new Random();
    public static int ataque = 0;
    public static Timer tempo;
    public int valorDadoJogar;
+   public static int x;
    public static String ataqueCritico = "";
     /**
      * Creates new form ViewConfronto
@@ -477,11 +478,11 @@ public class ViewConfronto extends javax.swing.JFrame {
           }
  
         //Valida se o oponente já morreu e gera um novo para lutar.
-        if (oponente.getVida() > 0) {
+        if (oponentes[x].getVida() > 0) {
         mostrarOponente();
         } else {
         mostrarOponente();
-        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns, você derrotou o oponente " + oponente.getNome() +"!\nVocê ganhou 100 de vida.","Parabéns",'i');
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns, você derrotou o oponente " + oponentes[x].getNome() +"!\nVocê ganhou 100 de vida.","Parabéns",'i');
         aumentaVida(); //Aumenta a vida do personagem
         mostrarPersonagem(); //Mostra o personagem com a vida atualizada
         vidaMenor200(); //Valida se o personagem não ficou com a vida menor que 200
@@ -531,51 +532,54 @@ public class ViewConfronto extends javax.swing.JFrame {
         });
     }
     
-   private Oponente gerarOponente () {
+  private Oponente gerarOponente () {
+       int numero = gerador.nextInt(4);
     try {    
     // +1 não deixa gerar 0
-    int numero = gerador.nextInt(5) + 1;
-    if (numero == 1) {
-        oponente.setNome("Mandala");
-        oponente.setVida(600);
-        oponente.setAtaque(200);  
-        oponente.setDescricao("<html> Será que você consegue derrotar o Rei voador? <br> por: " + oponente.getNome() + "</html>");
-        lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
-    }
-    else if (numero == 2) {
-        oponente.setNome("Rei Trator");
-        oponente.setVida(300);
-        oponente.setAtaque(150);    
-        oponente.setDescricao("<html> Preparado para perder? <br> por: " + oponente.getNome() + "</html>");
-        lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
-    }
-      else if (numero == 3) {
-        oponente.setNome("Corcel do Inferno");
-        oponente.setVida(800);
-        oponente.setAtaque(300);    
-        oponente.setDescricao("<html> Demonstre sua força para mim. <br> por: " + oponente.getNome()+ "</html>");
-        lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
-      }
-      else if (numero == 4) {
-        oponente.setNome("Lorden");
-        oponente.setVida(400);
-        oponente.setAtaque(200);    
-        oponente.setDescricao("<html> Espero que esteja preparado para a glória! <br> por: " + oponente.getNome()+ "</html>");
-        lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
-      }
-      else if (numero == 5) {
-        oponente.setNome("Louva-Deus");
-        oponente.setVida(500);
-        oponente.setAtaque(300);    
-        oponente.setDescricao("<html> Cuidado por onde andas! <br> por: " + oponente.getNome()+"</html>");
-        lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
-      }
-        return oponente;
-    
+   // int numero = gerador.nextInt(4);
+        System.out.println("OPONENTE GERADO: " + numero);
+       
+        oponentes[0] = new Oponente();
+        oponentes[0].setNome("Mandala");
+        oponentes[0].setVida(600);
+        oponentes[0].setAtaque(200);  
+        oponentes[0].setDescricao("<html> Será que você consegue derrotar o Rei voador? <br> por: " + oponentes[0].getNome() + "</html>");
+      
+        oponentes[1] = new Oponente();
+        oponentes[1].setNome("Rei Trator");
+        oponentes[1].setVida(300);
+        oponentes[1].setAtaque(150);    
+        oponentes[1].setDescricao("<html> Preparado para perder? <br> por: " + oponentes[1].getNome() + "</html>");
+       
+        oponentes[2] = new Oponente();
+        oponentes[2].setNome("Corcel do Inferno");
+        oponentes[2].setVida(800);
+        oponentes[2].setAtaque(300);    
+        oponentes[2].setDescricao("<html> Demonstre sua força para mim. <br> por: " + oponentes[2].getNome()+ "</html>");
+        
+        oponentes[3] = new Oponente();
+        oponentes[3].setNome("Lorden");
+        oponentes[3].setVida(400);
+        oponentes[3].setAtaque(200);    
+        oponentes[3].setDescricao("<html> Espero que esteja preparado para a glória! <br> por: " + oponentes[3].getNome()+ "</html>");
+  
+        
+        oponentes[4] = new Oponente();
+        oponentes[4].setNome("Louva-Deus");
+        oponentes[4].setVida(500);
+        oponentes[4].setAtaque(300);    
+        oponentes[4].setDescricao("<html> Cuidado por onde andas! <br> por: " + oponentes[4].getNome()+"</html>");
+        
     } catch (Exception e) {
         CaixaDeDialogo.obterinstancia().exibirMensagem(e.getMessage().toString(),"ERRO",'e');
-        return null;
     }
+        for (x = 0; x <5; x++) {
+        if (x==numero) {
+        lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponentes[x].getNome().toLowerCase()+".gif")));
+        return oponentes[x];
+        }
+        }
+    return null;
     }
      
     private void mostrarPersonagem() {
@@ -588,10 +592,10 @@ public class ViewConfronto extends javax.swing.JFrame {
     
     private void mostrarOponente() {
          //Preenche o Oponente
-        txtNomeB.setText(oponente.getNome());
-        txtAtaqueB.setText(String.valueOf(oponente.getAtaque()));
-        txtVidaB.setText(String.valueOf(oponente.getVida()));
-        txtDescB.setText(oponente.getDescricao());
+        txtNomeB.setText(oponentes[x].getNome());
+        txtAtaqueB.setText(String.valueOf(oponentes[x].getAtaque()));
+        txtVidaB.setText(String.valueOf(oponentes[x].getVida()));
+        txtDescB.setText(oponentes[x].getDescricao());
     }
     
     private void ataquePersonagem() {
@@ -618,17 +622,17 @@ public class ViewConfronto extends javax.swing.JFrame {
         });
         tempo.start();
         
-        int vidaRestante = (oponente.getVida() - ataque);
+        int vidaRestante = (oponentes[x].getVida() - ataque);
         System.out.println("Vida restante do Oponente: " + vidaRestante);
-        oponente.setVida(vidaRestante);  
+        oponentes[x].setVida(vidaRestante);  
   }
     private void ataqueOponente() {
         //Oponente ataca o personagem
         int valorDado = gerador.nextInt(20) + 1;
         if (valorDado > 17) { //Ataque Critico 
-            ataque = oponente.getAtaque() / 2;
+            ataque = oponentes[x].getAtaque() / 2;
         } else {
-            ataque = oponente.getAtaque() / 4;
+            ataque = oponentes[x].getAtaque() / 4;
         }
         System.out.println("DADO = " + valorDado);
         System.out.println("Ataque = " + ataque);
@@ -673,7 +677,7 @@ public class ViewConfronto extends javax.swing.JFrame {
          mostrarPersonagem();
          } else {
          mostrarPersonagem();
-         CaixaDeDialogo.obterinstancia().exibirMensagem("<html><center><b>GAME OVER</b></center>Você foi derrotado!<br>Esperamos que você esteja mais forte na próxima luta.<br>" + oponente.getNome()+"</html>","GAME OVER",'e');
+         CaixaDeDialogo.obterinstancia().exibirMensagem("<html><center><b>GAME OVER</b></center>Você foi derrotado!<br>Esperamos que você esteja mais forte na próxima luta.<br>" + oponentes[x].getNome()+"</html>","GAME OVER",'e');
          ViewPersonagem tela = new ViewPersonagem(personagem);
          tela.setVisible(true);
          this.setVisible(false);
