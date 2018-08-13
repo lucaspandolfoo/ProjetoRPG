@@ -535,13 +535,12 @@ public class ViewConfronto extends javax.swing.JFrame {
     try {    
     // +1 não deixa gerar 0
     int numero = gerador.nextInt(5) + 1;
-    
     if (numero == 1) {
         oponente.setNome("Mandala");
         oponente.setVida(600);
         oponente.setAtaque(200);  
         oponente.setDescricao("<html> Será que você consegue derrotar o Rei voador? <br> por: " + oponente.getNome() + "</html>");
-   lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
+        lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponente.getNome().toLowerCase()+".gif")));
     }
     else if (numero == 2) {
         oponente.setNome("Rei Trator");
