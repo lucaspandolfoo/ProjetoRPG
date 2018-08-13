@@ -8,6 +8,7 @@ package Views;
 import ferramentas.CaixaDeDialogo;
 import java.awt.Color;
 import java.io.IOException;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.Personagem;
@@ -19,6 +20,7 @@ import modelo.Personagem;
 public class ViewPersonagem extends javax.swing.JFrame {
      Personagem personagem;
      int vez =0;
+     Random gerador = new Random();
 
     /**
      * Creates new form ViewPersonagem
@@ -253,14 +255,24 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
     private void btnBauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBauActionPerformed
         // TODO add your handling code here:
+       int valorBau = gerador.nextInt(2) + 1;
        if (personagem.getBau() == 2) {
            // não pode pegar
             CaixaDeDialogo.obterinstancia().exibirMensagem("Você já pegou sua recompensa hoje!","Atenção",'e');
             
        } else {
            // pega premio
-            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns sua recompensa é: ","Atenção",'i');
+           if (valorBau == 1) {      
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns sua recompensa é: 200 de vida","Atenção",'i');
+            personagem.setVida(personagem.getVida()+200); 
+            mostrarPersonagem();
             personagem.setBau(2);
+           } else {
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns sua recompensa é: 200 de Ataque","Atenção",'i');
+            personagem.setAtaque(personagem.getAtaque()+200);   
+            personagem.setBau(2);
+            mostrarPersonagem();
+           }
        }
     }//GEN-LAST:event_btnBauActionPerformed
 
