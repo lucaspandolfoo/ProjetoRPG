@@ -6,10 +6,12 @@
 package Views;
 
 import Views.ViewLogin;
+import ferramentas.Arquivos;
 import ferramentas.CaixaDeDialogo;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -287,13 +289,10 @@ public class ViewSelecao extends javax.swing.JFrame {
                   } else {
                      System.out.println("Escolhido o personagem e pronto para jogar!");
                      CaixaDeDialogo.obterinstancia().exibirMensagem("Bom jogo!  " + txtNome.getText(),"Atenção",'i');
-                    // Personagem personagem = escolherPersonagem();
-                    /// ViewConfronto tela = new ViewConfronto(personagem);
-                    // tela.setVisible(true);
-                    Personagem personagem = escolherPersonagem();
-                    ViewPersonagem tela = new ViewPersonagem(personagem);
-                    tela.setVisible(true);
-                    this.setVisible(false);
+                     Personagem personagem = escolherPersonagem();
+                     ViewPersonagem tela = new ViewPersonagem(personagem);
+                     tela.setVisible(true);
+                     this.setVisible(false);
                 }
                }
         
@@ -378,6 +377,8 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setVida(600);
           personagem.setAtaque(300);
           personagem.setBau(1);
+          String caminho = new File ("../ProjetoRPG/usuarios/Usuario LUCAS.txt").getCanonicalPath(); //pegarNomedoUsuario
+          Arquivos.escrever(caminho,"\n1");
         }
        else if (btrArcano.isSelected()) {  
           personagem.setClasse("Arcano");

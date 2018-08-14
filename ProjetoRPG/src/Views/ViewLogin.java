@@ -195,12 +195,10 @@ public class ViewLogin extends javax.swing.JFrame {
            String personagemSelecionado = Global.lerArquivo(caminho,3);
            
            
-           if((txtLogin.getText().toUpperCase().equals(loginSalvo)) && senha.toUpperCase().equals(senhaSalva)){  
-            if (personagemSelecionado.equals("0")) {  
+           if((txtLogin.getText().toUpperCase().equals(loginSalvo)) && senha.toUpperCase().equals(senhaSalva)){   
             ViewSelecao tela = new ViewSelecao();
             tela.setVisible(true);
             this.setVisible(false);
-             }
           } else {
            CaixaDeDialogo.obterinstancia().exibirMensagem("Usuário ou senha inválidos!", "Atenção",'a');
            return;

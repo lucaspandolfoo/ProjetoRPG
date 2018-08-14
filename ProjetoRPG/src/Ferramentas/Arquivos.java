@@ -16,7 +16,7 @@ public class Arquivos {
 		try {
 			// O parametro é que indica se deve sobrescrever ou continua no
 			// arquivo.
-			FileWriter fw = new FileWriter(path, false);
+			FileWriter fw = new FileWriter(path, true);
 			BufferedWriter conexao = new BufferedWriter(fw);
 			conexao.write(texto);
 			conexao.newLine();
