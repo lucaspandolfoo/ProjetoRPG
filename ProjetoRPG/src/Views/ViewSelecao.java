@@ -311,42 +311,22 @@ public class ViewSelecao extends javax.swing.JFrame {
 
     private void btnAtGuerreiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtGuerreiroActionPerformed
         // TODO add your handling code here:
-        Personagem personagem = escolherPersonagem();
-        if (personagem.getClasse() == null) {
-        CaixaDeDialogo.obterinstancia().exibirMensagem("Selecione o personagem para ver seus atributos!","Selecione um Personagem",'e'); 
-        return;
-        }
-        CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
+         validaAtributos();
     }//GEN-LAST:event_btnAtGuerreiroActionPerformed
 
     private void btnAtEspiritualistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtEspiritualistaActionPerformed
         // TODO add your handling code here:
-        Personagem personagem = escolherPersonagem();
-        if (personagem.getClasse() == null) {
-        CaixaDeDialogo.obterinstancia().exibirMensagem("Selecione o personagem para ver seus atributos!","Selecione um Personagem",'e'); 
-        return;
-        }
-        CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
+         validaAtributos();
     }//GEN-LAST:event_btnAtEspiritualistaActionPerformed
 
     private void btnAtArqueiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtArqueiroActionPerformed
         // TODO add your handling code here:
-        Personagem personagem = escolherPersonagem();
-        if (personagem.getClasse() == null) {
-        CaixaDeDialogo.obterinstancia().exibirMensagem("Selecione o personagem para ver seus atributos!","Selecione um Personagem",'e'); 
-        return;
-        }
-        CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
+         validaAtributos();
     }//GEN-LAST:event_btnAtArqueiroActionPerformed
 
     private void btnAtArcanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtArcanoActionPerformed
         // TODO add your handling code here:
-        Personagem personagem = escolherPersonagem();
-        if (personagem.getClasse() == null) {
-        CaixaDeDialogo.obterinstancia().exibirMensagem("Selecione o personagem para ver seus atributos!","Selecione um Personagem",'e'); 
-         return;
-        }
-        CaixaDeDialogo.obterinstancia().exibirMensagem(personagem.toString(),"Atributos",'i');
+        validaAtributos();
     }//GEN-LAST:event_btnAtArcanoActionPerformed
 
     private void txtNomeKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyTyped
@@ -435,6 +415,15 @@ public class ViewSelecao extends javax.swing.JFrame {
        } catch (Exception e) {
          return null;
     }
+    }
+    
+    private void validaAtributos() {
+        Personagem personagem = escolherPersonagem();
+        if (personagem.getClasse() == null) {
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Selecione o personagem para ver seus atributos!","Selecione um Personagem",'e'); 
+        return;
+        }
+        CaixaDeDialogo.obterinstancia().exibirMensagem("<html><b>Atributos do Personagem: </b></html>" + "\n" + personagem.toString(),"Atributos",'i');
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup SelecionarPersonagens;
