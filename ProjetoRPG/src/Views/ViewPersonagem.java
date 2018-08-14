@@ -5,12 +5,17 @@
  */
 package Views;
 
+import static Views.ViewConfronto.ataque;
+import static Views.ViewConfronto.tempo;
 import ferramentas.CaixaDeDialogo;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Timer;
 import modelo.Personagem;
 
 /**
@@ -31,6 +36,9 @@ public class ViewPersonagem extends javax.swing.JFrame {
         this.personagem = personagemEscolhido;
         lblImagemP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+personagem.getClasse().toLowerCase()+".png")));
         mostrarPersonagem();
+        if (personagem.getVida() == 0) {
+        tempoVida();
+        }
     }
 
     private ViewPersonagem() {
@@ -46,6 +54,11 @@ public class ViewPersonagem extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         btnVoltar = new javax.swing.JButton();
         btnCampoBatalha = new javax.swing.JButton();
         txtNivelP = new javax.swing.JLabel();
@@ -62,6 +75,23 @@ public class ViewPersonagem extends javax.swing.JFrame {
         lblTelaPersonagem = new javax.swing.JLabel();
         lblImagemP = new javax.swing.JLabel();
         btnBau = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        menuConfiguracoes = new javax.swing.JMenuItem();
+        menuSair = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+
+        jMenu1.setText("jMenu1");
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu4.setText("jMenu4");
+
+        jMenuItem3.setText("jMenuItem3");
+
+        jMenuItem4.setText("jMenuItem4");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela do Personagem");
@@ -140,22 +170,59 @@ public class ViewPersonagem extends javax.swing.JFrame {
             }
         });
 
+        jMenuBar1.setBackground(new java.awt.Color(0, 102, 255));
+        jMenuBar1.setToolTipText("");
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(178, 30));
+
+        jMenu2.setText("Jogo");
+
+        menuConfiguracoes.setText("Configurações");
+        menuConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuConfiguracoesActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuConfiguracoes);
+
+        menuSair.setText("Sair do Jogo");
+        menuSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuSairActionPerformed(evt);
+            }
+        });
+        jMenu2.add(menuSair);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Personagem");
+        jMenuBar1.add(jMenu3);
+
+        jMenu5.setText("Loja");
+        jMenuBar1.add(jMenu5);
+
+        jMenu6.setText("Sobre");
+        jMenuBar1.add(jMenu6);
+
+        setJMenuBar(jMenuBar1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTelaPersonagem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(btnVoltar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCampoBatalha)
+                    .addComponent(btnBau))
+                .addGap(22, 22, 22))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSeparator1)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(btnVoltar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 980, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblVidaP)
@@ -179,23 +246,20 @@ public class ViewPersonagem extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(txtNomeP, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 430, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBau)
-                    .addComponent(btnCampoBatalha))
-                .addGap(22, 22, 22))
+                        .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(593, 593, 593)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTelaPersonagem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNomeP)
                             .addComponent(txtNomeP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -215,13 +279,9 @@ public class ViewPersonagem extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblVidaP)
                             .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBau)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
+                    .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBau))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar)
                     .addComponent(btnCampoBatalha))
@@ -276,6 +336,15 @@ public class ViewPersonagem extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_btnBauActionPerformed
 
+    private void menuConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConfiguracoesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuConfiguracoesActionPerformed
+
+    private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_menuSairActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -287,11 +356,32 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtAtaqueP.setText(String.valueOf(personagem.getAtaque()));
         txtVidaP.setText(String.valueOf(personagem.getVida()) + "/" + String.valueOf(personagem.getVida()));
     }
+      
+      private void tempoVida() {
+        tempo = new Timer(5000, new ActionListener() {//vai esperar 5 segundos e executar essa ação
+        @Override
+        public void actionPerformed(ActionEvent e) {
+               personagem.setVida(personagem.getVida() + 5);
+               mostrarPersonagem();
+        }
+        });
+        tempo.start();
+      }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBau;
     private javax.swing.JButton btnCampoBatalha;
     private javax.swing.JButton btnVoltar;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAtaqueP;
     private javax.swing.JLabel lblClasseP;
@@ -300,6 +390,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JLabel lblNomeP;
     private javax.swing.JLabel lblTelaPersonagem;
     private javax.swing.JLabel lblVidaP;
+    private javax.swing.JMenuItem menuConfiguracoes;
+    private javax.swing.JMenuItem menuSair;
     private javax.swing.JLabel txtAtaqueP;
     private javax.swing.JLabel txtClasseP;
     private javax.swing.JLabel txtNivelP;

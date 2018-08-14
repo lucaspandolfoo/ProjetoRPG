@@ -384,7 +384,7 @@ public class ViewConfronto extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -678,6 +678,7 @@ public class ViewConfronto extends javax.swing.JFrame {
          } else {
          mostrarPersonagem();
          CaixaDeDialogo.obterinstancia().exibirMensagem("<html><center><b>GAME OVER</b></center>Você foi derrotado!<br>Esperamos que você esteja mais forte na próxima luta.<br>" + oponentes[x].getNome()+"</html>","GAME OVER",'e');
+         personagem.setVida(0);
          ViewPersonagem tela = new ViewPersonagem(personagem);
          tela.setVisible(true);
          this.setVisible(false);
