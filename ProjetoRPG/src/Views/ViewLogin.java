@@ -41,18 +41,8 @@ public class ViewLogin extends javax.swing.JFrame {
      */
     public ViewLogin() {
         initComponents();
-        
         //Atalho Enter para o botão entrar
-        InputMap inputMap = this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0),"forward");
-        this.getRootPane().setInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW, inputMap);
-        this.getRootPane().getActionMap().put("forward", new AbstractAction(){
-        private static final long serialVersionUID = 1L;
-        @Override
-        public void actionPerformed(ActionEvent arg0) {
-        btnEntrar.doClick();
-    }
-});
+        atalhoBotaoEntrar();
     }
 
     /**
@@ -232,9 +222,20 @@ public class ViewLogin extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */  
-     public static void main(String args[]) {
-     }
-    
+        
+        private void atalhoBotaoEntrar() {
+        InputMap inputMap = this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0),"forward");
+        this.getRootPane().setInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW, inputMap);
+        this.getRootPane().getActionMap().put("forward", new AbstractAction(){
+        private static final long serialVersionUID = 1L;
+        @Override
+        public void actionPerformed(ActionEvent arg0) {
+        btnEntrar.doClick();
+          }
+        });
+      }
+       
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnEntrar;
@@ -246,4 +247,4 @@ public class ViewLogin extends javax.swing.JFrame {
     private javax.swing.JTextField txtLogin;
     private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
-}
+ }

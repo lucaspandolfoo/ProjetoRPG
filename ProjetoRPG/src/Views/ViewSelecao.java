@@ -36,16 +36,7 @@ public class ViewSelecao extends javax.swing.JFrame {
         this.getContentPane().setBackground(Color.WHITE); 
         
         //Atalho Enter para o botão Avançar
-        InputMap inputMap = this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
-        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0),"forward");
-        this.getRootPane().setInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW, inputMap);
-        this.getRootPane().getActionMap().put("forward", new AbstractAction(){
-        private static final long serialVersionUID = 1L;
-        @Override
-        public void actionPerformed(ActionEvent arg0) {
-        btnAvancar.doClick();
-    }
-});
+        atalhoBotaoAvancar();
     }   
         /**
      * This method is called from within the constructor to initialize the form.
@@ -425,6 +416,19 @@ public class ViewSelecao extends javax.swing.JFrame {
         }
         CaixaDeDialogo.obterinstancia().exibirMensagem("<html><b>Atributos do Personagem: </b></html>" + "\n" + personagem.toString(),"Atributos",'i');
     }
+    
+      private void atalhoBotaoAvancar() {
+        InputMap inputMap = this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0),"forward");
+        this.getRootPane().setInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW, inputMap);
+        this.getRootPane().getActionMap().put("forward", new AbstractAction(){
+        private static final long serialVersionUID = 1L;
+        @Override
+        public void actionPerformed(ActionEvent arg0) {
+        btnAvancar.doClick();
+          }
+        });
+      }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup SelecionarPersonagens;
     private javax.swing.JButton btnAtArcano;
