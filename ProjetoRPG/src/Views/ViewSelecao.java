@@ -377,8 +377,8 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setVida(600);
           personagem.setAtaque(300);
           personagem.setBau(1);
-          String caminho = new File ("../ProjetoRPG/usuarios/Usuario LUCAS.txt").getCanonicalPath(); //pegarNomedoUsuario
-          Arquivos.escrever(caminho,"\n1");
+          //String caminho = new File ("../ProjetoRPG/usuarios/Usuario LUCAS.txt").getCanonicalPath(); //pegarNomedoUsuario
+         // Arquivos.escrever(caminho,"\n1");
         }
        else if (btrArcano.isSelected()) {  
           personagem.setClasse("Arcano");
