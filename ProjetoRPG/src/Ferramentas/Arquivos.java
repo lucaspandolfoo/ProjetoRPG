@@ -11,11 +11,7 @@ import java.io.*;
  *
  * @author Lucas
  */
-public class Arquivos {
-	public static void main(String[] args) {
-		
-	}
-        
+public class Arquivos { 
 	public static void escrever(String path, String texto) {
 		try {
 			// O parametro é que indica se deve sobrescrever ou continua no
