@@ -53,6 +53,7 @@ public class Usuario {
             pw.println(nome);
             pw.println(senha);
             pw.println(email);
+            pw.println(0);
             pw.flush();
             pw.close();
             fw.close();
