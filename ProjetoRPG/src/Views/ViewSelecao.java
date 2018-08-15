@@ -383,7 +383,7 @@ public class ViewSelecao extends javax.swing.JFrame {
        else if (btrArcano.isSelected()) {  
           personagem.setClasse("Arcano");
           personagem.setNivel(0);
-          personagem.setVida(400);
+          personagem.setVida(800);
           personagem.setAtaque(400);  
           personagem.setBau(1);
           
