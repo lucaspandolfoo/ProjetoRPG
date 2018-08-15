@@ -56,7 +56,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         mostrarPersonagem(); //Preenche os dados do personagem
         gerarOponente(); // Gera um novo oponente
         //vidaMaximaOponente = op.getVida();
-        mostrarOponente(); //Preenche os dados do oponente;
+        //mostrarOponente(); //Preenche os dados do oponente;
         //Seta a imagem do Personagem
         lblImagemP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+personagem.getClasse().toLowerCase()+".png")));
     }
@@ -521,7 +521,7 @@ public class ViewConfronto extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        gerarOponente();
+       // gerarOponente();
         mostrarOponente();
         //Global.ajustaCor();
     }//GEN-LAST:event_formWindowOpened
