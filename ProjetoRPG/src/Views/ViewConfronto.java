@@ -41,12 +41,12 @@ public class ViewConfronto extends javax.swing.JFrame {
    public int valorDadoJogar;
    public static int x;
    public static String ataqueCritico = "";
-   int vidaMaximaOponente = 0;
+   public static int vidaMaximaOponente = 0;
     /**
      * Creates new form ViewConfronto
      */
     public ViewConfronto(Personagem personagemEscolhido) throws IOException {
-        Global.ajustaCor();
+        ajustaCor();
         
         initComponents();
         limparLabels();
@@ -55,8 +55,10 @@ public class ViewConfronto extends javax.swing.JFrame {
         skillsPersonagem(); //Mostra as skills dos personagens
         mostrarPersonagem(); //Preenche os dados do personagem
         gerarOponente(); // Gera um novo oponente
-        //vidaMaximaOponente = op.getVida();
-        //mostrarOponente(); //Preenche os dados do oponente;
+        op = gerarOponente();
+        vidaMaximaOponente = op.getVida();
+        mostrarOponente(); //Preenche os dados do oponente
+        this.repaint();
         //Seta a imagem do Personagem
         lblImagemP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+personagem.getClasse().toLowerCase()+".png")));
     }
@@ -522,8 +524,7 @@ public class ViewConfronto extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
        // gerarOponente();
-        mostrarOponente();
-        //Global.ajustaCor();
+        //mostrarOponente();
     }//GEN-LAST:event_formWindowOpened
 
     /**
@@ -610,7 +611,6 @@ public class ViewConfronto extends javax.swing.JFrame {
         for (x = 0; x <5; x++) {
         if (x==numero) {
             lblImagemB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+oponentes[x].getNome().toLowerCase()+".gif")));
-            vidaMaximaOponente = oponentes[x].getVida();
             return oponentes[x];
         }
         }
@@ -739,6 +739,20 @@ public class ViewConfronto extends javax.swing.JFrame {
         }
     }
     
+    public void ajustaCor() {
+           try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ViewConfronto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(ViewConfronto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(ViewConfronto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(ViewConfronto.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup GrupoSkills;
     private javax.swing.JRadioButton JrSkill1;
