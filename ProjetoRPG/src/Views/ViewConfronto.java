@@ -6,6 +6,7 @@
 package Views;
 
 import ferramentas.CaixaDeDialogo;
+import ferramentas.Global;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -17,6 +18,7 @@ import java.net.URL;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javafx.scene.paint.Color.color;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
@@ -44,26 +46,15 @@ public class ViewConfronto extends javax.swing.JFrame {
      * Creates new form ViewConfronto
      */
     public ViewConfronto(Personagem personagemEscolhido) throws IOException {
-         try {
-            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ViewCarregamento.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(ViewCarregamento.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            Logger.getLogger(ViewCarregamento.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(ViewCarregamento.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Global.ajustaCor();
         
-         
         initComponents();
         limparLabels();
         this.personagem = personagemEscolhido;
         this.getContentPane().setBackground(Color.WHITE); 
         skillsPersonagem(); //Mostra as skills dos personagens
         mostrarPersonagem(); //Preenche os dados do personagem
-        op = gerarOponente(); // Gera um novo oponente
+        gerarOponente(); // Gera um novo oponente
         //vidaMaximaOponente = op.getVida();
         mostrarOponente(); //Preenche os dados do oponente;
         //Seta a imagem do Personagem
@@ -121,6 +112,11 @@ public class ViewConfronto extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Campo de Batalha");
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         lblNomeP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblNomeP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/usuario.png"))); // NOI18N
@@ -253,8 +249,8 @@ public class ViewConfronto extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Ataques:");
 
-        prbVidaOponente.setBackground(new java.awt.Color(255, 51, 51));
-        prbVidaOponente.setForeground(new java.awt.Color(0, 0, 0));
+        prbVidaOponente.setBackground(new java.awt.Color(255, 255, 255));
+        prbVidaOponente.setForeground(new java.awt.Color(255, 0, 0));
         prbVidaOponente.setToolTipText("");
         prbVidaOponente.setString("50");
 
@@ -522,6 +518,13 @@ public class ViewConfronto extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAtacarActionPerformed
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        gerarOponente();
+        mostrarOponente();
+        //Global.ajustaCor();
+    }//GEN-LAST:event_formWindowOpened
+
     /**
      * @param args the command line arguments
      */
@@ -571,7 +574,7 @@ public class ViewConfronto extends javax.swing.JFrame {
        
         oponentes[0] = new Oponente();
         oponentes[0].setNome("Mandala");
-        oponentes[0].setVida(600);
+        oponentes[0].setVida(300);
         oponentes[0].setAtaque(200);  
         oponentes[0].setDescricao("<html> Será que você consegue derrotar o Rei voador? <br> por: " + oponentes[0].getNome() + "</html>");
                 
@@ -583,7 +586,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         
         oponentes[2] = new Oponente();
         oponentes[2].setNome("Corcel do Inferno");
-        oponentes[2].setVida(800);
+        oponentes[2].setVida(300);
         oponentes[2].setAtaque(700);    
         oponentes[2].setDescricao("<html> Demonstre sua força para mim. <br> por: " + oponentes[2].getNome()+ "</html>");
         
@@ -596,7 +599,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         
         oponentes[4] = new Oponente();
         oponentes[4].setNome("Louva-Deus");
-        oponentes[4].setVida(500);
+        oponentes[4].setVida(300);
         oponentes[4].setAtaque(300);    
         oponentes[4].setDescricao("<html> Cuidado por onde andas! <br> por: " + oponentes[4].getNome()+"</html>");
         

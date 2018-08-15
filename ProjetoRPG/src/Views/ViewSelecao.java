@@ -374,7 +374,7 @@ public class ViewSelecao extends javax.swing.JFrame {
          if (btrGuerreiro.isSelected()) { 
           personagem.setClasse("Guerreiro");
           personagem.setNivel(0);
-          personagem.setVida(600);
+          personagem.setVida(1000);
           personagem.setAtaque(300);
           personagem.setBau(1);
           //String caminho = new File ("../ProjetoRPG/usuarios/Usuario LUCAS.txt").getCanonicalPath(); //pegarNomedoUsuario
