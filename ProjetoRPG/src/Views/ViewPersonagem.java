@@ -95,7 +95,6 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela do Personagem");
-        setPreferredSize(new java.awt.Dimension(1000, 650));
 
         btnVoltar.setBackground(new java.awt.Color(255, 255, 255));
         btnVoltar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -170,7 +169,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
             }
         });
 
-        jMenuBar1.setBackground(new java.awt.Color(0, 102, 255));
+        jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
         jMenuBar1.setToolTipText("");
         jMenuBar1.setPreferredSize(new java.awt.Dimension(178, 30));
 
