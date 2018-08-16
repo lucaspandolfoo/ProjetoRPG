@@ -259,6 +259,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         prbVidaOponente.setString("50");
 
         prbVidaPersonagem.setBackground(new java.awt.Color(255, 255, 255));
+        prbVidaPersonagem.setForeground(new java.awt.Color(255, 0, 0));
         prbVidaPersonagem.setMaximum(0);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -523,6 +524,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         mostrarPersonagem(); //Mostra o personagem com a vida atualizada
         vidaMenor200(); //Valida se o personagem não ficou com a vida menor que 200
         gerarOponente();
+        prbVidaOponente.setMaximum(vidaMaximaOponente);
         mostrarOponente();
         limparLabels();
         }
@@ -531,6 +533,7 @@ public class ViewConfronto extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
+        mostrarPersonagem();
     }//GEN-LAST:event_formWindowOpened
 
     /**
