@@ -55,7 +55,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         skillsPersonagem(); //Mostra as skills dos personagens
         mostrarPersonagem(); //Preenche os dados do personagem
         vidaMaximaPersonagem = personagem.getVida();
-        gerarOponente(); // Gera um novo oponente
+       // gerarOponente(); // Gera um novo oponente
         op = gerarOponente(); // pega o oponente que foi gerado
         vidaMaximaOponente = op.getVida(); //Pega a vida máxima do oponente quando gerado
         mostrarOponente(); //Preenche os dados do oponente
@@ -78,7 +78,6 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblVidaP = new javax.swing.JLabel();
         txtNomeP = new javax.swing.JLabel();
         txtAtaqueP = new javax.swing.JLabel();
-        txtVidaP = new javax.swing.JLabel();
         lblClasseP = new javax.swing.JLabel();
         txtClasseP = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -139,8 +138,6 @@ public class ViewConfronto extends javax.swing.JFrame {
         txtNomeP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         txtAtaqueP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-
-        txtVidaP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         lblClasseP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblClasseP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/classe.png"))); // NOI18N
@@ -299,7 +296,7 @@ public class ViewConfronto extends javax.swing.JFrame {
                                     .addComponent(txtDescB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(16, 16, 16)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(lblSkill1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
@@ -319,7 +316,6 @@ public class ViewConfronto extends javax.swing.JFrame {
                                             .addComponent(JrSkill3))))
                                 .addComponent(lblAtkPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 384, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(lblVezPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -338,14 +334,14 @@ public class ViewConfronto extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                             .addComponent(lblNomeP)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(txtNomeP, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(prbVidaPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(lblVidaP)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(287, 287, 287)))
+                                            .addComponent(txtNomeP, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(287, 287, 287))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblVidaP)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(prbVidaPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(46, 46, 46)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblX, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -371,6 +367,9 @@ public class ViewConfronto extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,16 +411,10 @@ public class ViewConfronto extends javax.swing.JFrame {
                             .addComponent(lblAtaqueP)
                             .addComponent(txtAtaqueP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblVidaP)
-                            .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(prbVidaPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(12, 12, 12)))
-                .addGap(18, 18, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblVidaP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(prbVidaPersonagem, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -631,7 +624,6 @@ public class ViewConfronto extends javax.swing.JFrame {
         txtClasseP.setText(personagem.getClasse());
         txtNivelP.setText(String.valueOf(personagem.getNivel()));
         txtAtaqueP.setText(String.valueOf(personagem.getAtaque()));
-        txtVidaP.setText(String.valueOf(personagem.getVida()));
         
         prbVidaPersonagem.setMaximum(vidaMaximaPersonagem);
         prbVidaPersonagem.setMinimum(0);
@@ -808,6 +800,5 @@ public class ViewConfronto extends javax.swing.JFrame {
     private javax.swing.JLabel txtNomeB;
     private javax.swing.JLabel txtNomeP;
     private javax.swing.JLabel txtVidaB;
-    private javax.swing.JLabel txtVidaP;
     // End of variables declaration//GEN-END:variables
 }
