@@ -254,12 +254,12 @@ public class ViewConfronto extends javax.swing.JFrame {
 
         prbVidaOponente.setBackground(new java.awt.Color(255, 255, 255));
         prbVidaOponente.setForeground(new java.awt.Color(255, 0, 0));
-        prbVidaOponente.setMaximum(300);
+        prbVidaOponente.setMaximum(0);
         prbVidaOponente.setToolTipText("");
         prbVidaOponente.setString("50");
 
         prbVidaPersonagem.setBackground(new java.awt.Color(255, 255, 255));
-        prbVidaPersonagem.setForeground(new java.awt.Color(0, 0, 255));
+        prbVidaPersonagem.setMaximum(0);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -630,11 +630,12 @@ public class ViewConfronto extends javax.swing.JFrame {
         txtAtaqueP.setText(String.valueOf(personagem.getAtaque()));
         txtVidaP.setText(String.valueOf(personagem.getVida()));
         
+        prbVidaPersonagem.setMaximum(vidaMaximaPersonagem);
         prbVidaPersonagem.setMinimum(0);
         prbVidaPersonagem.setValue(personagem.getVida());
         prbVidaPersonagem.setStringPainted(true); 
         prbVidaPersonagem.setString(String.valueOf(personagem.getVida()));
-        prbVidaPersonagem.setMaximum(vidaMaximaPersonagem);
+
     }
     
     private void mostrarOponente() {
@@ -643,11 +644,11 @@ public class ViewConfronto extends javax.swing.JFrame {
         txtAtaqueB.setText(String.valueOf(oponentes[x].getAtaque()));
         txtVidaB.setText(String.valueOf(oponentes[x].getVida()));
         txtDescB.setText(oponentes[x].getDescricao());
+        prbVidaOponente.setMaximum(vidaMaximaOponente);
         prbVidaOponente.setMinimum(0);
         prbVidaOponente.setValue(oponentes[x].getVida());
         prbVidaOponente.setStringPainted(true); 
         prbVidaOponente.setString(String.valueOf(oponentes[x].getVida()));
-       // prbVidaOponente.setMaximum(vidaMaximaOponente);
     }
     
     private void ataquePersonagem() {
