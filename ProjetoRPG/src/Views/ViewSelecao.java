@@ -377,8 +377,7 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setVida(1000);
           personagem.setAtaque(300);
           personagem.setBau(1);
-          //String caminho = new File ("../ProjetoRPG/usuarios/Usuario LUCAS.txt").getCanonicalPath(); //pegarNomedoUsuario
-         // Arquivos.escrever(caminho,"\n1");
+          personagem.setMoedas(2000);
         }
        else if (btrArcano.isSelected()) {  
           personagem.setClasse("Arcano");
@@ -386,6 +385,7 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setVida(800);
           personagem.setAtaque(400);  
           personagem.setBau(1);
+          personagem.setMoedas(2000);
           
         } else if (btrEspiritualista.isSelected()) {
           personagem.setClasse("Espiritualista");
@@ -393,6 +393,7 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setVida(200);
           personagem.setAtaque(500);
           personagem.setBau(1);
+          personagem.setMoedas(2000);
           
         } else if (btrArqueiro.isSelected()) {
           personagem.setClasse("Arqueiro");
@@ -400,6 +401,7 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setVida(250);
           personagem.setAtaque(280);
           personagem.setBau(1);
+          personagem.setMoedas(2000);
         }
   
          return personagem;

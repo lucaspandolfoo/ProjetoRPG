@@ -12,6 +12,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,6 +27,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
      Personagem personagem;
      int vez =0;
      Random gerador = new Random();
+     DecimalFormat df = new DecimalFormat("0,00");
 
     /**
      * Creates new form ViewPersonagem
@@ -75,6 +77,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
         lblTelaPersonagem = new javax.swing.JLabel();
         lblImagemP = new javax.swing.JLabel();
         btnBau = new javax.swing.JButton();
+        lblMoedas = new javax.swing.JLabel();
+        txtMoedasP = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         menuConfiguracoes = new javax.swing.JMenuItem();
@@ -169,6 +173,12 @@ public class ViewPersonagem extends javax.swing.JFrame {
             }
         });
 
+        lblMoedas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblMoedas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/coins.png"))); // NOI18N
+        lblMoedas.setText("Moedas:");
+
+        txtMoedasP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
         jMenuBar1.setToolTipText("");
         jMenuBar1.setPreferredSize(new java.awt.Dimension(178, 30));
@@ -221,7 +231,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(lblVidaP)
@@ -245,7 +255,10 @@ public class ViewPersonagem extends javax.swing.JFrame {
                                 .addComponent(txtClasseP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(593, 593, 593)))
+                        .addGap(390, 390, 390)
+                        .addComponent(lblMoedas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtMoedasP, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -257,6 +270,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblNomeP)
@@ -277,8 +291,12 @@ public class ViewPersonagem extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblVidaP)
                             .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBau))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnBau)
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtMoedasP, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblMoedas))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar)
@@ -353,6 +371,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtNivelP.setText(String.valueOf(personagem.getNivel()));
         txtAtaqueP.setText(String.valueOf(personagem.getAtaque()));
         txtVidaP.setText(String.valueOf(personagem.getVida()) + "/" + String.valueOf(personagem.getVida()));
+        txtMoedasP.setText(String.valueOf(personagem.getMoedas()));
     }
       
       private void tempoVida() {
@@ -384,6 +403,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JLabel lblAtaqueP;
     private javax.swing.JLabel lblClasseP;
     private javax.swing.JLabel lblImagemP;
+    private javax.swing.JLabel lblMoedas;
     private javax.swing.JLabel lblNivelP;
     private javax.swing.JLabel lblNomeP;
     private javax.swing.JLabel lblTelaPersonagem;
@@ -392,6 +412,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuSair;
     private javax.swing.JLabel txtAtaqueP;
     private javax.swing.JLabel txtClasseP;
+    private javax.swing.JLabel txtMoedasP;
     private javax.swing.JLabel txtNivelP;
     private javax.swing.JLabel txtNomeP;
     private javax.swing.JLabel txtVidaP;
