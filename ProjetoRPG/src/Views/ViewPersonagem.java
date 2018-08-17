@@ -381,7 +381,12 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
     private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
         // TODO add your handling code here:
+        boolean wResposta = CaixaDeDialogo.obterinstancia().pedirConfirmacao("Atenção, você realmente deseja sair do jogo?","Sair",'p');         
+        if (wResposta == true) {
         System.exit(0);
+        } else {
+            return;
+        }
     }//GEN-LAST:event_menuSairActionPerformed
 
     /**
