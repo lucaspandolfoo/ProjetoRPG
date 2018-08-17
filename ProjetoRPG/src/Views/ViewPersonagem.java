@@ -27,7 +27,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
      Personagem personagem;
      int vez =0;
      Random gerador = new Random();
-     DecimalFormat df = new DecimalFormat("0,00");
+     DecimalFormat df = new DecimalFormat("0.00");
 
     /**
      * Creates new form ViewPersonagem
@@ -371,7 +371,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtNivelP.setText(String.valueOf(personagem.getNivel()));
         txtAtaqueP.setText(String.valueOf(personagem.getAtaque()));
         txtVidaP.setText(String.valueOf(personagem.getVida()) + "/" + String.valueOf(personagem.getVida()));
-        txtMoedasP.setText(String.valueOf(personagem.getMoedas()));
+        txtMoedasP.setText(String.valueOf(df.format(personagem.getMoedas())));
     }
       
       private void tempoVida() {
