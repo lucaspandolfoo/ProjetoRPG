@@ -17,6 +17,7 @@ public class Personagem {
     private int vida;
     private int ataque;
     private int bau;
+    private double moedas;
 
     public String getNome() {
         return nome;
@@ -65,6 +66,15 @@ public class Personagem {
     public void setBau(int bau) {
         this.bau = bau;
     }
+
+    public double getMoedas() {
+        return moedas;
+    }
+
+    public void setMoedas(double moedas) {
+        this.moedas = moedas;
+    }
+    
     
     public String toString() {
         return
