@@ -79,6 +79,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
         btnBau = new javax.swing.JButton();
         lblMoedas = new javax.swing.JLabel();
         txtMoedasP = new javax.swing.JLabel();
+        lblPratas = new javax.swing.JLabel();
+        txtMoedasP1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         menuConfiguracoes = new javax.swing.JMenuItem();
@@ -179,6 +181,12 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
         txtMoedasP.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
+        lblPratas.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblPratas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pratas.png"))); // NOI18N
+        lblPratas.setText("Pratas:");
+
+        txtMoedasP1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
         jMenuBar1.setToolTipText("");
         jMenuBar1.setPreferredSize(new java.awt.Dimension(178, 30));
@@ -219,14 +227,6 @@ public class ViewPersonagem extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTelaPersonagem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(btnVoltar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCampoBatalha)
-                    .addComponent(btnBau))
-                .addGap(22, 22, 22))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,11 +255,30 @@ public class ViewPersonagem extends javax.swing.JFrame {
                                 .addComponent(txtClasseP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(390, 390, 390)
-                        .addComponent(lblMoedas)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMoedasP, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(454, 454, 454)
+                        .addComponent(btnBau)
+                        .addGap(75, 75, 75)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(btnVoltar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCampoBatalha))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblMoedas)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtMoedasP, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblPratas)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtMoedasP1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(10, 10, 10)))
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,10 +312,14 @@ public class ViewPersonagem extends javax.swing.JFrame {
                             .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnBau)
-                        .addGap(14, 14, 14)
+                        .addGap(20, 20, 20)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtMoedasP, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblMoedas))))
+                            .addComponent(lblMoedas))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblPratas)
+                            .addComponent(txtMoedasP1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar)
@@ -372,6 +395,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtAtaqueP.setText(String.valueOf(personagem.getAtaque()));
         txtVidaP.setText(String.valueOf(personagem.getVida()) + "/" + String.valueOf(personagem.getVida()));
         txtMoedasP.setText(String.valueOf(df.format(personagem.getMoedas())));
+        txtMoedasP1.setText(String.valueOf(personagem.getPratas()));
     }
       
       private void tempoVida() {
@@ -406,6 +430,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JLabel lblMoedas;
     private javax.swing.JLabel lblNivelP;
     private javax.swing.JLabel lblNomeP;
+    private javax.swing.JLabel lblPratas;
     private javax.swing.JLabel lblTelaPersonagem;
     private javax.swing.JLabel lblVidaP;
     private javax.swing.JMenuItem menuConfiguracoes;
@@ -413,6 +438,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JLabel txtAtaqueP;
     private javax.swing.JLabel txtClasseP;
     private javax.swing.JLabel txtMoedasP;
+    private javax.swing.JLabel txtMoedasP1;
     private javax.swing.JLabel txtNivelP;
     private javax.swing.JLabel txtNomeP;
     private javax.swing.JLabel txtVidaP;

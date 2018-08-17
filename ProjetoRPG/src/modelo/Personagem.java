@@ -18,6 +18,7 @@ public class Personagem {
     private int ataque;
     private int bau;
     private double moedas;
+    private int pratas;
 
     public String getNome() {
         return nome;
@@ -74,6 +75,15 @@ public class Personagem {
     public void setMoedas(double moedas) {
         this.moedas = moedas;
     }
+
+    public int getPratas() {
+        return pratas;
+    }
+
+    public void setPratas(int pratas) {
+        this.pratas = pratas;
+    }
+    
     
     
     public String toString() {

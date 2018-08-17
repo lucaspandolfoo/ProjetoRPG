@@ -378,6 +378,7 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setAtaque(300);
           personagem.setBau(1);
           personagem.setMoedas(2000);
+          personagem.setPratas(2);
         }
        else if (btrArcano.isSelected()) {  
           personagem.setClasse("Arcano");
@@ -386,6 +387,7 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setAtaque(400);  
           personagem.setBau(1);
           personagem.setMoedas(2000);
+          personagem.setPratas(2);
           
         } else if (btrEspiritualista.isSelected()) {
           personagem.setClasse("Espiritualista");
@@ -394,6 +396,7 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setAtaque(500);
           personagem.setBau(1);
           personagem.setMoedas(2000);
+          personagem.setPratas(2);
           
         } else if (btrArqueiro.isSelected()) {
           personagem.setClasse("Arqueiro");
@@ -402,6 +405,7 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setAtaque(280);
           personagem.setBau(1);
           personagem.setMoedas(2000);
+          personagem.setPratas(2);
         }
   
          return personagem;
