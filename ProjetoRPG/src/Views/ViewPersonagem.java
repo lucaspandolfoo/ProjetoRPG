@@ -86,7 +86,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
         menuConfiguracoes = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
+        MenuLoja = new javax.swing.JMenu();
+        MenuLojaP = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -214,8 +215,17 @@ public class ViewPersonagem extends javax.swing.JFrame {
         jMenu3.setText("Personagem");
         jMenuBar1.add(jMenu3);
 
-        jMenu5.setText("Loja");
-        jMenuBar1.add(jMenu5);
+        MenuLoja.setText("Loja");
+
+        MenuLojaP.setText("Ir para Loja");
+        MenuLojaP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuLojaPActionPerformed(evt);
+            }
+        });
+        MenuLoja.add(MenuLojaP);
+
+        jMenuBar1.add(MenuLoja);
 
         jMenu6.setText("Sobre");
         jMenuBar1.add(jMenu6);
@@ -402,6 +412,12 @@ public class ViewPersonagem extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_menuSairActionPerformed
 
+    private void MenuLojaPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuLojaPActionPerformed
+        // TODO add your handling code here:
+        ViewLoja telaLoja = new ViewLoja();
+        telaLoja.setVisible(true);
+    }//GEN-LAST:event_MenuLojaPActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -435,6 +451,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
       }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu MenuLoja;
+    private javax.swing.JMenuItem MenuLojaP;
     private javax.swing.JButton btnBau;
     private javax.swing.JButton btnCampoBatalha;
     private javax.swing.JButton btnVoltar;
@@ -442,7 +460,6 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
