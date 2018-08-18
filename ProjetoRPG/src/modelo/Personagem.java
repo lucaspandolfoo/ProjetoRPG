@@ -19,7 +19,35 @@ public class Personagem {
     private int bau;
     private double moedas;
     private int pratas;
+    private int pvida;
+    private int pataque;
+    private int pexp;
 
+    public int getPvida() {
+        return pvida;
+    }
+
+    public void setPvida(int pvida) {
+        this.pvida = pvida;
+    }
+
+
+    public int getPataque() {
+        return pataque;
+    }
+
+    public void setPataque(int pataque) {
+        this.pataque = pataque;
+    }
+
+    public int getPexp() {
+        return pexp;
+    }
+
+    public void setPexp(int pexp) {
+        this.pexp = pexp;
+    }
+    
     public String getNome() {
         return nome;
     }

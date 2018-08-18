@@ -5,17 +5,23 @@
  */
 package Views;
 
+import ferramentas.CaixaDeDialogo;
+import modelo.Personagem;
+import java.text.DecimalFormat;
+
 /**
  *
  * @author Guilherme Klafki
  */
 public class ViewLoja extends javax.swing.JFrame {
+    Personagem personagem;
 
     /**
      * Creates new form ViewLoja
      */
-    public ViewLoja() {
+    public ViewLoja(Personagem personagem) {
         initComponents();
+         this.personagem = personagem;
     }
 
     /**
@@ -45,16 +51,26 @@ public class ViewLoja extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jPanel9 = new javax.swing.JPanel();
         lblPocaoVida5 = new javax.swing.JLabel();
-        btnComprarVidaM2 = new javax.swing.JButton();
+        btnComprarVidaM = new javax.swing.JButton();
         lblImagemPocaoVida5 = new javax.swing.JLabel();
-        btnComprarVidaP2 = new javax.swing.JButton();
+        btnComprarVidaP = new javax.swing.JButton();
         jSeparator7 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtPocaoExp = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtPocaoVida = new javax.swing.JTextArea();
+        btnSair1 = new javax.swing.JButton();
+        txtMoedasLoja = new javax.swing.JLabel();
+        lblMoedasLoja = new javax.swing.JLabel();
+        lblPratasLoja = new javax.swing.JLabel();
+        txtPratasLoja = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         lblTelaPersonagem.setFont(new java.awt.Font("Tahoma", 0, 40)); // NOI18N
         lblTelaPersonagem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -79,7 +95,7 @@ public class ViewLoja extends javax.swing.JFrame {
         lblImagemPocaoVida1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pocaoExp.png"))); // NOI18N
 
         btnComprarExpP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pratas.png"))); // NOI18N
-        btnComprarExpP.setText("$ 50");
+        btnComprarExpP.setText("$ 5");
         btnComprarExpP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnComprarExpPActionPerformed(evt);
@@ -138,11 +154,16 @@ public class ViewLoja extends javax.swing.JFrame {
 
         btnComprarAtaqueM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/coins.png"))); // NOI18N
         btnComprarAtaqueM.setText("$ 350");
+        btnComprarAtaqueM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprarAtaqueMActionPerformed(evt);
+            }
+        });
 
         lblImagemPocaoAtaque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pocaoAtaque.png"))); // NOI18N
 
         btnComprarAtaqueP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pratas.png"))); // NOI18N
-        btnComprarAtaqueP.setText("$ 25");
+        btnComprarAtaqueP.setText("$ 2");
         btnComprarAtaqueP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnComprarAtaquePActionPerformed(evt);
@@ -190,16 +211,21 @@ public class ViewLoja extends javax.swing.JFrame {
         lblPocaoVida5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblPocaoVida5.setText("Poção de Vida");
 
-        btnComprarVidaM2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/coins.png"))); // NOI18N
-        btnComprarVidaM2.setText("$ 350");
+        btnComprarVidaM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/coins.png"))); // NOI18N
+        btnComprarVidaM.setText("$ 350");
+        btnComprarVidaM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnComprarVidaMActionPerformed(evt);
+            }
+        });
 
         lblImagemPocaoVida5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/PocaoVidaTop2.png"))); // NOI18N
 
-        btnComprarVidaP2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pratas.png"))); // NOI18N
-        btnComprarVidaP2.setText("$ 25");
-        btnComprarVidaP2.addActionListener(new java.awt.event.ActionListener() {
+        btnComprarVidaP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pratas.png"))); // NOI18N
+        btnComprarVidaP.setText("$ 2");
+        btnComprarVidaP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComprarVidaP2ActionPerformed(evt);
+                btnComprarVidaPActionPerformed(evt);
             }
         });
 
@@ -212,8 +238,8 @@ public class ViewLoja extends javax.swing.JFrame {
                 .addComponent(lblImagemPocaoVida5)
                 .addGap(32, 32, 32)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnComprarVidaM2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnComprarVidaP2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnComprarVidaM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnComprarVidaP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(20, 20, 20))
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGap(53, 53, 53)
@@ -232,9 +258,9 @@ public class ViewLoja extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblImagemPocaoVida5, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(btnComprarVidaM2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnComprarVidaM, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnComprarVidaP2)))
+                        .addComponent(btnComprarVidaP)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -268,7 +294,7 @@ public class ViewLoja extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 220, Short.MAX_VALUE))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE))
                 .addGap(48, 48, 48))
         );
         jPanel1Layout.setVerticalGroup(
@@ -284,8 +310,30 @@ public class ViewLoja extends javax.swing.JFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
+
+        btnSair1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnSair1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/sign-error.png"))); // NOI18N
+        btnSair1.setText("Sair da Loja");
+        btnSair1.setToolTipText("Voltar para tela de seleção");
+        btnSair1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSair1ActionPerformed(evt);
+            }
+        });
+
+        txtMoedasLoja.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        lblMoedasLoja.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblMoedasLoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/coins.png"))); // NOI18N
+        lblMoedasLoja.setText("Moedas:");
+
+        lblPratasLoja.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblPratasLoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pratas.png"))); // NOI18N
+        lblPratasLoja.setText("Pratas:");
+
+        txtPratasLoja.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -293,8 +341,23 @@ public class ViewLoja extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblTelaPersonagem, javax.swing.GroupLayout.DEFAULT_SIZE, 1031, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(btnSair1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblPratasLoja)
+                                    .addGap(18, 18, 18)
+                                    .addComponent(txtPratasLoja, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(lblMoedasLoja)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txtMoedasLoja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -302,31 +365,122 @@ public class ViewLoja extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTelaPersonagem)
-                .addGap(24, 24, 24)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblMoedasLoja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtMoedasLoja, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblPratasLoja)
+                    .addComponent(txtPratasLoja, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(238, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                .addComponent(btnSair1)
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+     private void mostrarMoedasLoja() {
+    txtMoedasLoja.setText(String.valueOf((personagem.getMoedas())));
+    txtPratasLoja.setText(String.valueOf((personagem.getPratas())));
+     }
+    
     private void btnComprarExpPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarExpPActionPerformed
         // TODO add your handling code here:
+         if (personagem.getPratas() >= 5){
+            personagem.setPratas(personagem.getPratas() - 5);
+            personagem.setPexp(personagem.getPexp() + 1);
+            
+            System.out.println("Pratas " + personagem.getPratas());
+            System.out.println("Poções EXP: " + personagem.getPexp());
+        } else{
+             CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Pratas para essa compra!","Erro",'e');
+         } 
+  
     }//GEN-LAST:event_btnComprarExpPActionPerformed
 
     private void btnComprarAtaquePActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarAtaquePActionPerformed
         // TODO add your handling code here:
+        if (personagem.getPratas() >= 2){
+             personagem.setPratas(personagem.getPratas() - 2);
+             personagem.setPataque(personagem.getPataque() + 1);      
+            
+             System.out.println("Pratas: " + personagem.getPratas());
+             System.out.println("Poções Ataque: " + personagem.getPataque());
+        }else{
+             CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Pratas para essa compra!","Erro",'e');
+         }
     }//GEN-LAST:event_btnComprarAtaquePActionPerformed
 
-    private void btnComprarVidaP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarVidaP2ActionPerformed
+    private void btnComprarVidaPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarVidaPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnComprarVidaP2ActionPerformed
+        if (personagem.getPratas() >= 2){
+             personagem.setPratas(personagem.getPratas() - 2);
+             personagem.setPvida(personagem.getPvida() + 1);      
+            
+             System.out.println("Pratas: " + personagem.getPratas());
+             System.out.println("Poções Vida: " + personagem.getPvida());
+        }else{
+             CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Pratas para essa compra!","Erro",'e');
+         }
+    }//GEN-LAST:event_btnComprarVidaPActionPerformed
 
     private void btnComprarExpMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarExpMActionPerformed
         // TODO add your handling code here:
+         if (personagem.getMoedas() >= 350){
+             personagem.setMoedas(personagem.getMoedas() - 350);
+             personagem.setPexp(personagem.getPexp() + 1);      
+            
+             System.out.println("Moedas: " + personagem.getMoedas());
+             System.out.println("Poções EXP: " + personagem.getPexp());
+        }else{
+             CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Moedas para essa compra!","Erro",'e');
+         }
         
     }//GEN-LAST:event_btnComprarExpMActionPerformed
+
+    private void btnComprarVidaMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarVidaMActionPerformed
+        // TODO add your handling code here:
+        if (personagem.getMoedas() >= 350){
+             personagem.setMoedas(personagem.getMoedas() - 350);
+             personagem.setPvida(personagem.getPvida() + 1);      
+            
+             System.out.println("Moedas: " + personagem.getMoedas());
+             System.out.println("Poções Vida: " + personagem.getPvida());
+        }else{
+             CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Moedas para essa compra!","Erro",'e');
+         }
+        
+    }//GEN-LAST:event_btnComprarVidaMActionPerformed
+
+    private void btnComprarAtaqueMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarAtaqueMActionPerformed
+        // TODO add your handling code here:
+        if (personagem.getMoedas() >= 350){
+             personagem.setMoedas(personagem.getMoedas() - 350);
+             personagem.setPataque(personagem.getPataque() + 1);      
+            
+             System.out.println("Moedas: " + personagem.getMoedas());
+             System.out.println("Poções Ataque: " + personagem.getPataque());
+        }else{
+             CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Moedas para essa compra!","Erro",'e');
+         }
+    }//GEN-LAST:event_btnComprarAtaqueMActionPerformed
+
+    private void btnSair1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSair1ActionPerformed
+        // TODO add your handling code here:
+       this.dispose();
+       ViewPersonagem telaP = new ViewPersonagem(personagem);
+       telaP.setVisible(true);
+    }//GEN-LAST:event_btnSair1ActionPerformed
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        // TODO add your handling code here:
+        mostrarMoedasLoja();
+    }//GEN-LAST:event_formWindowActivated
 
     /**
      * @param args the command line arguments
@@ -358,7 +512,7 @@ public class ViewLoja extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewLoja().setVisible(true);
+                new ViewLoja(null).setVisible(true);
             }
         });
     }
@@ -368,8 +522,9 @@ public class ViewLoja extends javax.swing.JFrame {
     private javax.swing.JButton btnComprarAtaqueP;
     private javax.swing.JButton btnComprarExpM;
     private javax.swing.JButton btnComprarExpP;
-    private javax.swing.JButton btnComprarVidaM2;
-    private javax.swing.JButton btnComprarVidaP2;
+    private javax.swing.JButton btnComprarVidaM;
+    private javax.swing.JButton btnComprarVidaP;
+    private javax.swing.JButton btnSair1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
@@ -383,12 +538,16 @@ public class ViewLoja extends javax.swing.JFrame {
     private javax.swing.JLabel lblImagemPocaoAtaque;
     private javax.swing.JLabel lblImagemPocaoVida1;
     private javax.swing.JLabel lblImagemPocaoVida5;
+    private javax.swing.JLabel lblMoedasLoja;
     private javax.swing.JLabel lblPocaoAtaque;
     private javax.swing.JLabel lblPocaoExp;
     private javax.swing.JLabel lblPocaoVida5;
+    private javax.swing.JLabel lblPratasLoja;
     private javax.swing.JLabel lblTelaPersonagem;
+    private javax.swing.JLabel txtMoedasLoja;
     private javax.swing.JTextArea txtPocaoAtaque;
     private javax.swing.JTextArea txtPocaoExp;
     private javax.swing.JTextArea txtPocaoVida;
+    private javax.swing.JLabel txtPratasLoja;
     // End of variables declaration//GEN-END:variables
 }

@@ -414,7 +414,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
     private void MenuLojaPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuLojaPActionPerformed
         // TODO add your handling code here:
-        ViewLoja telaLoja = new ViewLoja();
+        ViewLoja telaLoja = new ViewLoja((personagem));
         telaLoja.setVisible(true);
     }//GEN-LAST:event_MenuLojaPActionPerformed
 
