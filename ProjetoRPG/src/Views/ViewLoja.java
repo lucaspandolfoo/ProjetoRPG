@@ -6,6 +6,7 @@
 package Views;
 
 import ferramentas.CaixaDeDialogo;
+import java.awt.Color;
 import modelo.Personagem;
 import java.text.DecimalFormat;
 
@@ -22,6 +23,7 @@ public class ViewLoja extends javax.swing.JFrame {
     public ViewLoja(Personagem personagem) {
         initComponents();
          this.personagem = personagem;
+         this.getContentPane().setBackground(Color.WHITE); 
     }
 
     /**
