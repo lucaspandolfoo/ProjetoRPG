@@ -291,7 +291,7 @@ public class ViewConfronto extends javax.swing.JFrame {
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                             .addComponent(txtAtaqueB, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addComponent(txtDescB, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(16, 16, 16)))
+                            .addGap(19, 19, 19)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -511,6 +511,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         mostrarOponente();
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns, você derrotou o oponente " + oponentes[x].getNome() +"!\nVocê ganhou 100 de vida.","Parabéns",'i');
         aumentaVida(); //Aumenta a vida do personagem
+        vidaMaximaPersonagem = personagem.getVida();
         mostrarPersonagem(); //Mostra o personagem com a vida atualizada
         vidaMenor200(); //Valida se o personagem não ficou com a vida menor que 200
         gerarOponente();
