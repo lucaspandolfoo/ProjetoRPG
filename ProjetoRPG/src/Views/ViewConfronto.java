@@ -42,6 +42,7 @@ public class ViewConfronto extends javax.swing.JFrame {
    public static int x;
    public static String ataqueCritico = "";
    public static int vidaMaximaOponente = 0, vidaMaximaPersonagem =0;
+   public static int qtdeDerrotas = 0;
     /**
      * Creates new form ViewConfronto
      */
@@ -509,8 +510,9 @@ public class ViewConfronto extends javax.swing.JFrame {
         mostrarOponente();
         } else {
         mostrarOponente();
-        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns, você derrotou o oponente " + oponentes[x].getNome() +"!\nVocê ganhou 100 de vida.","Parabéns",'i');
-        aumentaVida(); //Aumenta a vida do personagem
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns, você derrotou o oponente " + oponentes[x].getNome()+"!","Parabéns",'i');
+        qtdeDerrotas = qtdeDerrotas + 1;
+        upaNivel(qtdeDerrotas);
         vidaMaximaPersonagem = personagem.getVida();
         mostrarPersonagem(); //Mostra o personagem com a vida atualizada
         vidaMenor200(); //Valida se o personagem não ficou com a vida menor que 200
@@ -578,32 +580,32 @@ public class ViewConfronto extends javax.swing.JFrame {
        
         oponentes[0] = new Oponente();
         oponentes[0].setNome("Mandala");
-        oponentes[0].setVida(300);
-        oponentes[0].setAtaque(200);  
+        oponentes[0].setVida(400);
+        oponentes[0].setAtaque(300);  
         oponentes[0].setDescricao("<html> Será que você consegue derrotar o Rei voador? <br> por: " + oponentes[0].getNome() + "</html>");
                 
         oponentes[1] = new Oponente();
         oponentes[1].setNome("Rei Trator");
-        oponentes[1].setVida(700);
-        oponentes[1].setAtaque(150);    
+        oponentes[1].setVida(1000);
+        oponentes[1].setAtaque(300);    
         oponentes[1].setDescricao("<html> Preparado para perder? <br> por: " + oponentes[1].getNome() + "</html>");
         
         oponentes[2] = new Oponente();
         oponentes[2].setNome("Corcel do Inferno");
         oponentes[2].setVida(300);
-        oponentes[2].setAtaque(400);    
+        oponentes[2].setAtaque(500);    
         oponentes[2].setDescricao("<html> Demonstre sua força para mim. <br> por: " + oponentes[2].getNome()+ "</html>");
         
         oponentes[3] = new Oponente();
         oponentes[3].setNome("Lorden");
-        oponentes[3].setVida(400);
+        oponentes[3].setVida(500);
         oponentes[3].setAtaque(200);    
         oponentes[3].setDescricao("<html> Espero que esteja preparado para a glória! <br> por: " + oponentes[3].getNome()+ "</html>");
       
         
         oponentes[4] = new Oponente();
         oponentes[4].setNome("Louva-Deus");
-        oponentes[4].setVida(300);
+        oponentes[4].setVida(500);
         oponentes[4].setAtaque(300);    
         oponentes[4].setDescricao("<html> Cuidado por onde andas! <br> por: " + oponentes[4].getNome()+"</html>");
         
@@ -708,11 +710,6 @@ public class ViewConfronto extends javax.swing.JFrame {
         lblVezOponente.setText("");    
     }
     
-    private void aumentaVida() {
-        int vida = 100;
-        personagem.setVida(personagem.getVida() + vida);
-    }
-    
     private void skillsPersonagem() {
         lblSkill1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/skill1.png")));
         lblSkill2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/skill2.png")));
@@ -760,6 +757,35 @@ public class ViewConfronto extends javax.swing.JFrame {
         }
       }
 
+    private void upaNivel(int qtde) {
+        if (qtde == 1) {
+           CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você alcançou o nível 1\nSua recompesa é: 200 de Ataque","Parabéns",'i');
+           personagem.setAtaque(personagem.getAtaque()+200);
+           personagem.setNivel(personagem.getNivel()+1);
+        }
+        else if (qtde == 2) {
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você alcançou o nível 2\nSua recompesa é: 100 de Ataque e 200 de Vida","Parabéns",'i');
+            personagem.setAtaque(personagem.getAtaque()+100);
+            personagem.setVida(personagem.getVida()+200);
+            personagem.setNivel(personagem.getNivel()+1);
+        }
+        else if (qtde == 4) {
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você alcançou o nível 3\nSua recompesa é: 10000 moedas","Parabéns",'i');
+            personagem.setMoedas(personagem.getMoedas()+10000);
+            personagem.setNivel(personagem.getNivel()+1);
+        }
+        else if (qtde == 6) {
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você alcançou o nível 4\nSua recompesa é: 500 de vida","Parabéns",'i');
+            personagem.setVida(personagem.getVida()+500);
+            personagem.setNivel(personagem.getNivel()+1);
+        }
+        else if (qtde == 8) {
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você alcançou o nível 5\nSua recompesa é: 1000 de Ataque","Parabéns",'i');
+            personagem.setAtaque(personagem.getAtaque()+1000);
+            personagem.setNivel(personagem.getNivel()+1);
+        }
+        
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup GrupoSkills;
     private javax.swing.JRadioButton JrSkill1;

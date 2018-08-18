@@ -416,12 +416,19 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtMoedasP1.setText(String.valueOf(personagem.getPratas()));
     }
       
-      private void tempoVida() {
-        tempo = new Timer(5000, new ActionListener() {//vai esperar 5 segundos e executar essa ação
+    private void tempoVida() {
+        tempo = new Timer(2000, new ActionListener() {//vai esperar 5 segundos e executar essa ação
         @Override
         public void actionPerformed(ActionEvent e) {
-               personagem.setVida(personagem.getVida() + 5);
+            if (personagem.getVida() < 500) {
+               personagem.setVida(personagem.getVida() + 10);
                mostrarPersonagem();
+        } else {
+                CaixaDeDialogo.obterinstancia().exibirMensagem("Sua vida foi recuperada com sucesso!","Atenção",'i');
+                mostrarPersonagem();
+                tempo.stop();
+                return;
+            }
         }
         });
         tempo.start();
