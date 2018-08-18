@@ -79,8 +79,10 @@ public class ViewLoja extends javax.swing.JFrame {
         lblTelaPersonagem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTelaPersonagem.setText("Tela da Loja");
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Poções"));
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel5.setPreferredSize(new java.awt.Dimension(220, 145));
 
@@ -149,6 +151,7 @@ public class ViewLoja extends javax.swing.JFrame {
         txtPocaoAtaque.setWrapStyleWord(true);
         jScrollPane1.setViewportView(txtPocaoAtaque);
 
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel8.setPreferredSize(new java.awt.Dimension(220, 145));
 
@@ -208,6 +211,7 @@ public class ViewLoja extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
         jPanel9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel9.setPreferredSize(new java.awt.Dimension(220, 145));
 
