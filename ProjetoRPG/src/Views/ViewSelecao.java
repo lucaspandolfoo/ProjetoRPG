@@ -8,6 +8,7 @@ package Views;
 import Views.ViewLogin;
 import ferramentas.Arquivos;
 import ferramentas.CaixaDeDialogo;
+import ferramentas.Global;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -67,6 +68,7 @@ public class ViewSelecao extends javax.swing.JFrame {
         btnAtEspiritualista = new javax.swing.JButton();
         btnAtArqueiro = new javax.swing.JButton();
         btnAtArcano = new javax.swing.JButton();
+        txtLoginP = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Seleção do Personagem");
@@ -163,6 +165,9 @@ public class ViewSelecao extends javax.swing.JFrame {
             }
         });
 
+        txtLoginP.setFont(new java.awt.Font("Microsoft Tai Le", 1, 12)); // NOI18N
+        txtLoginP.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -218,11 +223,17 @@ public class ViewSelecao extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addComponent(btnAtArqueiro)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtLoginP, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addContainerGap()
+                .addComponent(txtLoginP, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(lblTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -252,7 +263,7 @@ public class ViewSelecao extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnAtArqueiro)
                             .addComponent(btnAtArcano))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAvancar)
                     .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -436,6 +447,9 @@ public class ViewSelecao extends javax.swing.JFrame {
           }
         });
       }
+       public void recebendo (String login) {
+          txtLoginP.setText("Você está logado com o usuário: " + login);
+      }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup SelecionarPersonagens;
     private javax.swing.JButton btnAtArcano;
@@ -454,6 +468,7 @@ public class ViewSelecao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel lblNick;
     private javax.swing.JLabel lblTeste;
+    private javax.swing.JLabel txtLoginP;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
 }
