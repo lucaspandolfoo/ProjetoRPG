@@ -354,8 +354,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
     private void btnBauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBauActionPerformed
         // TODO add your handling code here:
-       int valorBau = gerador.nextInt(2) + 1;
-       if (personagem.getBau() == 2) {
+       int valorBau = gerador.nextInt(4) + 1;
+       if (personagem.getBau() == 10) {
            // não pode pegar
             CaixaDeDialogo.obterinstancia().exibirMensagem("Você já pegou sua recompensa hoje!","Atenção",'e');
             
@@ -365,11 +365,24 @@ public class ViewPersonagem extends javax.swing.JFrame {
             CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns sua recompensa é: 200 de vida","Atenção",'i');
             personagem.setVida(personagem.getVida()+200); 
             mostrarPersonagem();
-            personagem.setBau(2);
-           } else {
+            personagem.setBau(10);
+           }
+           else if(valorBau == 2) {
             CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns sua recompensa é: 200 de Ataque","Atenção",'i');
             personagem.setAtaque(personagem.getAtaque()+200);   
-            personagem.setBau(2);
+            personagem.setBau(10);
+            mostrarPersonagem();
+           }
+           else if(valorBau == 3) {
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns sua recompensa é: 200 Moedas","Atenção",'i');
+            personagem.setMoedas(personagem.getMoedas()+ 200);   
+            personagem.setBau(10);
+            mostrarPersonagem();
+           }
+           else if(valorBau == 4) {
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns sua recompensa é: 1 Prata","Atenção",'i');
+            personagem.setPratas(personagem.getPratas()+1);   
+            personagem.setBau(10);
             mostrarPersonagem();
            }
        }

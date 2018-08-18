@@ -35,6 +35,7 @@ import static jdk.nashorn.internal.objects.ArrayBufferView.buffer;
  * @author Windows
  */
 public class ViewLogin extends javax.swing.JFrame {
+    ViewSelecao enviaLogin;
 
     /**
      * Creates new form ViewLogin
@@ -192,15 +193,18 @@ public class ViewLogin extends javax.swing.JFrame {
            
            String loginSalvo = Global.lerArquivo(caminho,0);
            String senhaSalva = Global.lerArquivo(caminho,1);
-           String personagemSelecionado = Global.lerArquivo(caminho,3);
-           
            
            if((txtLogin.getText().toUpperCase().equals(loginSalvo)) && senha.toUpperCase().equals(senhaSalva)){  
-            if(personagemSelecionado == null) {   
-            ViewSelecao tela = new ViewSelecao();
-            tela.setVisible(true);
-            this.setVisible(false);
+            if (enviaLogin == null) {
+                enviaLogin = new ViewSelecao();
+                enviaLogin.setVisible(true);
+                enviaLogin.recebendo(loginSalvo);
+            } else {
+                enviaLogin.setVisible(true);
+                enviaLogin.setState(ViewSelecao.NORMAL);
+                enviaLogin.recebendo(loginSalvo);
             }
+            this.setVisible(false);
           } else {
            CaixaDeDialogo.obterinstancia().exibirMensagem("Usuário ou senha inválidos!", "Atenção",'a');
            return;
