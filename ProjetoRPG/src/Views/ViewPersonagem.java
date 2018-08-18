@@ -88,6 +88,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         MenuLoja = new javax.swing.JMenu();
         MenuLojaP = new javax.swing.JMenuItem();
+        IMAdquirirPratas = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -224,6 +225,14 @@ public class ViewPersonagem extends javax.swing.JFrame {
             }
         });
         MenuLoja.add(MenuLojaP);
+
+        IMAdquirirPratas.setText("Adquirir Pratas");
+        IMAdquirirPratas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IMAdquirirPratasActionPerformed(evt);
+            }
+        });
+        MenuLoja.add(IMAdquirirPratas);
 
         jMenuBar1.add(MenuLoja);
 
@@ -418,6 +427,13 @@ public class ViewPersonagem extends javax.swing.JFrame {
         telaLoja.setVisible(true);
     }//GEN-LAST:event_MenuLojaPActionPerformed
 
+    private void IMAdquirirPratasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IMAdquirirPratasActionPerformed
+        // TODO add your handling code here:
+        ViewCompra telaCompra = new ViewCompra(this, true);
+        telaCompra.setLocationRelativeTo(null);
+        telaCompra.setVisible(true);
+    }//GEN-LAST:event_IMAdquirirPratasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -451,6 +467,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
       }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem IMAdquirirPratas;
     private javax.swing.JMenu MenuLoja;
     private javax.swing.JMenuItem MenuLojaP;
     private javax.swing.JButton btnBau;
