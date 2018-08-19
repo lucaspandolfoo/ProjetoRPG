@@ -53,6 +53,9 @@ public class ViewConfronto extends javax.swing.JFrame {
         limparLabels();
         this.personagem = personagemEscolhido;
         this.getContentPane().setBackground(ViewPersonagem.pegaCor()); 
+        JrSkill1.setBackground(ViewPersonagem.pegaCor());
+        JrSkill2.setBackground(ViewPersonagem.pegaCor());
+        JrSkill3.setBackground(ViewPersonagem.pegaCor());
         skillsPersonagem(); //Mostra as skills dos personagens
         mostrarPersonagem(); //Preenche os dados do personagem
         vidaMaximaPersonagem = personagem.getVida();
