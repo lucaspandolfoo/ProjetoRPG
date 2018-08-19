@@ -437,7 +437,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBauActionPerformed
 
     private void menuConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConfiguracoesActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
     }//GEN-LAST:event_menuConfiguracoesActionPerformed
 
     private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
