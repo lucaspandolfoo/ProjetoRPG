@@ -90,9 +90,11 @@ public class ViewPersonagem extends javax.swing.JFrame {
         lblPratas = new javax.swing.JLabel();
         txtMoedasP1 = new javax.swing.JLabel();
         btnPocaoVida = new javax.swing.JButton();
-        btnPocaoAtaque = new javax.swing.JButton();
+        btnPocaoExp = new javax.swing.JButton();
         txtPocaoAtaque = new javax.swing.JTextField();
         txtPocaoVida = new javax.swing.JTextField();
+        btnPocaoAtaque1 = new javax.swing.JButton();
+        txtPocaoExp = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         menuConfiguracoes = new javax.swing.JMenuItem();
@@ -213,11 +215,11 @@ public class ViewPersonagem extends javax.swing.JFrame {
             }
         });
 
-        btnPocaoAtaque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pocaoAtaque30.png"))); // NOI18N
-        btnPocaoAtaque.setText("Poção Ataque:");
-        btnPocaoAtaque.addActionListener(new java.awt.event.ActionListener() {
+        btnPocaoExp.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pocaoExp30.png"))); // NOI18N
+        btnPocaoExp.setText("Poção Exp:");
+        btnPocaoExp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPocaoAtaqueActionPerformed(evt);
+                btnPocaoExpActionPerformed(evt);
             }
         });
 
@@ -227,6 +229,22 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtPocaoVida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPocaoVidaActionPerformed(evt);
+            }
+        });
+
+        btnPocaoAtaque1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pocaoAtaque30.png"))); // NOI18N
+        btnPocaoAtaque1.setText("Poção Ataque:");
+        btnPocaoAtaque1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPocaoAtaque1ActionPerformed(evt);
+            }
+        });
+
+        txtPocaoExp.setEditable(false);
+        txtPocaoExp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtPocaoExp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPocaoExpActionPerformed(evt);
             }
         });
 
@@ -365,13 +383,15 @@ public class ViewPersonagem extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnCampoBatalha))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnPocaoAtaque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnPocaoVida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btnPocaoExp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnPocaoVida, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnPocaoAtaque1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtPocaoAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPocaoVida, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(txtPocaoVida, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPocaoExp, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(22, 22, 22))
         );
@@ -379,51 +399,58 @@ public class ViewPersonagem extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTelaPersonagem)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNomeP)
-                            .addComponent(txtNomeP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtClasseP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblClasseP))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblNivelP)
-                            .addComponent(txtNivelP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblAtaqueP)
-                            .addComponent(txtAtaqueP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblTelaPersonagem)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblVidaP)
-                            .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblNomeP)
+                                    .addComponent(txtNomeP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(txtClasseP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblClasseP))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblNivelP)
+                                    .addComponent(txtNivelP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(lblAtaqueP)
+                                    .addComponent(txtAtaqueP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblVidaP)
+                                    .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnBau)
+                                .addGap(20, 20, 20)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtMoedasP, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblMoedas))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(lblPratas)
+                                    .addComponent(txtMoedasP1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPocaoVida, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPocaoVida))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtPocaoAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPocaoAtaque1))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPocaoExp))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBau)
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtMoedasP, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblMoedas))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblPratas)
-                            .addComponent(txtMoedasP1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPocaoVida)
-                    .addComponent(txtPocaoVida, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnPocaoAtaque)
-                    .addComponent(txtPocaoAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(81, 81, 81)
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(txtPocaoExp, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar)
                     .addComponent(btnCampoBatalha))
@@ -539,17 +566,17 @@ public class ViewPersonagem extends javax.swing.JFrame {
         telaSobre.setVisible(true);
     }//GEN-LAST:event_IMSobreJogoActionPerformed
 
-    private void btnPocaoAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocaoAtaqueActionPerformed
+    private void btnPocaoExpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocaoExpActionPerformed
         // TODO add your handling code here:
-        if (personagem.getPataque() > 0) {
-            personagem.setAtaque(personagem.getAtaque() + 100);
-            personagem.setPataque(personagem.getPataque() -1);
-            mostrarPersonagem();        
+        if (personagem.getPexp() > 0) {
+            personagem.setNivel(personagem.getNivel() + 1);
+            personagem.setPexp(personagem.getPexp() -1);
+            mostrarPersonagem();
         }else {
-            CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Poções de Ataque!","Atenção",'i');
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Poções de EXP!","Atenção",'i');
         }
     
-    }//GEN-LAST:event_btnPocaoAtaqueActionPerformed
+    }//GEN-LAST:event_btnPocaoExpActionPerformed
 
     private void btnPocaoVidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocaoVidaActionPerformed
         // TODO add your handling code here:
@@ -565,6 +592,14 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private void txtPocaoVidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPocaoVidaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPocaoVidaActionPerformed
+
+    private void btnPocaoAtaque1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocaoAtaque1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPocaoAtaque1ActionPerformed
+
+    private void txtPocaoExpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPocaoExpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPocaoExpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -583,6 +618,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtMoedasP1.setText(String.valueOf(personagem.getPratas()));
         txtPocaoVida.setText(String.valueOf(personagem.getPvida()));
         txtPocaoAtaque.setText(String.valueOf(personagem.getPataque()));
+        txtPocaoExp.setText(String.valueOf(personagem.getPexp()));
     }
       
     private void tempoVida() {
@@ -615,7 +651,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuLojaP;
     private javax.swing.JButton btnBau;
     private javax.swing.JButton btnCampoBatalha;
-    private javax.swing.JButton btnPocaoAtaque;
+    private javax.swing.JButton btnPocaoAtaque1;
+    private javax.swing.JButton btnPocaoExp;
     private javax.swing.JButton btnPocaoVida;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JMenu jMenu1;
@@ -647,6 +684,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JLabel txtNivelP;
     private javax.swing.JLabel txtNomeP;
     private javax.swing.JTextField txtPocaoAtaque;
+    private javax.swing.JTextField txtPocaoExp;
     private javax.swing.JTextField txtPocaoVida;
     private javax.swing.JLabel txtVidaP;
     // End of variables declaration//GEN-END:variables

@@ -241,14 +241,16 @@
                               <Component id="btnCampoBatalha" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="btnPocaoAtaque" max="32767" attributes="0"/>
-                                  <Component id="btnPocaoVida" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="btnPocaoExp" max="32767" attributes="0"/>
+                                  <Component id="btnPocaoVida" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnPocaoAtaque1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="txtPocaoAtaque" min="-2" pref="37" max="-2" attributes="0"/>
                                   <Component id="txtPocaoVida" min="-2" pref="37" max="-2" attributes="0"/>
+                                  <Component id="txtPocaoExp" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -262,64 +264,74 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Component id="lblTelaPersonagem" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-              <Component id="jSeparator1" min="-2" pref="21" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblImagemP" alignment="0" min="-2" pref="189" max="-2" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblNomeP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNomeP" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="txtClasseP" min="-2" pref="24" max="-2" attributes="0"/>
-                          <Component id="lblClasseP" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblNivelP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtNivelP" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblAtaqueP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtAtaqueP" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="lblTelaPersonagem" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSeparator1" min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblVidaP" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtVidaP" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
+                          <Component id="lblImagemP" alignment="0" min="-2" pref="189" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblNomeP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNomeP" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="txtClasseP" min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Component id="lblClasseP" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblNivelP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtNivelP" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblAtaqueP" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtAtaqueP" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblVidaP" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtVidaP" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="btnBau" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txtMoedasP" min="-2" pref="23" max="-2" attributes="0"/>
+                                  <Component id="lblMoedas" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="lblPratas" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtMoedasP1" min="-2" pref="23" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnBau" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="txtMoedasP" min="-2" pref="23" max="-2" attributes="0"/>
-                          <Component id="lblMoedas" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPocaoVida" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="btnPocaoVida" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="lblPratas" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtMoedasP1" min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtPocaoAtaque" min="-2" pref="39" max="-2" attributes="0"/>
+                          <Component id="btnPocaoAtaque1" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btnPocaoExp" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="txtPocaoExp" min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="83" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnPocaoVida" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPocaoVida" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnPocaoAtaque" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtPocaoAtaque" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnCampoBatalha" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -539,15 +551,15 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPocaoVidaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnPocaoAtaque">
+    <Component class="javax.swing.JButton" name="btnPocaoExp">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/icones/pocaoAtaque30.png"/>
+          <Image iconType="3" name="/icones/pocaoExp30.png"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Po&#xe7;&#xe3;o Ataque:"/>
+        <Property name="text" type="java.lang.String" value="Po&#xe7;&#xe3;o Exp:"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPocaoAtaqueActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPocaoExpActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtPocaoAtaque">
@@ -565,6 +577,28 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPocaoVidaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnPocaoAtaque1">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/icones/pocaoAtaque30.png"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Po&#xe7;&#xe3;o Ataque:"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPocaoAtaque1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txtPocaoExp">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtPocaoExpActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
