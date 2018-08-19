@@ -33,12 +33,15 @@ public class ViewPersonagem extends javax.swing.JFrame {
      Random gerador = new Random();
      DecimalFormat df = new DecimalFormat("0.00");
      public static Color color;
+     
 
     /**
      * Creates new form ViewPersonagem
      */
     public ViewPersonagem(Personagem personagemEscolhido) {
         initComponents();
+       txtPocaoVida.setEditable(false);
+       txtPocaoAtaque.setEditable(false);
         if (color == null) {
         color = Color.WHITE;
         }
@@ -48,6 +51,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         mostrarPersonagem();
         if (personagem.getVida() == 0) {
         tempoVida();
+       
         }
     }
     /**
@@ -217,6 +221,9 @@ public class ViewPersonagem extends javax.swing.JFrame {
             }
         });
 
+        txtPocaoAtaque.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        txtPocaoVida.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtPocaoVida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPocaoVidaActionPerformed(evt);
@@ -408,7 +415,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblPratas)
                             .addComponent(txtMoedasP1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPocaoVida)
                     .addComponent(txtPocaoVida, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
