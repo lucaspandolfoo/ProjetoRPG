@@ -259,6 +259,11 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
         IMSobreJogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/game-controller.png"))); // NOI18N
         IMSobreJogo.setText("Sobre o Jogo");
+        IMSobreJogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IMSobreJogoActionPerformed(evt);
+            }
+        });
         jMenu6.add(IMSobreJogo);
 
         jMenuBar1.add(jMenu6);
@@ -464,6 +469,13 @@ public class ViewPersonagem extends javax.swing.JFrame {
         this.setVisible(false);
         this.setVisible(true);
     }//GEN-LAST:event_IMTelaPersonagemActionPerformed
+
+    private void IMSobreJogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IMSobreJogoActionPerformed
+        // TODO add your handling code here:
+        ViewSobre telaSobre = new ViewSobre(this, true);
+        telaSobre.setLocationRelativeTo(null);
+        telaSobre.setVisible(true);
+    }//GEN-LAST:event_IMSobreJogoActionPerformed
 
     /**
      * @param args the command line arguments
