@@ -94,7 +94,7 @@ public class ViewLoja extends javax.swing.JFrame {
         lblPocaoExp.setText("Poção de Exp");
 
         btnComprarExpM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/coins.png"))); // NOI18N
-        btnComprarExpM.setText("$ 600");
+        btnComprarExpM.setText("$ 1000");
         btnComprarExpM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnComprarExpMActionPerformed(evt);
@@ -468,8 +468,8 @@ public class ViewLoja extends javax.swing.JFrame {
 
     private void btnComprarExpMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarExpMActionPerformed
         // TODO add your handling code here:
-         if (personagem.getMoedas() >= 350){
-             personagem.setMoedas(personagem.getMoedas() - 350);
+         if (personagem.getMoedas() >= 1000){
+             personagem.setMoedas(personagem.getMoedas() - 1000);
              personagem.setPexp(personagem.getPexp() + 1);      
              mostrarMoedasLoja();
             
