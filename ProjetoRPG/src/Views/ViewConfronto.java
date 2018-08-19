@@ -52,7 +52,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         initComponents();
         limparLabels();
         this.personagem = personagemEscolhido;
-        this.getContentPane().setBackground(Color.WHITE); 
+        this.getContentPane().setBackground(ViewPersonagem.pegaCor()); 
         skillsPersonagem(); //Mostra as skills dos personagens
         mostrarPersonagem(); //Preenche os dados do personagem
         vidaMaximaPersonagem = personagem.getVida();

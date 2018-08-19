@@ -518,6 +518,10 @@ public class ViewPersonagem extends javax.swing.JFrame {
         });
         tempo.start();
       }
+    
+    public static Color pegaCor() {
+        return color;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem IMAdquirirPratas;
