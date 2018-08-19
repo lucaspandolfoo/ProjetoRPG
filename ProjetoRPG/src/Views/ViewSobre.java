@@ -19,7 +19,7 @@ public class ViewSobre extends javax.swing.JDialog {
     public ViewSobre(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        this.getContentPane().setBackground(Color.WHITE); 
+        this.getContentPane().setBackground(ViewPersonagem.pegaCor());
     }
 
     /**
