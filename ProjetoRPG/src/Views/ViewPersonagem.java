@@ -7,6 +7,7 @@ package Views;
 
 import static Views.ViewConfronto.ataque;
 import static Views.ViewConfronto.tempo;
+import static Views.ViewPersonagem.color;
 import ferramentas.CaixaDeDialogo;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -16,6 +17,9 @@ import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javafx.scene.paint.Color.color;
+import javax.swing.JColorChooser;
+import javax.swing.JFrame;
 import javax.swing.Timer;
 import modelo.Personagem;
 
@@ -28,13 +32,17 @@ public class ViewPersonagem extends javax.swing.JFrame {
      int vez =0;
      Random gerador = new Random();
      DecimalFormat df = new DecimalFormat("0.00");
+     public static Color color;
 
     /**
      * Creates new form ViewPersonagem
      */
     public ViewPersonagem(Personagem personagemEscolhido) {
         initComponents();
-        this.getContentPane().setBackground(Color.WHITE); 
+        if (color == null) {
+        color = Color.WHITE;
+        }
+        this.getContentPane().setBackground(color);
         this.personagem = personagemEscolhido;
         lblImagemP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/personagens/"+personagem.getClasse().toLowerCase()+".png")));
         mostrarPersonagem();
@@ -42,11 +50,6 @@ public class ViewPersonagem extends javax.swing.JFrame {
         tempoVida();
         }
     }
-
-    private ViewPersonagem() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -438,6 +441,13 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
     private void menuConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConfiguracoesActionPerformed
         // TODO add your handling code here: 
+            color= JColorChooser.showDialog(null, "Coge uno", color);
+            if(color==null) {
+               color=(Color.WHITE);
+            } else {
+              this.getContentPane().setBackground(color);
+            }
+
     }//GEN-LAST:event_menuConfiguracoesActionPerformed
 
     private void menuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSairActionPerformed
