@@ -35,6 +35,11 @@
         <Property name="text" type="java.lang.String" value="jMenuItem4"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JMenuItem" name="jMenuItem2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jMenuItem2"/>
+      </Properties>
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -53,6 +58,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="menuConfiguracoes">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/settings.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Configura&#xe7;&#xf5;es"/>
               </Properties>
               <Events>
@@ -61,6 +69,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuSair">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/sign-error.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Sair do Jogo"/>
               </Properties>
               <Events>
@@ -73,6 +84,19 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Personagem"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="IMTelaPersonagem">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/dependable.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Tela do Personagem"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IMTelaPersonagemActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="MenuLoja">
           <Properties>
@@ -81,6 +105,9 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="MenuLojaP">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/online-store.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ir para Loja"/>
               </Properties>
               <Events>
@@ -89,6 +116,9 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="IMAdquirirPratas">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/bank.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Adquirir Pratas"/>
               </Properties>
               <Events>
@@ -101,6 +131,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Sobre"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="IMSobreJogo">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/icones/game-controller.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Sobre o Jogo"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>

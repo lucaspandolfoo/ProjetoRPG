@@ -61,6 +61,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         btnVoltar = new javax.swing.JButton();
         btnCampoBatalha = new javax.swing.JButton();
         txtNivelP = new javax.swing.JLabel();
@@ -86,10 +87,12 @@ public class ViewPersonagem extends javax.swing.JFrame {
         menuConfiguracoes = new javax.swing.JMenuItem();
         menuSair = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        IMTelaPersonagem = new javax.swing.JMenuItem();
         MenuLoja = new javax.swing.JMenu();
         MenuLojaP = new javax.swing.JMenuItem();
         IMAdquirirPratas = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
+        IMSobreJogo = new javax.swing.JMenuItem();
 
         jMenu1.setText("jMenu1");
 
@@ -100,6 +103,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
         jMenuItem3.setText("jMenuItem3");
 
         jMenuItem4.setText("jMenuItem4");
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela do Personagem");
@@ -195,6 +200,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
         jMenu2.setText("Jogo");
 
+        menuConfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/settings.png"))); // NOI18N
         menuConfiguracoes.setText("Configurações");
         menuConfiguracoes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,6 +209,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         });
         jMenu2.add(menuConfiguracoes);
 
+        menuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/sign-error.png"))); // NOI18N
         menuSair.setText("Sair do Jogo");
         menuSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,10 +221,21 @@ public class ViewPersonagem extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Personagem");
+
+        IMTelaPersonagem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/dependable.png"))); // NOI18N
+        IMTelaPersonagem.setText("Tela do Personagem");
+        IMTelaPersonagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IMTelaPersonagemActionPerformed(evt);
+            }
+        });
+        jMenu3.add(IMTelaPersonagem);
+
         jMenuBar1.add(jMenu3);
 
         MenuLoja.setText("Loja");
 
+        MenuLojaP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/online-store.png"))); // NOI18N
         MenuLojaP.setText("Ir para Loja");
         MenuLojaP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,6 +244,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         });
         MenuLoja.add(MenuLojaP);
 
+        IMAdquirirPratas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/bank.png"))); // NOI18N
         IMAdquirirPratas.setText("Adquirir Pratas");
         IMAdquirirPratas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,6 +256,11 @@ public class ViewPersonagem extends javax.swing.JFrame {
         jMenuBar1.add(MenuLoja);
 
         jMenu6.setText("Sobre");
+
+        IMSobreJogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/game-controller.png"))); // NOI18N
+        IMSobreJogo.setText("Sobre o Jogo");
+        jMenu6.add(IMSobreJogo);
+
         jMenuBar1.add(jMenu6);
 
         setJMenuBar(jMenuBar1);
@@ -425,6 +449,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         // TODO add your handling code here:
         ViewLoja telaLoja = new ViewLoja((personagem));
         telaLoja.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_MenuLojaPActionPerformed
 
     private void IMAdquirirPratasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IMAdquirirPratasActionPerformed
@@ -433,6 +458,12 @@ public class ViewPersonagem extends javax.swing.JFrame {
         telaCompra.setLocationRelativeTo(null);
         telaCompra.setVisible(true);
     }//GEN-LAST:event_IMAdquirirPratasActionPerformed
+
+    private void IMTelaPersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IMTelaPersonagemActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_IMTelaPersonagemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -468,6 +499,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem IMAdquirirPratas;
+    private javax.swing.JMenuItem IMSobreJogo;
+    private javax.swing.JMenuItem IMTelaPersonagem;
     private javax.swing.JMenu MenuLoja;
     private javax.swing.JMenuItem MenuLojaP;
     private javax.swing.JButton btnBau;
@@ -480,6 +513,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JSeparator jSeparator1;

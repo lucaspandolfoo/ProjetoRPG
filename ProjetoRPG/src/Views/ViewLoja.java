@@ -16,6 +16,7 @@ import java.text.DecimalFormat;
  */
 public class ViewLoja extends javax.swing.JFrame {
     Personagem personagem;
+    DecimalFormat df = new DecimalFormat("0.00");
 
     /**
      * Creates new form ViewLoja
@@ -66,6 +67,7 @@ public class ViewLoja extends javax.swing.JFrame {
         lblMoedasLoja = new javax.swing.JLabel();
         lblPratasLoja = new javax.swing.JLabel();
         txtPratasLoja = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela da Loja");
@@ -77,10 +79,10 @@ public class ViewLoja extends javax.swing.JFrame {
 
         lblTelaPersonagem.setFont(new java.awt.Font("Tahoma", 0, 40)); // NOI18N
         lblTelaPersonagem.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTelaPersonagem.setText("Tela da Loja");
+        lblTelaPersonagem.setText(" Loja");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Poções"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Poções"));
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -100,7 +102,7 @@ public class ViewLoja extends javax.swing.JFrame {
         lblImagemPocaoVida1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pocaoExp.png"))); // NOI18N
 
         btnComprarExpP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pratas.png"))); // NOI18N
-        btnComprarExpP.setText("$ 5");
+        btnComprarExpP.setText("$ 10");
         btnComprarExpP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnComprarExpPActionPerformed(evt);
@@ -366,13 +368,16 @@ public class ViewLoja extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(txtMoedasLoja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTelaPersonagem)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblMoedasLoja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtMoedasLoja, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -382,7 +387,7 @@ public class ViewLoja extends javax.swing.JFrame {
                     .addComponent(txtPratasLoja, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 153, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addComponent(btnSair1)
                 .addContainerGap())
         );
@@ -391,16 +396,12 @@ public class ViewLoja extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-     private void mostrarMoedasLoja() {
-    txtMoedasLoja.setText(String.valueOf((personagem.getMoedas())));
-    txtPratasLoja.setText(String.valueOf((personagem.getPratas())));
-     }
-    
     private void btnComprarExpPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprarExpPActionPerformed
         // TODO add your handling code here:
-         if (personagem.getPratas() >= 5){
-            personagem.setPratas(personagem.getPratas() - 5);
+         if (personagem.getPratas() >= 10){
+            personagem.setPratas(personagem.getPratas() - 10);
             personagem.setPexp(personagem.getPexp() + 1);
+            mostrarMoedasLoja();
             
             System.out.println("Pratas " + personagem.getPratas());
             System.out.println("Poções EXP: " + personagem.getPexp());
@@ -414,7 +415,8 @@ public class ViewLoja extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (personagem.getPratas() >= 2){
              personagem.setPratas(personagem.getPratas() - 2);
-             personagem.setPataque(personagem.getPataque() + 1);      
+             personagem.setPataque(personagem.getPataque() + 1);  
+             mostrarMoedasLoja();
             
              System.out.println("Pratas: " + personagem.getPratas());
              System.out.println("Poções Ataque: " + personagem.getPataque());
@@ -428,6 +430,7 @@ public class ViewLoja extends javax.swing.JFrame {
         if (personagem.getPratas() >= 2){
              personagem.setPratas(personagem.getPratas() - 2);
              personagem.setPvida(personagem.getPvida() + 1);      
+             mostrarMoedasLoja();
             
              System.out.println("Pratas: " + personagem.getPratas());
              System.out.println("Poções Vida: " + personagem.getPvida());
@@ -441,6 +444,7 @@ public class ViewLoja extends javax.swing.JFrame {
          if (personagem.getMoedas() >= 350){
              personagem.setMoedas(personagem.getMoedas() - 350);
              personagem.setPexp(personagem.getPexp() + 1);      
+             mostrarMoedasLoja();
             
              System.out.println("Moedas: " + personagem.getMoedas());
              System.out.println("Poções EXP: " + personagem.getPexp());
@@ -455,6 +459,7 @@ public class ViewLoja extends javax.swing.JFrame {
         if (personagem.getMoedas() >= 350){
              personagem.setMoedas(personagem.getMoedas() - 350);
              personagem.setPvida(personagem.getPvida() + 1);      
+             mostrarMoedasLoja();
             
              System.out.println("Moedas: " + personagem.getMoedas());
              System.out.println("Poções Vida: " + personagem.getPvida());
@@ -468,7 +473,8 @@ public class ViewLoja extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (personagem.getMoedas() >= 350){
              personagem.setMoedas(personagem.getMoedas() - 350);
-             personagem.setPataque(personagem.getPataque() + 1);      
+             personagem.setPataque(personagem.getPataque() + 1);  
+             mostrarMoedasLoja();
             
              System.out.println("Moedas: " + personagem.getMoedas());
              System.out.println("Poções Ataque: " + personagem.getPataque());
@@ -523,6 +529,10 @@ public class ViewLoja extends javax.swing.JFrame {
             }
         });
     }
+    private void mostrarMoedasLoja() {
+    txtMoedasLoja.setText(String.valueOf(df.format(personagem.getMoedas())));
+    txtPratasLoja.setText(String.valueOf(personagem.getPratas()));
+     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnComprarAtaqueM;
@@ -539,6 +549,7 @@ public class ViewLoja extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
