@@ -37,6 +37,7 @@ public class ViewSelecao extends javax.swing.JFrame {
         this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.getContentPane().setBackground(Color.WHITE); 
+        txtNome.grabFocus();
         
         //Atalho Enter para o botão Avançar
         atalhoBotaoAvancar();
