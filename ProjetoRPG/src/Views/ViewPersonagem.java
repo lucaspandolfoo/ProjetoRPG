@@ -85,6 +85,10 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtMoedasP = new javax.swing.JLabel();
         lblPratas = new javax.swing.JLabel();
         txtMoedasP1 = new javax.swing.JLabel();
+        btnPocaoVida = new javax.swing.JButton();
+        btnPocaoAtaque = new javax.swing.JButton();
+        txtPocaoAtaque = new javax.swing.JTextField();
+        txtPocaoVida = new javax.swing.JTextField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         menuConfiguracoes = new javax.swing.JMenuItem();
@@ -196,6 +200,28 @@ public class ViewPersonagem extends javax.swing.JFrame {
         lblPratas.setText("Pratas:");
 
         txtMoedasP1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+
+        btnPocaoVida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/PocaoVida30.png"))); // NOI18N
+        btnPocaoVida.setText("Poção Vida:");
+        btnPocaoVida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPocaoVidaActionPerformed(evt);
+            }
+        });
+
+        btnPocaoAtaque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pocaoAtaque30.png"))); // NOI18N
+        btnPocaoAtaque.setText("Poção Ataque:");
+        btnPocaoAtaque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPocaoAtaqueActionPerformed(evt);
+            }
+        });
+
+        txtPocaoVida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtPocaoVidaActionPerformed(evt);
+            }
+        });
 
         jMenuBar1.setBackground(new java.awt.Color(204, 204, 204));
         jMenuBar1.setToolTipText("");
@@ -313,11 +339,6 @@ public class ViewPersonagem extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(btnVoltar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCampoBatalha))
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -328,7 +349,23 @@ public class ViewPersonagem extends javax.swing.JFrame {
                                 .addComponent(lblPratas)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtMoedasP1, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(10, 10, 10)))
+                        .addGap(10, 10, 10))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnVoltar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnCampoBatalha))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(btnPocaoAtaque, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnPocaoVida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtPocaoAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtPocaoVida, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
@@ -371,7 +408,15 @@ public class ViewPersonagem extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblPratas)
                             .addComponent(txtMoedasP1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPocaoVida)
+                    .addComponent(txtPocaoVida, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPocaoAtaque)
+                    .addComponent(txtPocaoAtaque, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(81, 81, 81)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar)
                     .addComponent(btnCampoBatalha))
@@ -487,9 +532,39 @@ public class ViewPersonagem extends javax.swing.JFrame {
         telaSobre.setVisible(true);
     }//GEN-LAST:event_IMSobreJogoActionPerformed
 
+    private void btnPocaoAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocaoAtaqueActionPerformed
+        // TODO add your handling code here:
+        if (personagem.getPataque() > 0) {
+            personagem.setAtaque(personagem.getAtaque() + 100);
+            personagem.setPataque(personagem.getPataque() -1);
+            mostrarPersonagem();        
+        }else {
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Poções de Ataque!","Atenção",'i');
+        }
+    
+    }//GEN-LAST:event_btnPocaoAtaqueActionPerformed
+
+    private void btnPocaoVidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocaoVidaActionPerformed
+        // TODO add your handling code here:
+        if (personagem.getPvida() > 0) {
+            personagem.setVida(personagem.getVida() + 100);
+            personagem.setPvida(personagem.getPvida() -1);
+            mostrarPersonagem();            
+        }else {
+            CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Poções de Vida!","Atenção",'i');
+        }
+    }//GEN-LAST:event_btnPocaoVidaActionPerformed
+
+    private void txtPocaoVidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPocaoVidaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPocaoVidaActionPerformed
+
     /**
      * @param args the command line arguments
      */
+    
+        
+        
     
       private void mostrarPersonagem() {
         txtNomeP.setText(personagem.getNome());
@@ -499,6 +574,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtVidaP.setText(String.valueOf(personagem.getVida()) + "/" + String.valueOf(personagem.getVida()));
         txtMoedasP.setText(String.valueOf(df.format(personagem.getMoedas())));
         txtMoedasP1.setText(String.valueOf(personagem.getPratas()));
+        txtPocaoVida.setText(String.valueOf(personagem.getPvida()));
+        txtPocaoAtaque.setText(String.valueOf(personagem.getPataque()));
     }
       
     private void tempoVida() {
@@ -531,6 +608,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuLojaP;
     private javax.swing.JButton btnBau;
     private javax.swing.JButton btnCampoBatalha;
+    private javax.swing.JButton btnPocaoAtaque;
+    private javax.swing.JButton btnPocaoVida;
     private javax.swing.JButton btnVoltar;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -560,6 +639,8 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JLabel txtMoedasP1;
     private javax.swing.JLabel txtNivelP;
     private javax.swing.JLabel txtNomeP;
+    private javax.swing.JTextField txtPocaoAtaque;
+    private javax.swing.JTextField txtPocaoVida;
     private javax.swing.JLabel txtVidaP;
     // End of variables declaration//GEN-END:variables
 }
