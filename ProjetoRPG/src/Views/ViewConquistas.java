@@ -5,18 +5,44 @@
  */
 package Views;
 
+import modelo.Personagem;
+
 /**
  *
  * @author Lucas
  */
 public class ViewConquistas extends javax.swing.JDialog {
+   Personagem personagem;
 
     /**
      * Creates new form ViewConquistas
      */
-    public ViewConquistas(java.awt.Frame parent, boolean modal) {
+    public ViewConquistas(java.awt.Frame parent, boolean modal, Personagem personagem) {
         super(parent, modal);
         initComponents();
+        this.personagem = personagem;
+        lblVitorias10.setText(personagem.getVitorias() + "/10");
+        lblVitorias30.setText(personagem.getVitorias() + "/30");
+        lblVitorias50.setText(personagem.getVitorias() + "/50");
+        this.getContentPane().setBackground(ViewPersonagem.pegaCor()); 
+        
+        if (personagem.getVitorias() >=10) {
+          lblMedalha10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/10vitorias.png")));
+        } else {
+          lblMedalha10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/10vitoriasp.png")));
+        }
+        
+         if (personagem.getVitorias() >=30) {
+          lblMedalha30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/30vitorias.png")));
+        } else {
+          lblMedalha30.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/30vitoriasp.png")));
+        }
+         
+          if (personagem.getVitorias() >=50) {
+          lblMedalha50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/50vitorias.png")));
+        } else {
+          lblMedalha50.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/50vitoriasp.png")));
+        }
     }
 
     /**
@@ -30,15 +56,18 @@ public class ViewConquistas extends javax.swing.JDialog {
 
         jLabel1 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lblMedalha50 = new javax.swing.JLabel();
+        lblMedalha10 = new javax.swing.JLabel();
+        lblMedalha30 = new javax.swing.JLabel();
+        lblAmeacador = new javax.swing.JLabel();
+        lblImortal = new javax.swing.JLabel();
+        lblVingativo = new javax.swing.JLabel();
+        lblProgresso30 = new javax.swing.JLabel();
+        lblProgresso50 = new javax.swing.JLabel();
+        lblProgresso10 = new javax.swing.JLabel();
+        lblVitorias30 = new javax.swing.JLabel();
+        lblVitorias10 = new javax.swing.JLabel();
+        lblVitorias50 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Tela de Conquistas");
@@ -47,66 +76,76 @@ public class ViewConquistas extends javax.swing.JDialog {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Conquistas");
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/50vitorias.png"))); // NOI18N
+        lblMedalha50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/10vitorias.png"))); // NOI18N
+        lblMedalha10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/30vitorias.png"))); // NOI18N
+        lblMedalha30.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Ameaçador - 10 vitórias");
+        lblAmeacador.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblAmeacador.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblAmeacador.setText("Ameaçador - 10 vitórias");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel6.setText("Imortal - 50 vitórias");
+        lblImortal.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblImortal.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lblImortal.setText("Imortal - 50 vitórias");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Vingativo - 30 vitórias");
+        lblVingativo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        lblVingativo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblVingativo.setText("Vingativo - 30 vitórias");
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("Progresso:");
+        lblProgresso30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblProgresso30.setText("Progresso:");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel9.setText("Progresso:");
+        lblProgresso50.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblProgresso50.setText("Progresso:");
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("Progresso:");
+        lblProgresso10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblProgresso10.setText("Progresso:");
+
+        lblVitorias30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        lblVitorias10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+
+        lblVitorias50.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jSeparator1)
             .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblMedalha10, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMedalha30, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblMedalha50, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(lblAmeacador, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblVingativo, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblProgresso30)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblVitorias30, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblProgresso50, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblVitorias50, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lblImortal, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblProgresso10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblVitorias10, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,27 +154,33 @@ public class ViewConquistas extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblAmeacador, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10)))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblProgresso10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblVitorias10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(lblMedalha10, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                    .addComponent(lblMedalha30)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblVingativo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblProgresso30)
+                            .addComponent(lblVitorias30, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblMedalha50)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblImortal, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblProgresso50)
+                            .addComponent(lblVitorias50, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(41, 41, 41))
         );
 
@@ -173,7 +218,7 @@ public class ViewConquistas extends javax.swing.JDialog {
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ViewConquistas dialog = new ViewConquistas(new javax.swing.JFrame(), true);
+                ViewConquistas dialog = new ViewConquistas(new javax.swing.JFrame(), true, null);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -187,15 +232,18 @@ public class ViewConquistas extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblAmeacador;
+    private javax.swing.JLabel lblImortal;
+    private javax.swing.JLabel lblMedalha10;
+    private javax.swing.JLabel lblMedalha30;
+    private javax.swing.JLabel lblMedalha50;
+    private javax.swing.JLabel lblProgresso10;
+    private javax.swing.JLabel lblProgresso30;
+    private javax.swing.JLabel lblProgresso50;
+    private javax.swing.JLabel lblVingativo;
+    private javax.swing.JLabel lblVitorias10;
+    private javax.swing.JLabel lblVitorias30;
+    private javax.swing.JLabel lblVitorias50;
     // End of variables declaration//GEN-END:variables
 }

@@ -23,7 +23,8 @@ public class Personagem {
     private int pvida;
     private int pataque;
     private int pexp;
-
+    private int vitorias;
+    
     public int getPvida() {
         return pvida;
     }
@@ -120,8 +121,14 @@ public class Personagem {
     public void setExperiencia(int experiencia) {
         this.experiencia = experiencia;
     }
-    
-    
+
+    public int getVitorias() {
+        return vitorias;
+    }
+
+    public void setVitorias(int vitorias) {
+        this.vitorias = vitorias;
+    }
     
     public String toString() {
         return

@@ -538,6 +538,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         personagem.setExperiencia(personagem.getExperiencia()+150);
         upaNivel(personagem.getExperiencia());
         vidaMaximaPersonagem = personagem.getVida();
+        personagem.setVitorias(personagem.getVitorias()+1);
         mostrarPersonagem(); //Mostra o personagem com a vida atualizada
         vidaMenor200(); //Valida se o personagem não ficou com a vida menor que 200
         gerarOponente();

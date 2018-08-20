@@ -638,7 +638,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
     private void IMConquistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IMConquistasActionPerformed
         // TODO add your handling code here:
-        ViewConquistas telaConquistas = new ViewConquistas(this, true);
+        ViewConquistas telaConquistas = new ViewConquistas(this, true, personagem);
         telaConquistas.setLocationRelativeTo(null);
         telaConquistas.setVisible(true);
         
