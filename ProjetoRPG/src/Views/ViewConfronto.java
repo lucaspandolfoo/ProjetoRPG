@@ -113,7 +113,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         prbVidaOponente = new javax.swing.JProgressBar();
         prbVidaPersonagem = new javax.swing.JProgressBar();
-        jLabel2 = new javax.swing.JLabel();
+        lblExperiencia = new javax.swing.JLabel();
         prbExperiencia = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -264,8 +264,9 @@ public class ViewConfronto extends javax.swing.JFrame {
         prbVidaPersonagem.setMaximum(0);
         prbVidaPersonagem.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Experiência:");
+        lblExperiencia.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblExperiencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/statistics.png"))); // NOI18N
+        lblExperiencia.setText("Experiência:");
 
         prbExperiencia.setBackground(new java.awt.Color(255, 255, 255));
         prbExperiencia.setForeground(new java.awt.Color(153, 0, 153));
@@ -354,7 +355,7 @@ public class ViewConfronto extends javax.swing.JFrame {
                                         .addGap(1, 1, 1)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(prbExperiencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                            .addComponent(lblExperiencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(lblImagemP, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(46, 46, 46)
@@ -428,7 +429,7 @@ public class ViewConfronto extends javax.swing.JFrame {
                                     .addComponent(lblVidaP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(prbVidaPersonagem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel2)
+                                .addComponent(lblExperiencia)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(prbExperiencia, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 6, Short.MAX_VALUE))
@@ -905,7 +906,6 @@ public class ViewConfronto extends javax.swing.JFrame {
     private javax.swing.JButton btnDuelo;
     private javax.swing.JButton btnSair;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAtaqueB;
     private javax.swing.JLabel lblAtaqueP;
@@ -913,6 +913,7 @@ public class ViewConfronto extends javax.swing.JFrame {
     private javax.swing.JLabel lblAtkPersonagem;
     private javax.swing.JLabel lblBatalha;
     private javax.swing.JLabel lblClasseP;
+    private javax.swing.JLabel lblExperiencia;
     private javax.swing.JLabel lblImagemB;
     private javax.swing.JLabel lblImagemP;
     private javax.swing.JLabel lblNivelP;

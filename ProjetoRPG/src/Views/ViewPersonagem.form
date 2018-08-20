@@ -251,7 +251,7 @@
                               <Component id="txtClasseP" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblExperiencia" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Component id="prbExperiencia" max="32767" attributes="0"/>
@@ -305,7 +305,7 @@
                                   <Component id="txtVidaP" alignment="0" min="-2" pref="24" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblExperiencia" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="prbExperiencia" min="-2" pref="22" max="-2" attributes="0"/>
                           </Group>
@@ -323,7 +323,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="39" max="32767" attributes="0"/>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="txtPocaoVida" min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="btnPocaoVida" min="-2" max="-2" attributes="0"/>
@@ -605,10 +605,13 @@
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lblExperiencia">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="0"/>
+        </Property>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/icones/statistics.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Experi&#xea;ncia:"/>
       </Properties>

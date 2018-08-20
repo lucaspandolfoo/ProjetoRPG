@@ -96,7 +96,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtPocaoVida = new javax.swing.JTextField();
         btnPocaoAtaque = new javax.swing.JButton();
         txtPocaoExp = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        lblExperiencia = new javax.swing.JLabel();
         prbExperiencia = new javax.swing.JProgressBar();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
@@ -241,8 +241,9 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtPocaoExp.setEditable(false);
         txtPocaoExp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Experiência:");
+        lblExperiencia.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblExperiencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/statistics.png"))); // NOI18N
+        lblExperiencia.setText("Experiência:");
 
         prbExperiencia.setBackground(new java.awt.Color(255, 255, 255));
         prbExperiencia.setForeground(new java.awt.Color(153, 0, 153));
@@ -389,7 +390,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtClasseP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
+                                .addComponent(lblExperiencia)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(prbExperiencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -432,7 +433,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
                                     .addComponent(lblVidaP)
                                     .addComponent(txtVidaP, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel1)
+                                .addComponent(lblExperiencia)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(prbExperiencia, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -445,7 +446,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(lblPratas)
                                     .addComponent(txtMoedasP1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtPocaoVida, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnPocaoVida))
@@ -782,7 +783,6 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JButton btnPocaoExp;
     private javax.swing.JButton btnPocaoVida;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -796,6 +796,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblAtaqueP;
     private javax.swing.JLabel lblClasseP;
+    private javax.swing.JLabel lblExperiencia;
     private javax.swing.JLabel lblImagemP;
     private javax.swing.JLabel lblMoedas;
     private javax.swing.JLabel lblNivelP;
