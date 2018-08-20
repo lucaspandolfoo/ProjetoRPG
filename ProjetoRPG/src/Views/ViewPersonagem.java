@@ -227,8 +227,10 @@ public class ViewPersonagem extends javax.swing.JFrame {
         });
 
         txtPocaoAtaque.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtPocaoAtaque.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         txtPocaoVida.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtPocaoVida.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         btnPocaoAtaque.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/pocaoAtaque30.png"))); // NOI18N
         btnPocaoAtaque.setText("Poção Ataque:");
@@ -240,6 +242,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
         txtPocaoExp.setEditable(false);
         txtPocaoExp.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtPocaoExp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         lblExperiencia.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblExperiencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/statistics.png"))); // NOI18N
