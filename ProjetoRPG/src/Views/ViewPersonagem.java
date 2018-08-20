@@ -532,7 +532,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
     private void menuConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuConfiguracoesActionPerformed
         // TODO add your handling code here: 
-            color= JColorChooser.showDialog(null, "Coge uno", color);
+            color= JColorChooser.showDialog(null, "Escolha uma cor", color);
             if(color==null) {
                color=(Color.WHITE);
             } else {

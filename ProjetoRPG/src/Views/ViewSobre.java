@@ -43,6 +43,7 @@ public class ViewSobre extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Sobre o Jogo");
 
         lblSobreJogo.setFont(new java.awt.Font("Tahoma", 0, 30)); // NOI18N
         lblSobreJogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
