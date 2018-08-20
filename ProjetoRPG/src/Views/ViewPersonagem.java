@@ -612,9 +612,6 @@ public class ViewPersonagem extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     
-        
-        
-    
       private void mostrarPersonagem() {
         txtNomeP.setText(personagem.getNome());
         txtClasseP.setText(personagem.getClasse());
@@ -626,6 +623,12 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtPocaoVida.setText(String.valueOf(personagem.getPvida()));
         txtPocaoAtaque.setText(String.valueOf(personagem.getPataque()));
         txtPocaoExp.setText(String.valueOf(personagem.getPexp()));
+        
+        prbExperiencia.setMaximum(20000);
+        prbExperiencia.setMinimum(0);
+        prbExperiencia.setValue(personagem.getExperiencia());
+        prbExperiencia.setStringPainted(true); 
+        prbExperiencia.setString(String.valueOf(personagem.getExperiencia()));
     }
       
     private void tempoVida() {
