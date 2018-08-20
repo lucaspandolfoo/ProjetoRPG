@@ -771,6 +771,7 @@ public class ViewConfronto extends javax.swing.JFrame {
             limparLabels();
             ViewPersonagem telaP = new ViewPersonagem(personagem);
             telaP.setVisible(true);
+            this.setVisible(false);
          }
         }
     }
@@ -795,11 +796,13 @@ public class ViewConfronto extends javax.swing.JFrame {
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 1!","Parabéns",'i');  
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 600:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 2!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 900:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 3!","Parabéns",'i');
@@ -810,92 +813,111 @@ public class ViewConfronto extends javax.swing.JFrame {
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 4!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 1500:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 5!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 1800:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 6!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 2100:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 7!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 2400:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 8!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 2700:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 9!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 3000:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 10!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 3300:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 11!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 3600:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 12!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 3900:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 13!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 4200:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 14!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 4500:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 15!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 4800:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 16!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 5100:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 17!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 5400:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 18!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 5700:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 19!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         case 6000:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 20!","Parabéns",'i'); 
         personagem.setNivel(personagem.getNivel()+1);
         mostrarPersonagem();
+        telaAtributos();
         break;
         }
     }
     
     private void telaAtributos () {
-        
+        ViewAtributos telaAtributos = new ViewAtributos(this, true, personagem);
+        telaAtributos.setLocationRelativeTo(null);
+        telaAtributos.setVisible(true);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup GrupoSkills;
