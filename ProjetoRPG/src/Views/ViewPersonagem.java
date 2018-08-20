@@ -624,7 +624,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         txtPocaoAtaque.setText(String.valueOf(personagem.getPataque()));
         txtPocaoExp.setText(String.valueOf(personagem.getPexp()));
         
-        prbExperiencia.setMaximum(20000);
+        prbExperiencia.setMaximum(6000);
         prbExperiencia.setMinimum(0);
         prbExperiencia.setValue(personagem.getExperiencia());
         prbExperiencia.setStringPainted(true); 
