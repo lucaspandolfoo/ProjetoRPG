@@ -577,13 +577,25 @@ public class ViewPersonagem extends javax.swing.JFrame {
     private void btnPocaoExpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocaoExpActionPerformed
         // TODO add your handling code here:
         if (personagem.getPexp() > 0) {
-            personagem.setNivel(personagem.getNivel() + 1);
+        if (personagem.getExperiencia() == 150 || personagem.getExperiencia() == 450 || personagem.getExperiencia() == 750 ||
+            personagem.getExperiencia() == 1050 || personagem.getExperiencia() == 1350 || personagem.getExperiencia() == 1650 ||
+            personagem.getExperiencia() == 1850 || personagem.getExperiencia() == 2250 || personagem.getExperiencia() == 2550 ||
+            personagem.getExperiencia() == 2850 || personagem.getExperiencia() == 3150 || personagem.getExperiencia() == 3350 ||
+            personagem.getExperiencia() == 3750 || personagem.getExperiencia() == 3150 || personagem.getExperiencia() == 3550 ) {
+            
+            personagem.setExperiencia(personagem.getExperiencia() + 150);
+            upaNivel(personagem.getExperiencia());
             personagem.setPexp(personagem.getPexp() -1);
             mostrarPersonagem();
+        } else {
+            personagem.setExperiencia(personagem.getExperiencia() + 300);
+            upaNivel(personagem.getExperiencia());
+            personagem.setPexp(personagem.getPexp() -1);
+            mostrarPersonagem();
+        }
         }else {
             CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Poções de EXP!","Atenção",'i');
         }
-    
     }//GEN-LAST:event_btnPocaoExpActionPerformed
 
     private void btnPocaoVidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPocaoVidaActionPerformed
@@ -651,6 +663,111 @@ public class ViewPersonagem extends javax.swing.JFrame {
     
     public static Color pegaCor() {
         return color;
+    }
+    
+      public void upaNivel(int exp) {
+        switch (exp) {
+        case 300:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 1!","Parabéns",'i');  
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 600:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 2!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 900:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 3!","Parabéns",'i');
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 1200:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 4!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 1500:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 5!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 1800:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 6!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 2100:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 7!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 2400:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 8!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 2700:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 9!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 3000:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 10!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 3300:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 11!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 3600:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 12!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 3900:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 13!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 4200:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 14!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 4500:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 15!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 4800:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 16!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 5100:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 17!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 5400:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 18!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 5700:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 19!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        case 6000:
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 20!","Parabéns",'i'); 
+        personagem.setNivel(personagem.getNivel()+1);
+        mostrarPersonagem();
+        break;
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
