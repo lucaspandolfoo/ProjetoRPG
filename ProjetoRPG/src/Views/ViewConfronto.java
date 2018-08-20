@@ -534,8 +534,8 @@ public class ViewConfronto extends javax.swing.JFrame {
         } else {
         mostrarOponente();
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns, você derrotou o oponente " + oponentes[x].getNome()+"!","Parabéns",'i');
-        qtdeDerrotas = qtdeDerrotas + 1;
-        upaNivel(qtdeDerrotas);
+        personagem.setExperiencia(personagem.getExperiencia()+150);
+        upaNivel(personagem.getExperiencia());
         vidaMaximaPersonagem = personagem.getVida();
         mostrarPersonagem(); //Mostra o personagem com a vida atualizada
         vidaMenor200(); //Valida se o personagem não ficou com a vida menor que 200
@@ -786,34 +786,13 @@ public class ViewConfronto extends javax.swing.JFrame {
         }
       }
 
-    private void upaNivel(int qtde) {
-        if (qtde == 1) {
-           CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você alcançou o nível 1\nSua recompesa é: 200 de Ataque","Parabéns",'i');
-           personagem.setAtaque(personagem.getAtaque()+200);
-           personagem.setNivel(personagem.getNivel()+1);
-        }
-        else if (qtde == 2) {
-            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você alcançou o nível 2\nSua recompesa é: 100 de Ataque e 200 de Vida","Parabéns",'i');
-            personagem.setAtaque(personagem.getAtaque()+100);
-            personagem.setVida(personagem.getVida()+200);
-            personagem.setNivel(personagem.getNivel()+1);
-        }
-        else if (qtde == 4) {
-            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você alcançou o nível 3\nSua recompesa é: 10000 moedas","Parabéns",'i');
-            personagem.setMoedas(personagem.getMoedas()+10000);
-            personagem.setNivel(personagem.getNivel()+1);
-        }
-        else if (qtde == 6) {
-            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você alcançou o nível 4\nSua recompesa é: 500 de vida","Parabéns",'i');
-            personagem.setVida(personagem.getVida()+500);
-            personagem.setNivel(personagem.getNivel()+1);
-        }
-        else if (qtde == 8) {
-            CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você alcançou o nível 5\nSua recompesa é: 1000 de Ataque","Parabéns",'i');
-            personagem.setAtaque(personagem.getAtaque()+1000);
-            personagem.setNivel(personagem.getNivel()+1);
-        }
+    public static void upaNivel(int exp) {
+        switch (exp) {
+            
+            
+            
         
+        }
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup GrupoSkills;
