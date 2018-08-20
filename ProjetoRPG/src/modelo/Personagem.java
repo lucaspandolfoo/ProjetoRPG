@@ -18,6 +18,7 @@ public class Personagem {
     private int ataque;
     private int bau;
     private double moedas;
+    private int experiencia;
     private int pratas;
     private int pvida;
     private int pataque;
@@ -111,6 +112,14 @@ public class Personagem {
     public void setPratas(int pratas) {
         this.pratas = pratas;
     }
+
+    public int getExperiencia() {
+        return experiencia;
+    }
+
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
+    }
     
     
     
@@ -119,7 +128,8 @@ public class Personagem {
         "Classe: " + classe + "\n" +
         "Nível: " + nivel + "\n" +
         "Vida: " + vida + "\n" +
-        "Ataque: " + ataque + "\n";      
+        "Ataque: " + ataque + "\n" +
+        "Moedas: " + moedas + "\n";   
     }
     
 }
