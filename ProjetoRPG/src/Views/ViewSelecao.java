@@ -390,8 +390,8 @@ public class ViewSelecao extends javax.swing.JFrame {
          if (btrGuerreiro.isSelected()) { 
           personagem.setClasse("Guerreiro");
           personagem.setNivel(0);
-          personagem.setVida(600);
-          personagem.setAtaque(300);
+          personagem.setVida(1000);
+          personagem.setAtaque(500);
           personagem.setBau(1);
           personagem.setMoedas(2000);
           personagem.setPratas(2);

@@ -791,45 +791,65 @@ public class ViewConfronto extends javax.swing.JFrame {
     public static void upaNivel(int exp) {
         switch (exp) {
         case 300:
-        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 1!","Parabéns",'i');         
+        CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 1!","Parabéns",'i');  
+        break;
         case 600:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 2!","Parabéns",'i'); 
+        break;
         case 900:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 3!","Parabéns",'i'); 
+        break;
         case 1200:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 4!","Parabéns",'i'); 
+        break;
         case 1500:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 5!","Parabéns",'i'); 
+        break;
         case 1800:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 6!","Parabéns",'i'); 
+        break;
         case 2100:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 7!","Parabéns",'i'); 
+        break;
         case 2400:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 8!","Parabéns",'i'); 
+        break;
         case 2700:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 9!","Parabéns",'i'); 
+        break;
         case 3000:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 10!","Parabéns",'i'); 
+        break;
         case 3300:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 11!","Parabéns",'i'); 
+        break;
         case 3600:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 12!","Parabéns",'i'); 
+        break;
         case 3900:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 13!","Parabéns",'i'); 
+        break;
         case 4200:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 14!","Parabéns",'i'); 
+        break;
         case 4500:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 15!","Parabéns",'i'); 
+        break;
         case 4800:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 16!","Parabéns",'i'); 
+        break;
         case 5100:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 17!","Parabéns",'i'); 
+        break;
         case 5400:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 18!","Parabéns",'i'); 
+        break;
         case 5700:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 19!","Parabéns",'i'); 
+        break;
         case 6000:
         CaixaDeDialogo.obterinstancia().exibirMensagem("Parabéns você chegou ao nível 20!","Parabéns",'i'); 
+        break;
         }
     }
     
