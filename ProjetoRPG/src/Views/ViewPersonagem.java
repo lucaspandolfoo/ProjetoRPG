@@ -583,9 +583,11 @@ public class ViewPersonagem extends javax.swing.JFrame {
         if (personagem.getPexp() > 0) {
         if (personagem.getExperiencia() == 150 || personagem.getExperiencia() == 450 || personagem.getExperiencia() == 750 ||
             personagem.getExperiencia() == 1050 || personagem.getExperiencia() == 1350 || personagem.getExperiencia() == 1650 ||
-            personagem.getExperiencia() == 1850 || personagem.getExperiencia() == 2250 || personagem.getExperiencia() == 2550 ||
-            personagem.getExperiencia() == 2850 || personagem.getExperiencia() == 3150 || personagem.getExperiencia() == 3350 ||
-            personagem.getExperiencia() == 3750 || personagem.getExperiencia() == 3150 || personagem.getExperiencia() == 3550 ) {
+            personagem.getExperiencia() == 1950 || personagem.getExperiencia() == 2250 || personagem.getExperiencia() == 2550 ||
+            personagem.getExperiencia() == 2850 || personagem.getExperiencia() == 3150 || personagem.getExperiencia() == 3450 ||
+            personagem.getExperiencia() == 3750 || personagem.getExperiencia() == 4050 || personagem.getExperiencia() == 4350 ||
+            personagem.getExperiencia() == 4650 || personagem.getExperiencia() == 4950 || personagem.getExperiencia() == 5250 ||
+            personagem.getExperiencia() == 5550 || personagem.getExperiencia() == 5850) {
             
             personagem.setExperiencia(personagem.getExperiencia() + 150);
             upaNivel(personagem.getExperiencia());
