@@ -104,6 +104,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         menuSair = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         IMTelaPersonagem = new javax.swing.JMenuItem();
+        IMConquistas = new javax.swing.JMenuItem();
         MenuLoja = new javax.swing.JMenu();
         MenuLojaP = new javax.swing.JMenuItem();
         IMAdquirirPratas = new javax.swing.JMenuItem();
@@ -287,6 +288,15 @@ public class ViewPersonagem extends javax.swing.JFrame {
             }
         });
         jMenu3.add(IMTelaPersonagem);
+
+        IMConquistas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/gold-medal.png"))); // NOI18N
+        IMConquistas.setText("Conquistas");
+        IMConquistas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IMConquistasActionPerformed(evt);
+            }
+        });
+        jMenu3.add(IMConquistas);
 
         jMenuBar1.add(jMenu3);
 
@@ -626,6 +636,14 @@ public class ViewPersonagem extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnPocaoAtaqueActionPerformed
 
+    private void IMConquistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IMConquistasActionPerformed
+        // TODO add your handling code here:
+        ViewConquistas telaConquistas = new ViewConquistas(this, true);
+        telaConquistas.setLocationRelativeTo(null);
+        telaConquistas.setVisible(true);
+        
+    }//GEN-LAST:event_IMConquistasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -803,6 +821,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem IMAdquirirPratas;
+    private javax.swing.JMenuItem IMConquistas;
     private javax.swing.JMenuItem IMSobreJogo;
     private javax.swing.JMenuItem IMTelaPersonagem;
     private javax.swing.JMenu MenuLoja;
