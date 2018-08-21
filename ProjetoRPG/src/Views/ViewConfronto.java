@@ -12,7 +12,9 @@ import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Random;
@@ -48,7 +50,6 @@ public class ViewConfronto extends javax.swing.JFrame {
      */
     public ViewConfronto(Personagem personagemEscolhido) throws IOException {
         ajustaCor();
-        
         initComponents();
         limparLabels();
         this.personagem = personagemEscolhido;
@@ -547,7 +548,7 @@ public class ViewConfronto extends javax.swing.JFrame {
         prbVidaOponente.setMaximum(vidaMaximaOponente);
         mostrarOponente();
         limparLabels();
-        mostrarPersonagem();
+        mostrarPersonagem();   
         }
         }
     }//GEN-LAST:event_btnAtacarActionPerformed
@@ -658,6 +659,12 @@ public class ViewConfronto extends javax.swing.JFrame {
         prbVidaPersonagem.setValue(personagem.getVida());
         prbVidaPersonagem.setStringPainted(true); 
         prbVidaPersonagem.setString(String.valueOf(personagem.getVida()));
+        
+        prbExperiencia.setMaximum(6000);
+        prbExperiencia.setMinimum(0);
+        prbExperiencia.setValue(personagem.getExperiencia());
+        prbExperiencia.setStringPainted(true); 
+        prbExperiencia.setString(String.valueOf(personagem.getExperiencia()));
 
     }
     
@@ -671,12 +678,6 @@ public class ViewConfronto extends javax.swing.JFrame {
         prbVidaOponente.setValue(oponentes[x].getVida());
         prbVidaOponente.setStringPainted(true); 
         prbVidaOponente.setString(String.valueOf(oponentes[x].getVida()));
-        
-        prbExperiencia.setMaximum(6000);
-        prbExperiencia.setMinimum(0);
-        prbExperiencia.setValue(personagem.getExperiencia());
-        prbExperiencia.setStringPainted(true); 
-        prbExperiencia.setString(String.valueOf(personagem.getExperiencia()));
     }
     
     private void ataquePersonagem() {

@@ -52,7 +52,6 @@ public class ViewPersonagem extends javax.swing.JFrame {
         mostrarPersonagem();
         if (personagem.getVida() == 0) {
         tempoVida();
-       
         }
     }
     /**
@@ -619,7 +618,7 @@ public class ViewPersonagem extends javax.swing.JFrame {
         if (personagem.getPvida() > 0) {
             personagem.setVida(personagem.getVida() + 100);
             personagem.setPvida(personagem.getPvida() -1);
-            mostrarPersonagem();            
+            mostrarPersonagem();  
         }else {
             CaixaDeDialogo.obterinstancia().exibirMensagem("Você não possui Poções de Vida!","Atenção",'i');
         }

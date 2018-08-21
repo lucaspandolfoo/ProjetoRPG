@@ -13,7 +13,9 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.AbstractAction;
@@ -395,7 +397,7 @@ public class ViewSelecao extends javax.swing.JFrame {
           personagem.setBau(1);
           personagem.setMoedas(2000);
           personagem.setPratas(2);
-        }
+         }
        else if (btrArcano.isSelected()) {  
           personagem.setClasse("Arcano");
           personagem.setNivel(0);

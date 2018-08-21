@@ -162,8 +162,8 @@ public class ViewAtributos extends javax.swing.JDialog {
              return;
         }
         if(jRVida.isSelected()) {
-           personagem.setVida(personagem.getVida() +200);
-           try {
+            personagem.setVida(personagem.getVida()+200); 
+            try {
                 ViewConfronto confronto = new ViewConfronto (personagem);
                 //confronto.setVisible(true);
                 dispose();
