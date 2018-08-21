@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import Views.ViewSelecao;
 import ferramentas.CaixaDeDialogo;
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -28,6 +29,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import static jdk.nashorn.internal.objects.ArrayBufferView.buffer;
 
 /**
@@ -44,6 +47,8 @@ public class ViewLogin extends javax.swing.JFrame {
         initComponents();
         //Atalho Enter para o botão entrar
         atalhoBotaoEntrar();
+        ajustaCor();
+        this.getContentPane().setBackground(Color.WHITE); 
     }
 
     /**
@@ -242,6 +247,20 @@ public class ViewLogin extends javax.swing.JFrame {
         btnEntrar.doClick();
           }
         });
+      }
+        
+            public void ajustaCor() {
+           try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ViewConfronto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(ViewConfronto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(ViewConfronto.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(ViewConfronto.class.getName()).log(Level.SEVERE, null, ex);
+        }
       }
        
     // Variables declaration - do not modify//GEN-BEGIN:variables
