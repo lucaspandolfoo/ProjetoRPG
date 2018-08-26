@@ -211,6 +211,7 @@ public class ViewCadastro extends javax.swing.JDialog {
            CaixaDeDialogo.obterinstancia().exibirMensagem("Este usuário já está cadastrado em nosso sistema!", "Atenção",'e');
            return;
            }
+        
      CaixaDeDialogo.obterinstancia().exibirMensagem(usuario.salvar(), "Cadastro",'i');
      ViewLogin telaLogin = new ViewLogin();
      telaLogin.setVisible(true);
